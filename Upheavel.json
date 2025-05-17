@@ -143,6 +143,37 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/5e2e3fcc57885d5e510934e621be5f8dd7a5b6425cf46ef38073e3d2c3b04048_Kenney Mini Square.ttf",
           "name": "Kenney Mini Square.ttf"
         }
+      },
+      {
+        "file": "versus_bar.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "versus_bar.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "blue slim.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "blue slim.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "accountant.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "accountant.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Xolonium-Regular.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "assets\\Xolonium-Regular.ttf",
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -202,6 +233,72 @@
       "name": "StrengthMultiplier",
       "type": "number",
       "value": 1
+    },
+    {
+      "folded": true,
+      "name": "Enemies",
+      "type": "structure",
+      "children": [
+        {
+          "name": "Name",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "Shu The Accountant"
+            },
+            {
+              "type": "string",
+              "value": "Fiery Chicken Ji"
+            },
+            {
+              "type": "string",
+              "value": "Hunter Yong"
+            }
+          ]
+        },
+        {
+          "name": "Overpower",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 1800
+            },
+            {
+              "type": "number",
+              "value": 7000
+            },
+            {
+              "type": "number",
+              "value": 50000
+            }
+          ]
+        },
+        {
+          "name": "Strength",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 18
+            },
+            {
+              "type": "number",
+              "value": 70
+            },
+            {
+              "type": "number",
+              "value": 200
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CurrentEnemy",
+      "type": "number",
+      "value": 0
     }
   ],
   "layouts": [
@@ -273,11 +370,11 @@
           "depth": 1,
           "height": 40,
           "layer": "",
-          "name": "Text",
+          "name": "Player_Strength",
           "persistentUuid": "64167ef8-608c-481a-ad0f-e8f38e1a67c6",
-          "width": 188,
-          "x": 403,
-          "y": 51,
+          "width": 190,
+          "x": 370,
+          "y": 80,
           "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
@@ -456,9 +553,83 @@
               "value": -1
             }
           ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 40,
+          "layer": "",
+          "name": "Enemy_Strength",
+          "persistentUuid": "601601c1-02c4-4562-9f43-22bc212645c0",
+          "width": 190,
+          "x": 720,
+          "y": 80,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 40,
+          "layer": "",
+          "name": "PlayerName",
+          "persistentUuid": "a325f6da-4475-4321-a191-be5f8437034a",
+          "width": 200,
+          "x": 80,
+          "y": 50,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 40,
+          "layer": "",
+          "name": "EnemyName",
+          "persistentUuid": "7b0d1594-bd8a-4c74-ba9e-a679d7f00b67",
+          "width": 200,
+          "x": 1000,
+          "y": 50,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Settings_Bar",
+          "persistentUuid": "31a413de-79fc-4572-b8f3-8f42d220e8dc",
+          "width": 0,
+          "x": 200,
+          "y": 640,
+          "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
+        {
+          "assetStoreId": "",
+          "name": "Settings_Bar",
+          "type": "Settings_Bar::Settings_Bar",
+          "variant": "",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {}
+        },
         {
           "assetStoreId": "",
           "name": "Day_Counter",
@@ -569,7 +740,7 @@
           "assetStoreId": "",
           "bold": false,
           "italic": false,
-          "name": "Text",
+          "name": "Player_Strength",
           "smoothed": true,
           "type": "TextObject::Text",
           "underlined": false,
@@ -579,7 +750,7 @@
           "string": "Text",
           "font": "Xolonium-Regular.ttf",
           "textAlignment": "center",
-          "characterSize": 20,
+          "characterSize": 24,
           "color": {
             "b": 255,
             "g": 255,
@@ -603,7 +774,7 @@
             "font": "Xolonium-Regular.ttf",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
-            "characterSize": 20,
+            "characterSize": 24,
             "color": "255;255;255"
           }
         },
@@ -632,7 +803,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "grey_square.png",
+                      "image": "versus_bar.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -652,16 +823,16 @@
                             "y": 0
                           },
                           {
-                            "x": 100,
+                            "x": 1280,
                             "y": 0
                           },
                           {
-                            "x": 100,
-                            "y": 100
+                            "x": 1280,
+                            "y": 150
                           },
                           {
                             "x": 0,
-                            "y": 100
+                            "y": 150
                           }
                         ]
                       ]
@@ -671,6 +842,252 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Di",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "blue slim.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 176,
+                            "y": 124
+                          },
+                          {
+                            "x": 550,
+                            "y": 124
+                          },
+                          {
+                            "x": 550,
+                            "y": 353
+                          },
+                          {
+                            "x": 176,
+                            "y": 353
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Accountant",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "accountant.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 128,
+                            "y": 140
+                          },
+                          {
+                            "x": 549,
+                            "y": 140
+                          },
+                          {
+                            "x": 549,
+                            "y": 492
+                          },
+                          {
+                            "x": 128,
+                            "y": 492
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Enemy_Strength",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Text",
+          "font": "assets\\Xolonium-Regular.ttf",
+          "textAlignment": "center",
+          "characterSize": 24,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Text",
+            "font": "assets\\Xolonium-Regular.ttf",
+            "textAlignment": "center",
+            "verticalTextAlignment": "center",
+            "characterSize": 24,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "PlayerName",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Di",
+          "font": "assets\\Xolonium-Regular.ttf",
+          "textAlignment": "left",
+          "characterSize": 30,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Di",
+            "font": "assets\\Xolonium-Regular.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "center",
+            "characterSize": 30,
+            "color": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "EnemyName",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Text",
+          "font": "assets\\Xolonium-Regular.ttf",
+          "textAlignment": "right",
+          "characterSize": 30,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Text",
+            "font": "assets\\Xolonium-Regular.ttf",
+            "textAlignment": "right",
+            "verticalTextAlignment": "center",
+            "characterSize": 30,
+            "color": "255;255;255"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -683,7 +1100,13 @@
             "objectName": "Battle_Bar"
           },
           {
-            "objectName": "Text"
+            "objectName": "Di"
+          },
+          {
+            "objectName": "Player_Strength"
+          },
+          {
+            "objectName": "Enemy_Strength"
           },
           {
             "objectName": "Action"
@@ -693,6 +1116,18 @@
           },
           {
             "objectName": "Day_Counter"
+          },
+          {
+            "objectName": "Accountant"
+          },
+          {
+            "objectName": "PlayerName"
+          },
+          {
+            "objectName": "EnemyName"
+          },
+          {
+            "objectName": "Settings_Bar"
           }
         ]
       },
@@ -719,21 +1154,6 @@
                 "SpriteRecolorizer",
                 "\"201;201;201\"",
                 "\"26;26;26\"",
-                "30",
-                "50",
-                "50",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Recolorizer::SpriteRecolorizer::Recolorize"
-              },
-              "parameters": [
-                "Battle_Bar",
-                "SpriteRecolorizer",
-                "\"202;202;202\"",
-                "\"66;0;47\"",
                 "30",
                 "50",
                 "50",
@@ -830,6 +1250,18 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Player and Enemy Stats Display"
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -838,13 +1270,47 @@
                 "value": "TextContainerCapability::TextContainerBehavior::SetValue"
               },
               "parameters": [
-                "Text",
+                "Player_Strength",
                 "Text",
                 "=",
                 "Strength"
               ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Enemy_Strength",
+                "Text",
+                "=",
+                "Enemies.Strength[CurrentEnemy]"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "EnemyName",
+                "Text",
+                "=",
+                "Enemies.Name[CurrentEnemy]"
+              ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Action Toggle"
         },
         {
           "type": "BuiltinCommonInstructions::ForEach",
@@ -1270,6 +1736,208 @@
   ],
   "externalEvents": [],
   "eventsFunctionsExtensions": [
+    {
+      "author": "",
+      "category": "",
+      "extensionNamespace": "",
+      "fullName": "",
+      "gdevelopVersion": "",
+      "helpPath": "",
+      "iconUrl": "",
+      "name": "Settings_Bar",
+      "previewIconUrl": "",
+      "shortDescription": "",
+      "version": "",
+      "description": "",
+      "tags": [],
+      "authorIds": [],
+      "dependencies": [],
+      "globalVariables": [],
+      "sceneVariables": [],
+      "eventsFunctions": [],
+      "eventsBasedBehaviors": [],
+      "eventsBasedObjects": [
+        {
+          "areaMaxX": 1080,
+          "areaMaxY": 80,
+          "areaMaxZ": 1,
+          "areaMinX": 0,
+          "areaMinY": 0,
+          "areaMinZ": 0,
+          "defaultName": "",
+          "description": "",
+          "fullName": "",
+          "isUsingLegacyInstancesRenderer": false,
+          "name": "Settings_Bar",
+          "objects": [
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "GreySquare",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "SpriteRecolorizer",
+                  "type": "Recolorizer::SpriteRecolorizer"
+                }
+              ],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "grey_square.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 0,
+                                "y": 0
+                              },
+                              {
+                                "x": 100,
+                                "y": 0
+                              },
+                              {
+                                "x": 100,
+                                "y": 100
+                              },
+                              {
+                                "x": 0,
+                                "y": 100
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "objectsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "objectName": "GreySquare"
+              }
+            ]
+          },
+          "objectsGroups": [],
+          "layers": [
+            {
+              "ambientLightColorB": 200,
+              "ambientLightColorG": 200,
+              "ambientLightColorR": 200,
+              "camera3DFarPlaneDistance": 10000,
+              "camera3DFieldOfView": 45,
+              "camera3DNearPlaneDistance": 3,
+              "cameraType": "",
+              "followBaseLayerCamera": false,
+              "isLightingLayer": false,
+              "isLocked": false,
+              "name": "",
+              "renderingType": "",
+              "visibility": true,
+              "cameras": [
+                {
+                  "defaultSize": true,
+                  "defaultViewport": true,
+                  "height": 0,
+                  "viewportBottom": 1,
+                  "viewportLeft": 0,
+                  "viewportRight": 1,
+                  "viewportTop": 0,
+                  "width": 0
+                }
+              ],
+              "effects": []
+            }
+          ],
+          "instances": [
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 1.0223048327137545,
+              "height": 80,
+              "layer": "",
+              "name": "GreySquare",
+              "persistentUuid": "26e5eb20-64d6-421d-9662-c6a435c8bf34",
+              "width": 1080,
+              "x": 0,
+              "y": 0,
+              "zOrder": 17,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            }
+          ],
+          "eventsFunctions": [
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "onCreated",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Recolorizer::SpriteRecolorizer::Recolorize"
+                      },
+                      "parameters": [
+                        "GreySquare",
+                        "SpriteRecolorizer",
+                        "\"213;213;213\"",
+                        "\"32;0;0\"",
+                        "30",
+                        "50",
+                        "50",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "Settings_Bar::Settings_Bar",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": [],
+          "variants": []
+        }
+      ]
+    },
     {
       "author": "",
       "category": "",
@@ -2654,6 +3322,38 @@
                         "id",
                         "=",
                         "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Recolorizer::SpriteRecolorizer::Recolorize"
+                      },
+                      "parameters": [
+                        "Action_Wrapper",
+                        "SpriteRecolorizer",
+                        "\"202;202;202\"",
+                        "\"46;0;0\"",
+                        "30",
+                        "50",
+                        "50",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "id",
+                        "=",
+                        "1"
                       ]
                     }
                   ],
