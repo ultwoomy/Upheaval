@@ -191,12 +191,17 @@
     {
       "name": "Time_Max",
       "type": "number",
-      "value": 10
+      "value": 6
     },
     {
       "name": "Action_Returned",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "StrengthMultiplierFinal",
+      "type": "number",
+      "value": 1
     }
   ],
   "layouts": [
@@ -364,6 +369,72 @@
           "width": 1080,
           "x": 200,
           "y": 380,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "ID",
+              "type": "number",
+              "value": -1
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 51.31195335276968,
+          "height": 65,
+          "layer": "",
+          "name": "Action",
+          "persistentUuid": "ed184d68-92f9-45f6-8429-e127adfeca47",
+          "width": 1080,
+          "x": 200,
+          "y": 445,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "ID",
+              "type": "number",
+              "value": -1
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 51.31195335276968,
+          "height": 65,
+          "layer": "",
+          "name": "Action",
+          "persistentUuid": "894f215b-44c9-44dd-aaf9-666279a47b1e",
+          "width": 1080,
+          "x": 200,
+          "y": 510,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "ID",
+              "type": "number",
+              "value": -1
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 51.31195335276968,
+          "height": 65,
+          "layer": "",
+          "name": "Action",
+          "persistentUuid": "557306e1-c7e3-4b5e-b920-c7f8bc4ab297",
+          "width": 1080,
+          "x": 200,
+          "y": 575,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -750,11 +821,6 @@
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
           "actions": [
             {
               "type": {
@@ -770,21 +836,31 @@
           ]
         },
         {
-          "type": "BuiltinCommonInstructions::Standard",
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "Action",
           "conditions": [
             {
               "type": {
                 "value": "Action_Scene::MyObject::Button_Pressed"
               },
               "parameters": [
-                "Actions",
-                "=",
-                "Coins",
+                "Action",
                 ""
               ]
             }
           ],
-          "actions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Action_Returned",
+                "=",
+                "Action.ID"
+              ]
+            }
+          ],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -818,6 +894,28 @@
                     "-",
                     "1"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Action_Returned",
+                    "=",
+                    "-1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ActionCountDisplay::MyObject::Update_Values"
+                  },
+                  "parameters": [
+                    "ActionCountDisplay",
+                    "ActionsUsed",
+                    "ActionsCap",
+                    "Coins",
+                    ""
+                  ]
                 }
               ]
             },
@@ -843,6 +941,16 @@
                     "<",
                     "ActionsCap"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Action_Returned",
+                    ">=",
+                    "0"
+                  ]
                 }
               ],
               "actions": [
@@ -853,6 +961,38 @@
                   "parameters": [
                     "ActiveActions",
                     "Action_Returned"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ActionsUsed",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Action_Returned",
+                    "=",
+                    "-1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ActionCountDisplay::MyObject::Update_Values"
+                  },
+                  "parameters": [
+                    "ActionCountDisplay",
+                    "ActionsUsed",
+                    "ActionsCap",
+                    "Coins",
+                    ""
                   ]
                 }
               ]
@@ -2190,11 +2330,10 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "SetReturnNumber"
+                        "value": "SetReturnBoolean"
                       },
                       "parameters": [
-                        "ID",
-                        ""
+                        "True"
                       ]
                     }
                   ],
