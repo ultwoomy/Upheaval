@@ -1,0 +1,82 @@
+[
+	{
+		"title": "Tutorial",
+		"tags": "",
+		"body": "Hey my human controller! I am Di, warrior in training!\n\n[[Answer:Huh?|Tutorial2]]",
+		"position": {
+			"x": 416,
+			"y": 399
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial2",
+		"tags": "",
+		"body": "Let me walk you through managing my training.\n\n [[Answer:Continue|Tutorial3]]",
+		"position": {
+			"x": 404,
+			"y": 149
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial3",
+		"tags": "",
+		"body": "Over here is my training actions. Click start on any of them to toggle them on. Be warned however, as I can only currently do 1 at a time.\n\n [[Answer:Ok|Tutorial4]]",
+		"position": {
+			"x": 401,
+			"y": -69
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial4",
+		"tags": "",
+		"body": "Days is this number over here on the left. Every time it goes up, I gain strength based on the effects of the active actions.\n\n [[Answer:I see|Tutorial5]]",
+		"position": {
+			"x": 395,
+			"y": -334
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial5",
+		"tags": "",
+		"body": "Over in the middle is the days left until my first fight. Make sure I'm stronger than the enemy by then!\n\n [[Answer:Okay|Tutorial6]]",
+		"position": {
+			"x": 403,
+			"y": -562
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial6",
+		"tags": "",
+		"body": "My neighbor, Shu from Accounting challenged me to a duel. I have no idea why she would when she's not a warrior, but I never back down from a fight!\n\n [[Answer:O|Tutorial7]]",
+		"position": {
+			"x": 399,
+			"y": -798
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial7",
+		"tags": "",
+		"body": "Let's become the strongest in this world together!\n\n [[Answer:Ye|Tutorial8]]",
+		"position": {
+			"x": 381,
+			"y": -1089
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial8",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": 400,
+			"y": -1325
+		},
+		"colorID": 0
+	}
+]
