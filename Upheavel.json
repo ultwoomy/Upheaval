@@ -174,6 +174,22 @@
         "metadata": "",
         "name": "assets\\Xolonium-Regular.ttf",
         "userAdded": false
+      },
+      {
+        "file": "winner_back.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "winner_back.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "death.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "death.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -222,7 +238,7 @@
     {
       "name": "Time_Max",
       "type": "number",
-      "value": 6
+      "value": 3
     },
     {
       "name": "Action_Returned",
@@ -230,7 +246,7 @@
       "value": 0
     },
     {
-      "name": "StrengthMultiplier",
+      "name": "StrengthMultiplierRest",
       "type": "number",
       "value": 1
     },
@@ -239,6 +255,24 @@
       "name": "Enemies",
       "type": "structure",
       "children": [
+        {
+          "name": "Deadline",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 10
+            },
+            {
+              "type": "number",
+              "value": 22
+            },
+            {
+              "type": "number",
+              "value": 30
+            }
+          ]
+        },
         {
           "name": "Name",
           "type": "array",
@@ -281,7 +315,7 @@
           "children": [
             {
               "type": "number",
-              "value": 18
+              "value": 5
             },
             {
               "type": "number",
@@ -296,7 +330,22 @@
       ]
     },
     {
+      "name": "FinalStrength",
+      "type": "number",
+      "value": 0
+    },
+    {
       "name": "CurrentEnemy",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "VictoryStatus",
+      "type": "string",
+      "value": "na"
+    },
+    {
+      "name": "Temp",
       "type": "number",
       "value": 0
     }
@@ -614,6 +663,22 @@
           "x": 200,
           "y": 640,
           "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Deadline",
+          "persistentUuid": "e2d1811d-2988-4f55-8633-8b706b483ef5",
+          "width": 0,
+          "x": 560,
+          "y": 68,
+          "zOrder": 18,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1088,6 +1153,168 @@
             "characterSize": 30,
             "color": "255;255;255"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Deadline",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Fight Day:\n10",
+          "font": "assets\\Xolonium-Regular.ttf",
+          "textAlignment": "center",
+          "characterSize": 30,
+          "color": {
+            "b": 0,
+            "g": 255,
+            "r": 83
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Fight Day:\n10",
+            "font": "assets\\Xolonium-Regular.ttf",
+            "textAlignment": "center",
+            "verticalTextAlignment": "center",
+            "characterSize": 30,
+            "color": "83;255;0"
+          }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Winner_Background",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "winner_back.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 1300,
+                            "y": 0
+                          },
+                          {
+                            "x": 1300,
+                            "y": 720
+                          },
+                          {
+                            "x": 0,
+                            "y": 720
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Lose_Background",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "death.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 1300,
+                            "y": 0
+                          },
+                          {
+                            "x": 1300,
+                            "y": 720
+                          },
+                          {
+                            "x": 0,
+                            "y": 720
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -1095,6 +1322,12 @@
         "children": [
           {
             "objectName": "GreySquare"
+          },
+          {
+            "objectName": "Winner_Background"
+          },
+          {
+            "objectName": "Lose_Background"
           },
           {
             "objectName": "Battle_Bar"
@@ -1116,6 +1349,9 @@
           },
           {
             "objectName": "Day_Counter"
+          },
+          {
+            "objectName": "Deadline"
           },
           {
             "objectName": "Accountant"
@@ -1181,42 +1417,53 @@
                 "\"Time Counter\""
               ]
             }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "NumberObjectVariable"
-              },
-              "parameters": [
-                "Actions",
-                "ID",
-                ">=",
-                "0"
-              ]
-            }
           ],
-          "actions": [
+          "events": [
             {
-              "type": {
-                "value": "Action_Scene::MyObject::Set_Text"
-              },
-              "parameters": [
-                "Actions",
-                "Action.ID",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Action_Scene::MyObject::Set_ID"
-              },
-              "parameters": [
-                "Actions",
-                "Action.ID",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Actions",
+                    "ID",
+                    ">=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Action_Scene::MyObject::Set_Text"
+                  },
+                  "parameters": [
+                    "Actions",
+                    "Action.ID",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Action_Scene::MyObject::Set_ID"
+                  },
+                  "parameters": [
+                    "Actions",
+                    "Action.ID",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Action_Scene::MyObject::Set_Color"
+                  },
+                  "parameters": [
+                    "Actions",
+                    ""
+                  ]
+                }
               ]
             }
           ]
@@ -1273,7 +1520,7 @@
                 "Player_Strength",
                 "Text",
                 "=",
-                "Strength"
+                "Strength * StrengthMultiplierRest"
               ]
             },
             {
@@ -1297,6 +1544,17 @@
                 "=",
                 "Enemies.Name[CurrentEnemy]"
               ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Deadline",
+                "Text",
+                "=",
+                "\"Fight Day: \" + NewLine() + Enemies.Deadline[CurrentEnemy]"
+              ]
             }
           ]
         },
@@ -1313,15 +1571,14 @@
           "comment": "Action Toggle"
         },
         {
-          "type": "BuiltinCommonInstructions::ForEach",
-          "object": "Action",
+          "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
               "type": {
                 "value": "Action_Scene::MyObject::Button_Pressed"
               },
               "parameters": [
-                "Action",
+                "Actions",
                 ""
               ]
             }
@@ -1423,6 +1680,16 @@
                         "Coins",
                         ""
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "Action_Scene::MyObject::Set_Active"
+                      },
+                      "parameters": [
+                        "Action",
+                        "\"Start\"",
+                        ""
+                      ]
                     }
                   ]
                 }
@@ -1501,6 +1768,16 @@
                     "ActionsUsed",
                     "ActionsCap",
                     "Coins",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Action_Scene::MyObject::Set_Active"
+                  },
+                  "parameters": [
+                    "Action",
+                    "\"Stop\"",
                     ""
                   ]
                 }
@@ -1612,7 +1889,7 @@
                         "value": "SetNumberVariable"
                       },
                       "parameters": [
-                        "StrengthMultiplier",
+                        "StrengthMultiplierRest",
                         "+",
                         "0.05"
                       ]
@@ -1647,6 +1924,197 @@
                 "Days",
                 "Time_Max",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Days",
+                ">=",
+                "Enemies.Deadline[CurrentEnemy]"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PauseTimer"
+              },
+              "parameters": [
+                "",
+                "\"Time Counter\""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "FinalStrength",
+                "=",
+                "Strength * StrengthMultiplierRest"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "FinalStrength",
+                    ">=",
+                    "Enemies.Strength[CurrentEnemy]"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "VictoryStatus",
+                    "=",
+                    "\"win\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Winner_Background",
+                    "0",
+                    "0",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "FinalStrength",
+                    ">=",
+                    "Enemies.Strength[CurrentEnemy]"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "VictoryStatus",
+                    "=",
+                    "\"lose\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Lose_Background",
+                    "0",
+                    "0",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "VictoryStatus",
+                "=",
+                "\"na\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetStringVariable"
+              },
+              "parameters": [
+                "VictoryStatus",
+                "=",
+                "\"na\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Winner_Background",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Lose_Background",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CurrentEnemy",
+                "+",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "UnPauseTimer"
+              },
+              "parameters": [
+                "",
+                "\"Time Counter\""
               ]
             }
           ]
@@ -2224,7 +2692,7 @@
                         "NewText",
                         "Text",
                         "=",
-                        "Days_New"
+                        "\"Day: \" + Days_New"
                       ]
                     }
                   ]
@@ -2701,17 +3169,7 @@
       ],
       "sceneVariables": [
         {
-          "name": "Active",
-          "type": "number",
-          "value": 0
-        },
-        {
           "name": "ID",
-          "type": "number",
-          "value": 0
-        },
-        {
-          "name": "Break",
           "type": "number",
           "value": 0
         }
@@ -3113,117 +3571,37 @@
                         "True"
                       ]
                     }
-                  ],
-                  "events": [
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "Action_Scene::MyObject",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "Set Active",
+              "functionType": "Action",
+              "name": "Set_Active",
+              "sentence": "Set _PARAM0_ text to _PARAM1_",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
                     {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "NumberVariable"
-                          },
-                          "parameters": [
-                            "Active",
-                            "=",
-                            "0"
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetNumberVariable"
-                          },
-                          "parameters": [
-                            "Active",
-                            "=",
-                            "1"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "PanelSpriteButton::PanelSpriteButton::SetLabelText"
-                          },
-                          "parameters": [
-                            "Action_Start_Button",
-                            "\"Stop\"",
-                            ""
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "SetNumberVariable"
-                          },
-                          "parameters": [
-                            "Break",
-                            "=",
-                            "1"
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "value": "NumberVariable"
-                          },
-                          "parameters": [
-                            "Active",
-                            "=",
-                            "1"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "inverted": true,
-                            "value": "NumberVariable"
-                          },
-                          "parameters": [
-                            "Break",
-                            "=",
-                            "1"
-                          ]
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetNumberVariable"
-                          },
-                          "parameters": [
-                            "Active",
-                            "=",
-                            "0"
-                          ]
-                        },
-                        {
-                          "type": {
-                            "value": "PanelSpriteButton::PanelSpriteButton::SetLabelText"
-                          },
-                          "parameters": [
-                            "Action_Start_Button",
-                            "\"Start\"",
-                            ""
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [],
-                      "actions": [
-                        {
-                          "type": {
-                            "value": "SetNumberVariable"
-                          },
-                          "parameters": [
-                            "Break",
-                            "=",
-                            "0"
-                          ]
-                        }
+                      "type": {
+                        "value": "PanelSpriteButton::PanelSpriteButton::SetLabelText"
+                      },
+                      "parameters": [
+                        "Action_Start_Button",
+                        "Act",
+                        ""
                       ]
                     }
                   ]
@@ -3235,6 +3613,11 @@
                   "name": "Object",
                   "supplementaryInformation": "Action_Scene::MyObject",
                   "type": "object"
+                },
+                {
+                  "description": "Text",
+                  "name": "Act",
+                  "type": "string"
                 }
               ],
               "objectGroups": []
@@ -3310,7 +3693,29 @@
                       ]
                     }
                   ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "Action_Scene::MyObject",
+                  "type": "object"
                 },
+                {
+                  "description": "num",
+                  "name": "id",
+                  "type": "expression"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "Set Color",
+              "functionType": "Action",
+              "name": "Set_Color",
+              "sentence": "Set _PARAM0_ Color",
+              "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
@@ -3319,7 +3724,7 @@
                         "value": "NumberVariable"
                       },
                       "parameters": [
-                        "id",
+                        "ID",
                         "=",
                         "0"
                       ]
@@ -3351,7 +3756,7 @@
                         "value": "NumberVariable"
                       },
                       "parameters": [
-                        "id",
+                        "ID",
                         "=",
                         "1"
                       ]
@@ -3374,6 +3779,11 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": []
                 }
               ],
               "parameters": [
@@ -3382,11 +3792,6 @@
                   "name": "Object",
                   "supplementaryInformation": "Action_Scene::MyObject",
                   "type": "object"
-                },
-                {
-                  "description": "num",
-                  "name": "id",
-                  "type": "expression"
                 }
               ],
               "objectGroups": []
