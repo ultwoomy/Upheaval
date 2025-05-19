@@ -453,7 +453,6 @@
       "value": false
     },
     {
-      "folded": true,
       "name": "ActionInfo",
       "type": "structure",
       "children": [
@@ -509,6 +508,61 @@
             {
               "type": "string",
               "value": "Disable enemy ability for up to 15 days. Disabled afterwards"
+            }
+          ]
+        },
+        {
+          "folded": true,
+          "name": "Enabled",
+          "type": "array",
+          "children": [
+            {
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "type": "boolean",
+              "value": true
             }
           ]
         },
@@ -625,7 +679,6 @@
       ]
     },
     {
-      "folded": true,
       "name": "ActionIDList",
       "type": "array",
       "children": [
@@ -2885,118 +2938,17 @@
         "zoomFactor": 0.546875,
         "windowMask": false
       },
-      "objectsGroups": [],
+      "objectsGroups": [
+        {
+          "name": "PlayerActions",
+          "objects": [
+            {
+              "name": "Equipped_Action"
+            }
+          ]
+        }
+      ],
       "variables": [
-        {
-          "folded": true,
-          "name": "Name",
-          "type": "array",
-          "children": [
-            {
-              "type": "string",
-              "value": "Swordplay"
-            },
-            {
-              "type": "string",
-              "value": "Rest"
-            },
-            {
-              "type": "string",
-              "value": "Potentiality"
-            },
-            {
-              "type": "string",
-              "value": "Meditate"
-            },
-            {
-              "type": "string",
-              "value": "Enlightened Study"
-            },
-            {
-              "type": "string",
-              "value": "Dagger Throw"
-            },
-            {
-              "type": "string",
-              "value": "Whip Arts"
-            },
-            {
-              "type": "string",
-              "value": "Numbers Crunch"
-            },
-            {
-              "type": "string",
-              "value": "Hearty Meal"
-            },
-            {
-              "type": "string",
-              "value": "Insect Venom"
-            },
-            {
-              "type": "string",
-              "value": "Wind Sword Arts"
-            },
-            {
-              "type": "string",
-              "value": "Talisman"
-            }
-          ]
-        },
-        {
-          "folded": true,
-          "name": "Description",
-          "type": "array",
-          "children": [
-            {
-              "type": "string",
-              "value": "Increase base strength by 1"
-            },
-            {
-              "type": "string",
-              "value": "Increase final strength by 5%. Resets after each fight"
-            },
-            {
-              "type": "string",
-              "value": "Multiply sword strength gain by 2. Disable this action"
-            },
-            {
-              "type": "string",
-              "value": "Increase the value of weapons actions by 1. Disable this action"
-            },
-            {
-              "type": "string",
-              "value": "Multiply all strength gain by 1.01 permanently"
-            },
-            {
-              "type": "string",
-              "value": "Reduce enemy strength by 2"
-            },
-            {
-              "type": "string",
-              "value": "50% chance to gain 4 base strength"
-            },
-            {
-              "type": "string",
-              "value": "Increase strength by 100. Disable this action"
-            },
-            {
-              "type": "string",
-              "value": "Multiply current strength by 1.5. Disable this action"
-            },
-            {
-              "type": "string",
-              "value": "Reduce enemy strength by 1%"
-            },
-            {
-              "type": "string",
-              "value": "Increase base strength by 5"
-            },
-            {
-              "type": "string",
-              "value": "Disable enemy ability for up to 15 days. Disabled afterwards"
-            }
-          ]
-        },
         {
           "folded": true,
           "name": "Cost",
@@ -3051,6 +3003,26 @@
               "value": -1
             }
           ]
+        },
+        {
+          "name": "Index",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Offset",
+          "type": "number",
+          "value": 15
+        },
+        {
+          "name": "Temp",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "TempPlayerY",
+          "type": "number",
+          "value": 0
         }
       ],
       "instances": [
@@ -3079,8 +3051,8 @@
           "name": "GreySquare",
           "persistentUuid": "89ce1286-ad82-4cbc-be1e-07a17e01a66a",
           "width": 490,
-          "x": -230,
-          "y": -386,
+          "x": 300,
+          "y": 0,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -3092,11 +3064,11 @@
           "height": 0,
           "keepRatio": true,
           "layer": "",
-          "name": "NewText",
+          "name": "EquippedActionsText",
           "persistentUuid": "bdba9132-dfdc-4981-82c4-f638c3cddb50",
           "width": 0,
-          "x": -192,
-          "y": -358,
+          "x": 338,
+          "y": 20,
           "zOrder": 4,
           "numberProperties": [],
           "stringProperties": [],
@@ -3111,12 +3083,147 @@
           "name": "Equipped_Action",
           "persistentUuid": "f1a01a8b-e633-498a-a039-6543ed903a87",
           "width": 0,
-          "x": -230,
-          "y": -320,
+          "x": 300,
+          "y": 60,
           "zOrder": 7,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Equipped_Action",
+          "persistentUuid": "a3fe3edb-cf02-4aa4-8761-a9cb91cc9bde",
+          "width": 0,
+          "x": 300,
+          "y": 150,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Order",
+              "type": "number",
+              "value": 1
+            },
+            {
+              "name": "InitYPos",
+              "type": "number",
+              "value": 150
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Equipped_Action",
+          "persistentUuid": "2da5f5cb-9fa4-4d59-aac1-4a602a8a9662",
+          "width": 0,
+          "x": 300,
+          "y": 240,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Order",
+              "type": "number",
+              "value": 2
+            },
+            {
+              "name": "InitYPos",
+              "type": "number",
+              "value": 240
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Equipped_Action",
+          "persistentUuid": "010aa310-efc0-4f10-ad4c-2540d5f3ea66",
+          "width": 0,
+          "x": 300,
+          "y": 330,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Order",
+              "type": "number",
+              "value": 3
+            },
+            {
+              "name": "InitYPos",
+              "type": "number",
+              "value": 330
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Equipped_Action",
+          "persistentUuid": "d5379a87-bb4d-4beb-ac63-f58faeb0d897",
+          "width": 0,
+          "x": 300,
+          "y": 420,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Order",
+              "type": "number",
+              "value": 4
+            },
+            {
+              "name": "InitYPos",
+              "type": "number",
+              "value": 420
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Equipped_Action",
+          "persistentUuid": "a6134525-a148-495a-a79a-cd138c8fa32d",
+          "width": 0,
+          "x": 300,
+          "y": 510,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Order",
+              "type": "number",
+              "value": 5
+            },
+            {
+              "name": "InitYPos",
+              "type": "number",
+              "value": 510
+            }
+          ]
         }
       ],
       "objects": [
@@ -3125,23 +3232,45 @@
           "name": "Equipped_Action",
           "type": "Equipped_Action::Equipped_Action",
           "variant": "",
-          "variables": [],
+          "variables": [
+            {
+              "name": "ID",
+              "type": "number",
+              "value": -1
+            },
+            {
+              "name": "InitYPos",
+              "type": "number",
+              "value": 60
+            },
+            {
+              "name": "Order",
+              "type": "number",
+              "value": 0
+            }
+          ],
           "effects": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "checkCollisionMask": true,
+              "name": "Draggable",
+              "type": "DraggableBehavior::Draggable"
+            }
+          ],
           "content": {}
         },
         {
           "assetStoreId": "",
           "bold": false,
           "italic": false,
-          "name": "NewText",
+          "name": "EquippedActionsText",
           "smoothed": true,
           "type": "TextObject::Text",
           "underlined": false,
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Text",
+          "string": "Equipped Actions",
           "font": "assets\\Xolonium-Regular.ttf",
           "textAlignment": "left",
           "characterSize": 24,
@@ -3164,7 +3293,7 @@
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
-            "text": "Text",
+            "text": "Equipped Actions",
             "font": "assets\\Xolonium-Regular.ttf",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
@@ -3177,7 +3306,7 @@
         "folderName": "__ROOT",
         "children": [
           {
-            "objectName": "NewText"
+            "objectName": "EquippedActionsText"
           },
           {
             "objectName": "Equipped_Action"
@@ -3211,6 +3340,311 @@
                 "50",
                 "50",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Index",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Equipped_Action",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Equipped_Action::Equipped_Action::Hide_Text"
+                  },
+                  "parameters": [
+                    "Equipped_Action"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "ActionIDList[Index]",
+                        ">=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Equipped_Action::Equipped_Action::Set_Info"
+                      },
+                      "parameters": [
+                        "Equipped_Action",
+                        "ActionInfo.Name[ActionIDList[Index]]",
+                        "ActionInfo.Description[ActionIDList[Index]]",
+                        "ActionIDList[Index]",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Equipped_Action",
+                        "ID",
+                        "=",
+                        "ActionIDList[Index]"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Index",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Equipped_Action::Equipped_Action::Show_Text"
+                      },
+                      "parameters": [
+                        "Equipped_Action",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DraggableBehavior::Dropped"
+              },
+              "parameters": [
+                "PlayerActions",
+                "Draggable"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreX"
+              },
+              "parameters": [
+                "PlayerActions",
+                "=",
+                "300"
+              ]
+            },
+            {
+              "type": {
+                "value": "MettreY"
+              },
+              "parameters": [
+                "PlayerActions",
+                "=",
+                "PlayerActions.InitYPos"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temp",
+                "=",
+                "PlayerActions.ID"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "TempPlayerY",
+                "=",
+                "PlayerActions.Y()"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "PlayerActions",
+                    ">=",
+                    "300-Offset"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "PlayerActions",
+                    "<=",
+                    "300+Offset"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "PlayerActions",
+                        ">=",
+                        "60-Offset"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PosY"
+                      },
+                      "parameters": [
+                        "PlayerActions",
+                        "<=",
+                        "60+Offset"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Index",
+                        "=",
+                        "-1"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Index",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "Equipped_Action",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Equipped_Action::Equipped_Action::Hide_Text"
+                      },
+                      "parameters": [
+                        "Equipped_Action"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "ActionIDList[Index]",
+                            ">=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Equipped_Action::Equipped_Action::Set_Info"
+                          },
+                          "parameters": [
+                            "Equipped_Action",
+                            "ActionInfo.Name[ActionIDList[Index]]",
+                            "ActionInfo.Description[ActionIDList[Index]]",
+                            "ActionIDList[Index]",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberObjectVariable"
+                          },
+                          "parameters": [
+                            "Equipped_Action",
+                            "ID",
+                            "=",
+                            "ActionIDList[Index]"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Index",
+                            "+",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Equipped_Action::Equipped_Action::Show_Text"
+                          },
+                          "parameters": [
+                            "Equipped_Action",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
               ]
             }
           ]
@@ -3348,7 +3782,7 @@
               "string": "Text",
               "font": "assets\\Xolonium-Regular.ttf",
               "textAlignment": "left",
-              "characterSize": 24,
+              "characterSize": 20,
               "color": {
                 "b": 255,
                 "g": 255,
@@ -3372,7 +3806,7 @@
                 "font": "assets\\Xolonium-Regular.ttf",
                 "textAlignment": "left",
                 "verticalTextAlignment": "center",
-                "characterSize": 24,
+                "characterSize": 20,
                 "color": "255;255;255"
               }
             },
@@ -3455,7 +3889,7 @@
               "string": "Text",
               "font": "assets\\Xolonium-Regular.ttf",
               "textAlignment": "left",
-              "characterSize": 24,
+              "characterSize": 18,
               "color": {
                 "b": 255,
                 "g": 255,
@@ -3479,7 +3913,7 @@
                 "font": "assets\\Xolonium-Regular.ttf",
                 "textAlignment": "left",
                 "verticalTextAlignment": "center",
-                "characterSize": 24,
+                "characterSize": 18,
                 "color": "255;255;255"
               }
             }
@@ -3668,6 +4102,86 @@
                   "description": "ID",
                   "name": "ID",
                   "type": "expression"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "Hide_Text",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "NameText"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "DescText"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "Equipped_Action::Equipped_Action",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "Show_Text",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "NameText",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "DescText",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "Equipped_Action::Equipped_Action",
+                  "type": "object"
                 }
               ],
               "objectGroups": []
