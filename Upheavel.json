@@ -250,9 +250,80 @@
     ],
     "resourceFolders": []
   },
-  "objects": [],
+  "objects": [
+    {
+      "adaptCollisionMaskAutomatically": true,
+      "assetStoreId": "",
+      "name": "GreySquare",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "SpriteRecolorizer",
+          "type": "Recolorizer::SpriteRecolorizer"
+        }
+      ],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "grey_square.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 0
+                      },
+                      {
+                        "x": 100,
+                        "y": 0
+                      },
+                      {
+                        "x": 100,
+                        "y": 100
+                      },
+                      {
+                        "x": 0,
+                        "y": 100
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "objectsFolderStructure": {
-    "folderName": "__ROOT"
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "objectName": "GreySquare"
+      }
+    ]
   },
   "objectsGroups": [],
   "variables": [
@@ -401,22 +472,220 @@
       "value": "na"
     },
     {
-      "name": "Temp",
-      "type": "number",
-      "value": 0
-    },
-    {
       "name": "TutorialCompletion",
       "type": "boolean",
       "value": false
+    },
+    {
+      "folded": true,
+      "name": "ActionInfo",
+      "type": "structure",
+      "children": [
+        {
+          "folded": true,
+          "name": "Description",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "Increase base strength by 1"
+            },
+            {
+              "type": "string",
+              "value": "Increase final strength by 5%. Resets after each fight"
+            },
+            {
+              "type": "string",
+              "value": "Multiply sword strength gain by 2. Disable this action"
+            },
+            {
+              "type": "string",
+              "value": "Increase the value of weapons actions by 1. Disable this action"
+            },
+            {
+              "type": "string",
+              "value": "Multiply all strength gain by 1.01 permanently"
+            },
+            {
+              "type": "string",
+              "value": "Reduce enemy strength by 2"
+            },
+            {
+              "type": "string",
+              "value": "50% chance to gain 4 base strength"
+            },
+            {
+              "type": "string",
+              "value": "Increase strength by 100. Disable this action"
+            },
+            {
+              "type": "string",
+              "value": "Multiply current strength by 1.5. Disable this action"
+            },
+            {
+              "type": "string",
+              "value": "Reduce enemy strength by 1%"
+            },
+            {
+              "type": "string",
+              "value": "Increase base strength by 5"
+            },
+            {
+              "type": "string",
+              "value": "Disable enemy ability for up to 15 days. Disabled afterwards"
+            }
+          ]
+        },
+        {
+          "folded": true,
+          "name": "Name",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "Swordplay"
+            },
+            {
+              "type": "string",
+              "value": "Rest"
+            },
+            {
+              "type": "string",
+              "value": "Potentiality"
+            },
+            {
+              "type": "string",
+              "value": "Meditate"
+            },
+            {
+              "type": "string",
+              "value": "Enlightened Study"
+            },
+            {
+              "type": "string",
+              "value": "Dagger Throw"
+            },
+            {
+              "type": "string",
+              "value": "Whip Arts"
+            },
+            {
+              "type": "string",
+              "value": "Numbers Crunch"
+            },
+            {
+              "type": "string",
+              "value": "Hearty Meal"
+            },
+            {
+              "type": "string",
+              "value": "Insect Venom"
+            },
+            {
+              "type": "string",
+              "value": "Wind Sword Arts"
+            },
+            {
+              "type": "string",
+              "value": "Talisman"
+            }
+          ]
+        },
+        {
+          "folded": true,
+          "name": "Unlocked",
+          "type": "array",
+          "children": [
+            {
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "type": "boolean",
+              "value": true
+            },
+            {
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "type": "boolean",
+              "value": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "folded": true,
+      "name": "ActionIDList",
+      "type": "array",
+      "children": [
+        {
+          "type": "number",
+          "value": 0
+        },
+        {
+          "type": "number",
+          "value": 1
+        },
+        {
+          "type": "number",
+          "value": -1
+        },
+        {
+          "type": "number",
+          "value": -1
+        },
+        {
+          "type": "number",
+          "value": -1
+        },
+        {
+          "type": "number",
+          "value": -1
+        }
+      ]
     }
   ],
   "layouts": [
     {
       "b": 63,
       "disableInputWhenNotFocused": true,
-      "mangledName": "Untitled_32scene",
-      "name": "Untitled scene",
+      "mangledName": "Main_32Scene",
+      "name": "Main Scene",
       "r": 63,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
@@ -837,71 +1106,6 @@
           "effects": [],
           "behaviors": [],
           "content": {}
-        },
-        {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "",
-          "name": "GreySquare",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "SpriteRecolorizer",
-              "type": "Recolorizer::SpriteRecolorizer"
-            }
-          ],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": false,
-                  "timeBetweenFrames": 0.08,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "grey_square.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 100,
-                            "y": 0
-                          },
-                          {
-                            "x": 100,
-                            "y": 100
-                          },
-                          {
-                            "x": 0,
-                            "y": 100
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
         },
         {
           "assetStoreId": "",
@@ -1507,6 +1711,7 @@
         "folderName": "__ROOT",
         "children": [
           {
+<<<<<<< HEAD
             "folderName": "Blue Slime",
             "children": [
               {
@@ -1523,6 +1728,8 @@
             "objectName": "GreySquare"
           },
           {
+=======
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
             "objectName": "Winner_Background"
           },
           {
@@ -1624,9 +1831,47 @@
                 "",
                 "Tutorial"
               ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Index",
+                "=",
+                "-1"
+              ]
             }
           ],
           "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Action",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Index",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Action",
+                    "ID",
+                    "=",
+                    "ActionIDList[Index]"
+                  ]
+                }
+              ]
+            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -1649,7 +1894,8 @@
                   },
                   "parameters": [
                     "Actions",
-                    "Action.ID",
+                    "ActionInfo.Name[Action.ID]",
+                    "ActionInfo.Description[Action.ID]",
                     ""
                   ]
                 },
@@ -2467,6 +2713,16 @@
                     "value": "DialogueTree::HasClippedTextScrollingCompleted"
                   },
                   "parameters": []
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "TutorialCompletion",
+                    "=",
+                    ""
+                  ]
                 }
               ],
               "actions": [],
@@ -2674,6 +2930,441 @@
           "type": "TextContainerCapability::TextContainerBehavior"
         }
       ]
+    },
+    {
+      "b": 0,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "Reincarnation_32Scene",
+      "name": "Reincarnation Scene",
+      "r": 0,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "",
+      "v": 0,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.546875,
+        "windowMask": false
+      },
+      "objectsGroups": [],
+      "variables": [
+        {
+          "folded": true,
+          "name": "Name",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "Swordplay"
+            },
+            {
+              "type": "string",
+              "value": "Rest"
+            },
+            {
+              "type": "string",
+              "value": "Potentiality"
+            },
+            {
+              "type": "string",
+              "value": "Meditate"
+            },
+            {
+              "type": "string",
+              "value": "Enlightened Study"
+            },
+            {
+              "type": "string",
+              "value": "Dagger Throw"
+            },
+            {
+              "type": "string",
+              "value": "Whip Arts"
+            },
+            {
+              "type": "string",
+              "value": "Numbers Crunch"
+            },
+            {
+              "type": "string",
+              "value": "Hearty Meal"
+            },
+            {
+              "type": "string",
+              "value": "Insect Venom"
+            },
+            {
+              "type": "string",
+              "value": "Wind Sword Arts"
+            },
+            {
+              "type": "string",
+              "value": "Talisman"
+            }
+          ]
+        },
+        {
+          "folded": true,
+          "name": "Description",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "Increase base strength by 1"
+            },
+            {
+              "type": "string",
+              "value": "Increase final strength by 5%. Resets after each fight"
+            },
+            {
+              "type": "string",
+              "value": "Multiply sword strength gain by 2. Disable this action"
+            },
+            {
+              "type": "string",
+              "value": "Increase the value of weapons actions by 1. Disable this action"
+            },
+            {
+              "type": "string",
+              "value": "Multiply all strength gain by 1.01 permanently"
+            },
+            {
+              "type": "string",
+              "value": "Reduce enemy strength by 2"
+            },
+            {
+              "type": "string",
+              "value": "50% chance to gain 4 base strength"
+            },
+            {
+              "type": "string",
+              "value": "Increase strength by 100. Disable this action"
+            },
+            {
+              "type": "string",
+              "value": "Multiply current strength by 1.5. Disable this action"
+            },
+            {
+              "type": "string",
+              "value": "Reduce enemy strength by 1%"
+            },
+            {
+              "type": "string",
+              "value": "Increase base strength by 5"
+            },
+            {
+              "type": "string",
+              "value": "Disable enemy ability for up to 15 days. Disabled afterwards"
+            }
+          ]
+        },
+        {
+          "folded": true,
+          "name": "Cost",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": -1
+            },
+            {
+              "type": "number",
+              "value": -1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 2
+            },
+            {
+              "type": "number",
+              "value": 2
+            },
+            {
+              "type": "number",
+              "value": 3
+            },
+            {
+              "type": "number",
+              "value": 5
+            },
+            {
+              "type": "number",
+              "value": -1
+            },
+            {
+              "type": "number",
+              "value": -1
+            },
+            {
+              "type": "number",
+              "value": -1
+            },
+            {
+              "type": "number",
+              "value": -1
+            },
+            {
+              "type": "number",
+              "value": -1
+            }
+          ]
+        }
+      ],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 720,
+          "layer": "",
+          "name": "GreySquare",
+          "persistentUuid": "2417b8b9-bc00-4fc6-bc2b-75d57f234f9e",
+          "width": 980,
+          "x": 300,
+          "y": 0,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1.9917012448132778,
+          "height": 720,
+          "layer": "",
+          "name": "GreySquare",
+          "persistentUuid": "89ce1286-ad82-4cbc-be1e-07a17e01a66a",
+          "width": 490,
+          "x": -230,
+          "y": -386,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "NewText",
+          "persistentUuid": "bdba9132-dfdc-4981-82c4-f638c3cddb50",
+          "width": 0,
+          "x": -192,
+          "y": -358,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Equipped_Action",
+          "persistentUuid": "f1a01a8b-e633-498a-a039-6543ed903a87",
+          "width": 0,
+          "x": -230,
+          "y": -320,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "assetStoreId": "",
+          "name": "Equipped_Action",
+          "type": "Equipped_Action::Equipped_Action",
+          "variant": "",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {}
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "NewText",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Text",
+          "font": "assets\\Xolonium-Regular.ttf",
+          "textAlignment": "left",
+          "characterSize": 24,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Text",
+            "font": "assets\\Xolonium-Regular.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 24,
+            "color": "255;255;255"
+          }
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "NewText"
+          },
+          {
+            "objectName": "Equipped_Action"
+          }
+        ]
+      },
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Recolorizer::SpriteRecolorizer::Recolorize"
+              },
+              "parameters": [
+                "GreySquare",
+                "SpriteRecolorizer",
+                "\"199;199;199\"",
+                "\"0;0;0\"",
+                "30",
+                "50",
+                "50",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
+        }
+      ],
+      "behaviorsSharedData": [
+        {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
+        },
+        {
+          "name": "SpriteRecolorizer",
+          "type": "Recolorizer::SpriteRecolorizer"
+        },
+        {
+          "name": "Text",
+          "type": "TextContainerCapability::TextContainerBehavior"
+        }
+      ]
     }
   ],
   "externalEvents": [],
@@ -2686,7 +3377,11 @@
       "gdevelopVersion": "",
       "helpPath": "",
       "iconUrl": "",
+<<<<<<< HEAD
       "name": "Di_Miniature",
+=======
+      "name": "Equipped_Action",
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
       "previewIconUrl": "",
       "shortDescription": "",
       "version": "",
@@ -2700,6 +3395,7 @@
       "eventsBasedBehaviors": [],
       "eventsBasedObjects": [
         {
+<<<<<<< HEAD
           "areaMaxX": 121,
           "areaMaxY": 92,
           "areaMaxZ": 1,
@@ -2716,14 +3412,79 @@
               "adaptCollisionMaskAutomatically": true,
               "assetStoreId": "",
               "name": "Di_Dagger",
+=======
+          "areaMaxX": 490,
+          "areaMaxY": 90,
+          "areaMaxZ": 0,
+          "areaMinX": 0,
+          "areaMinY": 0,
+          "areaMinZ": 0,
+          "defaultName": "",
+          "description": "",
+          "fullName": "",
+          "isUsingLegacyInstancesRenderer": false,
+          "name": "Equipped_Action",
+          "objects": [
+            {
+              "assetStoreId": "",
+              "bold": false,
+              "italic": false,
+              "name": "NameText",
+              "smoothed": true,
+              "type": "TextObject::Text",
+              "underlined": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "string": "Text",
+              "font": "assets\\Xolonium-Regular.ttf",
+              "textAlignment": "left",
+              "characterSize": 24,
+              "color": {
+                "b": 255,
+                "g": 255,
+                "r": 255
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Text",
+                "font": "assets\\Xolonium-Regular.ttf",
+                "textAlignment": "left",
+                "verticalTextAlignment": "center",
+                "characterSize": 24,
+                "color": "255;255;255"
+              }
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "GreySquare",
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
               "type": "Sprite",
               "updateIfNotVisible": false,
               "variables": [],
               "effects": [],
               "behaviors": [
                 {
+<<<<<<< HEAD
                   "name": "Tween",
                   "type": "Tween::TweenBehavior"
+=======
+                  "name": "SpriteRecolorizer",
+                  "type": "Recolorizer::SpriteRecolorizer"
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
                 }
               ],
               "animations": [
@@ -2737,7 +3498,11 @@
                       "sprites": [
                         {
                           "hasCustomCollisionMask": true,
+<<<<<<< HEAD
                           "image": "sprites\\blue_slime\\miniature\\Blue_Slime_Dagger.png",
+=======
+                          "image": "grey_square.png",
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
                           "points": [],
                           "originPoint": {
                             "name": "origine",
@@ -2753,6 +3518,7 @@
                           "customCollisionMask": [
                             [
                               {
+<<<<<<< HEAD
                                 "x": 4,
                                 "y": 4
                               },
@@ -2767,6 +3533,22 @@
                               {
                                 "x": 4,
                                 "y": 71
+=======
+                                "x": 0,
+                                "y": 0
+                              },
+                              {
+                                "x": 100,
+                                "y": 0
+                              },
+                              {
+                                "x": 100,
+                                "y": 100
+                              },
+                              {
+                                "x": 0,
+                                "y": 100
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
                               }
                             ]
                           ]
@@ -2778,6 +3560,7 @@
               ]
             },
             {
+<<<<<<< HEAD
               "adaptCollisionMaskAutomatically": true,
               "assetStoreId": "",
               "name": "Di_Face",
@@ -2906,12 +3689,55 @@
                   ]
                 }
               ]
+=======
+              "assetStoreId": "",
+              "bold": false,
+              "italic": false,
+              "name": "DescText",
+              "smoothed": true,
+              "type": "TextObject::Text",
+              "underlined": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "string": "Text",
+              "font": "assets\\Xolonium-Regular.ttf",
+              "textAlignment": "left",
+              "characterSize": 24,
+              "color": {
+                "b": 255,
+                "g": 255,
+                "r": 255
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Text",
+                "font": "assets\\Xolonium-Regular.ttf",
+                "textAlignment": "left",
+                "verticalTextAlignment": "center",
+                "characterSize": 24,
+                "color": "255;255;255"
+              }
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
             }
           ],
           "objectsFolderStructure": {
             "folderName": "__ROOT",
             "children": [
               {
+<<<<<<< HEAD
                 "objectName": "Di_Body"
               },
               {
@@ -2919,6 +3745,15 @@
               },
               {
                 "objectName": "Di_Dagger"
+=======
+                "objectName": "GreySquare"
+              },
+              {
+                "objectName": "NameText"
+              },
+              {
+                "objectName": "DescText"
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
               }
             ]
           },
@@ -2957,6 +3792,7 @@
             {
               "angle": 0,
               "customSize": true,
+<<<<<<< HEAD
               "depth": 1,
               "height": 84,
               "keepRatio": true,
@@ -2994,12 +3830,25 @@
                   "value": 0
                 }
               ],
+=======
+              "depth": 0.9898989898989898,
+              "height": 90,
+              "layer": "",
+              "name": "GreySquare",
+              "persistentUuid": "185ab45b-493e-415d-b54b-e0129ca8bc65",
+              "width": 490,
+              "x": 0,
+              "y": 0,
+              "zOrder": 5,
+              "numberProperties": [],
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
               "stringProperties": [],
               "initialVariables": []
             },
             {
               "angle": 0,
               "customSize": true,
+<<<<<<< HEAD
               "depth": 1,
               "height": 19,
               "keepRatio": true,
@@ -3016,6 +3865,34 @@
                   "value": 0
                 }
               ],
+=======
+              "depth": 1.2436548223350254,
+              "height": 80,
+              "layer": "",
+              "name": "NameText",
+              "persistentUuid": "a6e148d2-e12b-41ed-a6cb-135415eba95e",
+              "width": 240,
+              "x": 5,
+              "y": 45,
+              "zOrder": 6,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 0.02884615384615385,
+              "height": 80,
+              "layer": "",
+              "name": "DescText",
+              "persistentUuid": "2cf1a1fa-108f-444e-9f98-05b8f9b9b83b",
+              "width": 240,
+              "x": 245,
+              "y": 45,
+              "zOrder": 7,
+              "numberProperties": [],
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
               "stringProperties": [],
               "initialVariables": []
             }
@@ -3024,6 +3901,7 @@
             {
               "fullName": "",
               "functionType": "Action",
+<<<<<<< HEAD
               "name": "doStepPostEvents",
               "sentence": "",
               "events": [
@@ -3073,10 +3951,18 @@
                       ]
                     }
                   ],
+=======
+              "name": "Set_Info",
+              "sentence": "Set _PARAM0_ name and desc (_PARAM1_,_PARAM2_,_PARAM3_)",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
                   "conditions": [],
                   "actions": [
                     {
                       "type": {
+<<<<<<< HEAD
                         "value": "Tween::TweenBehavior::AddObjectPositionTween2"
                       },
                       "parameters": [
@@ -3315,10 +4201,20 @@
                         "Di_Dagger",
                         "=",
                         "0"
+=======
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "NameText",
+                        "Text",
+                        "=",
+                        "Name"
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
                       ]
                     },
                     {
                       "type": {
+<<<<<<< HEAD
                         "value": "Tween::TweenBehavior::AddObjectAngleTween2"
                       },
                       "parameters": [
@@ -3328,6 +4224,46 @@
                         "360",
                         "\"linear\"",
                         "1",
+=======
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "DescText",
+                        "Text",
+                        "=",
+                        "Description"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "ID",
+                        "<=",
+                        "6"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Recolorizer::SpriteRecolorizer::Recolorize"
+                      },
+                      "parameters": [
+                        "GreySquare",
+                        "SpriteRecolorizer",
+                        "\"202;202;202\"",
+                        "\"46;0;0\"",
+                        "30",
+                        "50",
+                        "50",
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
                         ""
                       ]
                     }
@@ -3338,8 +4274,28 @@
                 {
                   "description": "Object",
                   "name": "Object",
+<<<<<<< HEAD
                   "supplementaryInformation": "Di_Miniature::Di_Miniature",
                   "type": "object"
+=======
+                  "supplementaryInformation": "Equipped_Action::Equipped_Action",
+                  "type": "object"
+                },
+                {
+                  "description": "Name",
+                  "name": "Name",
+                  "type": "string"
+                },
+                {
+                  "description": "Description",
+                  "name": "Description",
+                  "type": "string"
+                },
+                {
+                  "description": "ID",
+                  "name": "ID",
+                  "type": "expression"
+>>>>>>> 7061e210f59903d3bbd480e7707c71d66ba1c9a1
                 }
               ],
               "objectGroups": []
@@ -4800,44 +5756,7 @@
       "tags": [],
       "authorIds": [],
       "dependencies": [],
-      "globalVariables": [
-        {
-          "name": "Name",
-          "type": "array",
-          "children": [
-            {
-              "type": "string",
-              "value": "Swordplay"
-            },
-            {
-              "type": "string",
-              "value": "Rest"
-            },
-            {
-              "type": "string",
-              "value": "fgsdfgs"
-            }
-          ]
-        },
-        {
-          "name": "Description",
-          "type": "array",
-          "children": [
-            {
-              "type": "string",
-              "value": "Increase strength by 1"
-            },
-            {
-              "type": "string",
-              "value": "Increase final strength by 5%. Resets after fight"
-            },
-            {
-              "type": "string",
-              "value": "sdfgsdfg"
-            }
-          ]
-        }
-      ],
+      "globalVariables": [],
       "sceneVariables": [
         {
           "name": "ID",
@@ -5335,7 +6254,7 @@
               "fullName": "Set Text",
               "functionType": "Action",
               "name": "Set_Text",
-              "sentence": "Init _PARAM0_ text _PARAM1_",
+              "sentence": "Init _PARAM0_ text (_PARAM1_,_PARAM2_)",
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
@@ -5349,7 +6268,7 @@
                         "Action_Text",
                         "Text",
                         "=",
-                        "Name[id]"
+                        "name"
                       ]
                     },
                     {
@@ -5360,7 +6279,7 @@
                         "Action_Desc",
                         "Text",
                         "=",
-                        "Description[id]"
+                        "desc"
                       ]
                     }
                   ]
@@ -5374,9 +6293,14 @@
                   "type": "object"
                 },
                 {
-                  "description": "num",
-                  "name": "id",
-                  "type": "expression"
+                  "description": "Name",
+                  "name": "name",
+                  "type": "string"
+                },
+                {
+                  "description": "Description",
+                  "name": "desc",
+                  "type": "string"
                 }
               ],
               "objectGroups": []
@@ -5396,40 +6320,8 @@
                       },
                       "parameters": [
                         "ID",
-                        "=",
-                        "0"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "Recolorizer::SpriteRecolorizer::Recolorize"
-                      },
-                      "parameters": [
-                        "Action_Wrapper",
-                        "SpriteRecolorizer",
-                        "\"202;202;202\"",
-                        "\"46;0;0\"",
-                        "30",
-                        "50",
-                        "50",
-                        ""
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "NumberVariable"
-                      },
-                      "parameters": [
-                        "ID",
-                        "=",
-                        "1"
+                        "<=",
+                        "6"
                       ]
                     }
                   ],
