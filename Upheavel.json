@@ -222,30 +222,6 @@
         "name": "blue slim3.png",
         "smoothed": true,
         "userAdded": false
-      },
-      {
-        "file": "sprites/blue_slime/miniature/Blue_Slime_Body.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\blue_slime\\miniature\\Blue_Slime_Body.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "sprites/blue_slime/miniature/Blue_Slime_Face.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\blue_slime\\miniature\\Blue_Slime_Face.png",
-        "smoothed": true,
-        "userAdded": false
-      },
-      {
-        "file": "sprites/blue_slime/miniature/Blue_Slime_Dagger.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "sprites\\blue_slime\\miniature\\Blue_Slime_Dagger.png",
-        "smoothed": true,
-        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -432,8 +408,13 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
+<<<<<<< HEAD
         "zoomFactor": 0.8416428125373203,
         "windowMask": true
+=======
+        "zoomFactor": 0.546875,
+        "windowMask": false
+>>>>>>> parent of 5aa2df9 (Di Miniature finished)
       },
       "objectsGroups": [
         {
@@ -748,35 +729,9 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Di_Miniature",
-          "persistentUuid": "4fee3588-78a3-453a-a3a5-0949536c8c4d",
-          "width": 0,
-          "x": 215,
-          "y": 29,
-          "zOrder": 21,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
         }
       ],
       "objects": [
-        {
-          "assetStoreId": "",
-          "name": "Di_Miniature",
-          "type": "Di_Miniature::Di_Miniature",
-          "variant": "",
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "content": {}
-        },
         {
           "assetStoreId": "",
           "name": "Dialogue_Container",
@@ -1506,19 +1461,6 @@
       "objectsFolderStructure": {
         "folderName": "__ROOT",
         "children": [
-          {
-            "folderName": "Blue Slime",
-            "children": [
-              {
-                "folderName": "Miniature",
-                "children": [
-                  {
-                    "objectName": "Di_Miniature"
-                  }
-                ]
-              }
-            ]
-          },
           {
             "objectName": "GreySquare"
           },
@@ -2686,6 +2628,7 @@
       "gdevelopVersion": "",
       "helpPath": "",
       "iconUrl": "",
+<<<<<<< HEAD
       "name": "Di_Miniature",
       "previewIconUrl": "",
       "shortDescription": "",
@@ -3358,6 +3301,8 @@
       "gdevelopVersion": "",
       "helpPath": "",
       "iconUrl": "",
+=======
+>>>>>>> parent of 5aa2df9 (Di Miniature finished)
       "name": "Dialogue_Container",
       "previewIconUrl": "",
       "shortDescription": "",
