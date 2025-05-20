@@ -222,6 +222,30 @@
         "name": "blue slim3.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "sprites/blue_slime/miniature/Blue_Slime_Body.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\blue_slime\\miniature\\Blue_Slime_Body.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "sprites/blue_slime/miniature/Blue_Slime_Face.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\blue_slime\\miniature\\Blue_Slime_Face.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "sprites/blue_slime/miniature/Blue_Slime_Dagger.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "sprites\\blue_slime\\miniature\\Blue_Slime_Dagger.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -730,7 +754,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.870023285985729,
+        "zoomFactor": 0.8993607583666621,
         "windowMask": false
       },
       "objectsGroups": [
@@ -1043,6 +1067,23 @@
           "x": 560,
           "y": 68,
           "zOrder": 18,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0.925925925925926,
+          "height": 100,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Di_Miniature",
+          "persistentUuid": "aee42c70-8713-4ed9-9242-8846f48ea147",
+          "width": 154.62962962962962,
+          "x": 215,
+          "y": 25,
+          "zOrder": 19,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1708,11 +1749,252 @@
             "characterSize": 24,
             "color": "0;0;0"
           }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Di_Miniature",
+          "type": "Di_Miniature::Di_Miniature",
+          "variant": "",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {},
+          "childrenContent": {
+            "Di_Body": {
+              "adaptCollisionMaskAutomatically": true,
+              "updateIfNotVisible": false,
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "sprites\\blue_slime\\miniature\\Blue_Slime_Body.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 10,
+                                "y": 71
+                              },
+                              {
+                                "x": 354,
+                                "y": 71
+                              },
+                              {
+                                "x": 354,
+                                "y": 319
+                              },
+                              {
+                                "x": 10,
+                                "y": 319
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "Di_Dagger": {
+              "adaptCollisionMaskAutomatically": true,
+              "updateIfNotVisible": false,
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "sprites\\blue_slime\\miniature\\Blue_Slime_Dagger.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 4,
+                                "y": 4
+                              },
+                              {
+                                "x": 203,
+                                "y": 4
+                              },
+                              {
+                                "x": 203,
+                                "y": 71
+                              },
+                              {
+                                "x": 4,
+                                "y": 71
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "Di_Face": {
+              "adaptCollisionMaskAutomatically": true,
+              "updateIfNotVisible": false,
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "sprites\\blue_slime\\miniature\\Blue_Slime_Face.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 113,
+                                "y": 145
+                              },
+                              {
+                                "x": 277,
+                                "y": 145
+                              },
+                              {
+                                "x": 277,
+                                "y": 277
+                              },
+                              {
+                                "x": 113,
+                                "y": 277
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "NewSprite": {
+              "adaptCollisionMaskAutomatically": true,
+              "updateIfNotVisible": false,
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "sprites\\blue_slime\\miniature\\Blue_Slime_Dagger.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 4,
+                                "y": 4
+                              },
+                              {
+                                "x": 203,
+                                "y": 4
+                              },
+                              {
+                                "x": 203,
+                                "y": 71
+                              },
+                              {
+                                "x": 4,
+                                "y": 71
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
         }
       ],
       "objectsFolderStructure": {
         "folderName": "__ROOT",
         "children": [
+          {
+            "folderName": "Sprites",
+            "children": [
+              {
+                "folderName": "Miniatures",
+                "children": [
+                  {
+                    "objectName": "Di_Miniature"
+                  }
+                ]
+              }
+            ]
+          },
           {
             "objectName": "Winner_Background"
           },
@@ -3734,6 +4016,322 @@
   ],
   "externalEvents": [],
   "eventsFunctionsExtensions": [
+    {
+      "author": "",
+      "category": "",
+      "extensionNamespace": "",
+      "fullName": "",
+      "gdevelopVersion": "",
+      "helpPath": "",
+      "iconUrl": "",
+      "name": "Di_Miniature",
+      "previewIconUrl": "",
+      "shortDescription": "",
+      "version": "",
+      "description": "",
+      "tags": [],
+      "authorIds": [],
+      "dependencies": [],
+      "globalVariables": [],
+      "sceneVariables": [],
+      "eventsFunctions": [],
+      "eventsBasedBehaviors": [],
+      "eventsBasedObjects": [
+        {
+          "areaMaxX": 495,
+          "areaMaxY": 320,
+          "areaMaxZ": 0,
+          "areaMinX": 0,
+          "areaMinY": 0,
+          "areaMinZ": 0,
+          "defaultName": "",
+          "description": "",
+          "fullName": "",
+          "isUsingLegacyInstancesRenderer": false,
+          "name": "Di_Miniature",
+          "objects": [
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "Di_Body",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "sprites\\blue_slime\\miniature\\Blue_Slime_Body.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 10,
+                                "y": 71
+                              },
+                              {
+                                "x": 354,
+                                "y": 71
+                              },
+                              {
+                                "x": 354,
+                                "y": 319
+                              },
+                              {
+                                "x": 10,
+                                "y": 319
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "Di_Face",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "sprites\\blue_slime\\miniature\\Blue_Slime_Face.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 113,
+                                "y": 145
+                              },
+                              {
+                                "x": 277,
+                                "y": 145
+                              },
+                              {
+                                "x": 277,
+                                "y": 277
+                              },
+                              {
+                                "x": 113,
+                                "y": 277
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "Di_Dagger",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "sprites\\blue_slime\\miniature\\Blue_Slime_Dagger.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 4,
+                                "y": 4
+                              },
+                              {
+                                "x": 203,
+                                "y": 4
+                              },
+                              {
+                                "x": 203,
+                                "y": 71
+                              },
+                              {
+                                "x": 4,
+                                "y": 71
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "objectsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "objectName": "Di_Face"
+              },
+              {
+                "objectName": "Di_Body"
+              },
+              {
+                "objectName": "Di_Dagger"
+              }
+            ]
+          },
+          "objectsGroups": [],
+          "layers": [
+            {
+              "ambientLightColorB": 200,
+              "ambientLightColorG": 200,
+              "ambientLightColorR": 200,
+              "camera3DFarPlaneDistance": 10000,
+              "camera3DFieldOfView": 45,
+              "camera3DNearPlaneDistance": 3,
+              "cameraType": "",
+              "followBaseLayerCamera": false,
+              "isLightingLayer": false,
+              "isLocked": false,
+              "name": "",
+              "renderingType": "",
+              "visibility": true,
+              "cameras": [
+                {
+                  "defaultSize": true,
+                  "defaultViewport": true,
+                  "height": 0,
+                  "viewportBottom": 1,
+                  "viewportLeft": 0,
+                  "viewportRight": 1,
+                  "viewportTop": 0,
+                  "width": 0
+                }
+              ],
+              "effects": []
+            }
+          ],
+          "instances": [
+            {
+              "angle": 0,
+              "customSize": false,
+              "height": 0,
+              "keepRatio": true,
+              "layer": "",
+              "name": "Di_Face",
+              "persistentUuid": "a26e0fd4-3683-4395-b5a7-3a3ee9b7d927",
+              "width": 0,
+              "x": 0,
+              "y": 0,
+              "zOrder": 20,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": false,
+              "height": 0,
+              "keepRatio": true,
+              "layer": "",
+              "name": "Di_Body",
+              "persistentUuid": "be0a685a-cda4-4804-865f-82691521e30c",
+              "width": 0,
+              "x": 0,
+              "y": 0,
+              "zOrder": 19,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": false,
+              "height": 0,
+              "keepRatio": true,
+              "layer": "",
+              "name": "Di_Dagger",
+              "persistentUuid": "24e6e948-b6f0-4b4f-8e2d-59b0609a625b",
+              "width": 0,
+              "x": 290,
+              "y": 245,
+              "zOrder": 21,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            }
+          ],
+          "eventsFunctions": [],
+          "propertyDescriptors": [],
+          "variants": []
+        }
+      ]
+    },
     {
       "author": "",
       "category": "",
