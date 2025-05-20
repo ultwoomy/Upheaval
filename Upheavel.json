@@ -246,6 +246,14 @@
         "name": "sprites\\blue_slime\\miniature\\Blue_Slime_Dagger.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/NewSprite.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "NewSprite",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -754,7 +762,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.8993607583666621,
+        "zoomFactor": 1.1343715797160954,
         "windowMask": false
       },
       "objectsGroups": [
@@ -1966,6 +1974,61 @@
                               {
                                 "x": 4,
                                 "y": 71
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "Sweat": {
+              "adaptCollisionMaskAutomatically": true,
+              "updateIfNotVisible": false,
+              "animations": [
+                {
+                  "name": "NewSprite",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "metadata": "{\"pskl\":{}}",
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "NewSprite",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 18,
+                                "y": 8
+                              },
+                              {
+                                "x": 33,
+                                "y": 8
+                              },
+                              {
+                                "x": 33,
+                                "y": 34
+                              },
+                              {
+                                "x": 18,
+                                "y": 34
                               }
                             ]
                           ]
@@ -4058,7 +4121,12 @@
               "updateIfNotVisible": false,
               "variables": [],
               "effects": [],
-              "behaviors": [],
+              "behaviors": [
+                {
+                  "name": "Tween",
+                  "type": "Tween::TweenBehavior"
+                }
+              ],
               "animations": [
                 {
                   "name": "",
@@ -4118,7 +4186,12 @@
               "updateIfNotVisible": false,
               "variables": [],
               "effects": [],
-              "behaviors": [],
+              "behaviors": [
+                {
+                  "name": "Tween",
+                  "type": "Tween::TweenBehavior"
+                }
+              ],
               "animations": [
                 {
                   "name": "",
@@ -4178,7 +4251,12 @@
               "updateIfNotVisible": false,
               "variables": [],
               "effects": [],
-              "behaviors": [],
+              "behaviors": [
+                {
+                  "name": "Tween",
+                  "type": "Tween::TweenBehavior"
+                }
+              ],
               "animations": [
                 {
                   "name": "",
@@ -4326,7 +4404,493 @@
               "initialVariables": []
             }
           ],
-          "eventsFunctions": [],
+          "eventsFunctions": [
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPostEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Di's Body"
+                },
+                {
+                  "infiniteLoopWarning": true,
+                  "type": "BuiltinCommonInstructions::While",
+                  "whileConditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "Tween::Exists"
+                          },
+                          "parameters": [
+                            "Di_Body",
+                            "Tween",
+                            "\"Shuffling\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Tween::HasFinished"
+                          },
+                          "parameters": [
+                            "Di_Body",
+                            "Tween",
+                            "\"Shuffling\""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+                      },
+                      "parameters": [
+                        "Di_Body",
+                        "Tween",
+                        "\"Shuffling\"",
+                        "Di_Body.X() + 10",
+                        "Di_Body.Y()",
+                        "\"linear\"",
+                        "1",
+                        "no"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+                      },
+                      "parameters": [
+                        "Di_Body",
+                        "Tween",
+                        "\"Shuffling\"",
+                        "Di_Body.X() - 10",
+                        "Di_Body.Y()",
+                        "\"linear\"",
+                        "1",
+                        "no"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+                      },
+                      "parameters": [
+                        "Di_Body",
+                        "Tween",
+                        "\"Shuffling\"",
+                        "Di_Body.X() - 10",
+                        "Di_Body.Y()",
+                        "\"linear\"",
+                        "1",
+                        "no"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+                      },
+                      "parameters": [
+                        "Di_Body",
+                        "Tween",
+                        "\"Shuffling\"",
+                        "Di_Body.X() + 10",
+                        "Di_Body.Y()",
+                        "\"linear\"",
+                        "1",
+                        "no"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "infiniteLoopWarning": true,
+                  "type": "BuiltinCommonInstructions::While",
+                  "whileConditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "Tween::Exists"
+                          },
+                          "parameters": [
+                            "Di_Body",
+                            "Tween",
+                            "\"Breathing\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Tween::HasFinished"
+                          },
+                          "parameters": [
+                            "Di_Body",
+                            "Tween",
+                            "\"Breathing\""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectScaleTween3"
+                      },
+                      "parameters": [
+                        "Di_Body",
+                        "Tween",
+                        "\"Breathing\"",
+                        "Di_Body.Scale::Value() + 0.05",
+                        "\"linear\"",
+                        "1",
+                        "1",
+                        "yes"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectScaleTween3"
+                      },
+                      "parameters": [
+                        "Di_Body",
+                        "Tween",
+                        "\"Breathing\"",
+                        "Di_Body.Scale::Value() - 0.05",
+                        "\"linear\"",
+                        "1",
+                        "1",
+                        "yes"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Di's Face"
+                },
+                {
+                  "infiniteLoopWarning": true,
+                  "type": "BuiltinCommonInstructions::While",
+                  "whileConditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "Tween::Exists"
+                          },
+                          "parameters": [
+                            "Di_Face",
+                            "Tween",
+                            "\"Nodding\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Tween::HasFinished"
+                          },
+                          "parameters": [
+                            "Di_Face",
+                            "Tween",
+                            "\"Nodding\""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+                      },
+                      "parameters": [
+                        "Di_Face",
+                        "Tween",
+                        "\"Nodding\"",
+                        "Di_Face.X() + 7.5",
+                        "Di_Face.Y()",
+                        "\"linear\"",
+                        "1",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectAngleTween2"
+                      },
+                      "parameters": [
+                        "Di_Face",
+                        "Tween",
+                        "\"NoddingMotion\"",
+                        "Di_Face.Angle() - 10",
+                        "\"swingFromTo\"",
+                        "0.5",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+                      },
+                      "parameters": [
+                        "Di_Face",
+                        "Tween",
+                        "\"Nodding\"",
+                        "Di_Face.X() - 7.5",
+                        "Di_Face.Y()",
+                        "\"linear\"",
+                        "1",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+                      },
+                      "parameters": [
+                        "Di_Face",
+                        "Tween",
+                        "\"Nodding\"",
+                        "Di_Face.X() - 7.5",
+                        "Di_Face.Y()",
+                        "\"linear\"",
+                        "1",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectAngleTween2"
+                      },
+                      "parameters": [
+                        "Di_Face",
+                        "Tween",
+                        "\"NoddingMotion\"",
+                        "Di_Face.Angle() + 10",
+                        "\"swingFromTo\"",
+                        "0.5",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectPositionTween2"
+                      },
+                      "parameters": [
+                        "Di_Face",
+                        "Tween",
+                        "\"Nodding\"",
+                        "Di_Face.X() + 7.5",
+                        "Di_Face.Y()",
+                        "\"linear\"",
+                        "1",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Di's Dagger"
+                },
+                {
+                  "infiniteLoopWarning": true,
+                  "type": "BuiltinCommonInstructions::While",
+                  "whileConditions": [
+                    {
+                      "type": {
+                        "value": "BuiltinCommonInstructions::Or"
+                      },
+                      "parameters": [],
+                      "subInstructions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "Tween::Exists"
+                          },
+                          "parameters": [
+                            "Di_Dagger",
+                            "Tween",
+                            "\"Spin\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Tween::HasFinished"
+                          },
+                          "parameters": [
+                            "Di_Dagger",
+                            "Tween",
+                            "\"Spin\""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectAngleTween2"
+                      },
+                      "parameters": [
+                        "Di_Dagger",
+                        "Tween",
+                        "\"Spin\"",
+                        "360",
+                        "\"linear\"",
+                        "0.5",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Wait"
+                      },
+                      "parameters": [
+                        "0.5"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetAngle"
+                      },
+                      "parameters": [
+                        "Di_Dagger",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Tween::TweenBehavior::AddObjectAngleTween2"
+                      },
+                      "parameters": [
+                        "Di_Dagger",
+                        "Tween",
+                        "\"SpinReturn\"",
+                        "360",
+                        "\"linear\"",
+                        "0.5",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "Di_Miniature::Di_Miniature",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
           "propertyDescriptors": [],
           "variants": []
         }
