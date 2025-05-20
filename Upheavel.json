@@ -333,49 +333,19 @@
       "value": 1
     },
     {
-      "name": "ActionsUsed",
-      "type": "number",
-      "value": 0
-    },
-    {
       "name": "Coins",
-      "type": "number",
-      "value": 0
-    },
-    {
-      "name": "ActiveActions",
-      "type": "array",
-      "children": []
-    },
-    {
-      "name": "Strength",
-      "type": "number",
-      "value": 0
-    },
-    {
-      "name": "Days",
-      "type": "number",
-      "value": 0
-    },
-    {
-      "name": "Time",
       "type": "number",
       "value": 0
     },
     {
       "name": "Time_Max",
       "type": "number",
-      "value": 3
+      "value": 6
     },
     {
       "name": "Action_Returned",
       "type": "number",
       "value": 0
-    },
-    {
-      "name": "StrengthMultiplierRest",
-      "type": "number",
-      "value": 1
     },
     {
       "folded": true,
@@ -397,6 +367,18 @@
             {
               "type": "number",
               "value": 30
+            },
+            {
+              "type": "number",
+              "value": 45
+            },
+            {
+              "type": "number",
+              "value": 55
+            },
+            {
+              "type": "number",
+              "value": 70
             }
           ]
         },
@@ -415,6 +397,18 @@
             {
               "type": "string",
               "value": "Hunter Yong"
+            },
+            {
+              "type": "string",
+              "value": "Mercenary Ying"
+            },
+            {
+              "type": "string",
+              "value": "Shaman Fu"
+            },
+            {
+              "type": "string",
+              "value": "Tian, Son of Heaven"
             }
           ]
         },
@@ -433,6 +427,18 @@
             {
               "type": "number",
               "value": 50000
+            },
+            {
+              "type": "number",
+              "value": 120000
+            },
+            {
+              "type": "number",
+              "value": 600000
+            },
+            {
+              "type": "number",
+              "value": 3000000
             }
           ]
         },
@@ -442,7 +448,7 @@
           "children": [
             {
               "type": "number",
-              "value": 5
+              "value": 18
             },
             {
               "type": "number",
@@ -451,37 +457,33 @@
             {
               "type": "number",
               "value": 200
+            },
+            {
+              "type": "number",
+              "value": 1000
+            },
+            {
+              "type": "number",
+              "value": 4000
+            },
+            {
+              "type": "number",
+              "value": 10000
             }
           ]
         }
       ]
     },
     {
-      "name": "FinalStrength",
-      "type": "number",
-      "value": 0
-    },
-    {
-      "name": "CurrentEnemy",
-      "type": "number",
-      "value": 0
-    },
-    {
-      "name": "VictoryStatus",
-      "type": "string",
-      "value": "na"
-    },
-    {
       "name": "TutorialCompletion",
       "type": "boolean",
-      "value": false
+      "value": true
     },
     {
       "name": "ActionInfo",
       "type": "structure",
       "children": [
         {
-          "folded": true,
           "name": "Description",
           "type": "array",
           "children": [
@@ -523,7 +525,7 @@
             },
             {
               "type": "string",
-              "value": "Reduce enemy strength by 1%"
+              "value": "Reduce enemy strength by 10%. Disable this action"
             },
             {
               "type": "string",
@@ -536,7 +538,6 @@
           ]
         },
         {
-          "folded": true,
           "name": "Enabled",
           "type": "array",
           "children": [
@@ -646,6 +647,7 @@
           ]
         },
         {
+          "folded": true,
           "name": "Unlocked",
           "type": "array",
           "children": [
@@ -703,6 +705,41 @@
     },
     {
       "folded": true,
+      "name": "UpgradesInfo",
+      "type": "structure",
+      "children": [
+        {
+          "name": "Cost",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 2
+            },
+            {
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "name": "Scaling",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 2
+            },
+            {
+              "type": "number",
+              "value": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "folded": true,
       "name": "ActionIDList",
       "type": "array",
       "children": [
@@ -736,6 +773,11 @@
       "name": "ActionCount",
       "type": "number",
       "value": 12
+    },
+    {
+      "name": "PermanentStrengthMult",
+      "type": "number",
+      "value": 1
     }
   ],
   "layouts": [
@@ -787,6 +829,103 @@
           "name": "TextScrollSpeed",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "ActionsUsed",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "folded": true,
+          "name": "ActiveActions",
+          "type": "array",
+          "children": []
+        },
+        {
+          "name": "Strength",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Days",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Time",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "StrengthMultiplierRest",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "FinalStrength",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "CurrentEnemy",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "VictoryStatus",
+          "type": "string",
+          "value": "na"
+        },
+        {
+          "name": "SwordStrengthGainMult",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "WeaponActionsGainAdd",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "EnemyStrengthAdd",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "EnemyStrengthMult",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "TempStrength",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "TempStrengthMult",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "StrengthMult",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "TalismanEffect",
+          "type": "structure",
+          "children": [
+            {
+              "name": "Active",
+              "type": "boolean",
+              "value": false
+            },
+            {
+              "name": "TimeLeft",
+              "type": "number",
+              "value": 15
+            }
+          ]
         }
       ],
       "instances": [
@@ -1932,6 +2071,32 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "TutorialCompletion",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Time Counter\""
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -1987,7 +2152,7 @@
                 "Player_Strength",
                 "Text",
                 "=",
-                "ToString(roundTo(Strength * StrengthMultiplierRest, 2))"
+                "ToString(roundTo(Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult, 2))"
               ]
             },
             {
@@ -1998,7 +2163,7 @@
                 "Enemy_Strength",
                 "Text",
                 "=",
-                "ToString(roundTo(Enemies.Strength[CurrentEnemy],2))"
+                "ToString(roundTo((Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult,2))"
               ]
             },
             {
@@ -2021,233 +2186,6 @@
                 "Text",
                 "=",
                 "\"Fight Day: \" + NewLine() + Enemies.Deadline[CurrentEnemy]"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Action Toggle"
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "Action_Scene::MyObject::Button_Pressed"
-              },
-              "parameters": [
-                "Actions",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Action_Returned",
-                "=",
-                "Action.ID"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Index",
-                "=",
-                "-1"
-              ]
-            }
-          ],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::ForEachChildVariable",
-              "iterableVariableName": "ActiveActions",
-              "valueIteratorVariableName": "ID_Temp",
-              "keyIteratorVariableName": "",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "Index",
-                    "+",
-                    "1"
-                  ]
-                }
-              ],
-              "events": [
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "NumberVariable"
-                      },
-                      "parameters": [
-                        "ID_Temp",
-                        "=",
-                        "Action_Returned"
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "RemoveVariableAt"
-                      },
-                      "parameters": [
-                        "ActiveActions",
-                        "Index"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "ActionsUsed",
-                        "-",
-                        "1"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "Action_Returned",
-                        "=",
-                        "-1"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "ActionCountDisplay::MyObject::Update_Values"
-                      },
-                      "parameters": [
-                        "ActionCountDisplay",
-                        "ActionsUsed",
-                        "ActionsCap",
-                        "Coins",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "Action_Scene::MyObject::Set_Active"
-                      },
-                      "parameters": [
-                        "Action",
-                        "\"Start\"",
-                        ""
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": true,
-                    "value": "VariableChildExists2"
-                  },
-                  "parameters": [
-                    "ActiveActions",
-                    "Action_Returned"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "ActionsUsed",
-                    "<",
-                    "ActionsCap"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Action_Returned",
-                    ">=",
-                    "0"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "PushVariable"
-                  },
-                  "parameters": [
-                    "ActiveActions",
-                    "Action_Returned"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "ActionsUsed",
-                    "+",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "Action_Returned",
-                    "=",
-                    "-1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "ActionCountDisplay::MyObject::Update_Values"
-                  },
-                  "parameters": [
-                    "ActionCountDisplay",
-                    "ActionsUsed",
-                    "ActionsCap",
-                    "Coins",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Action_Scene::MyObject::Set_Active"
-                  },
-                  "parameters": [
-                    "Action",
-                    "\"Stop\"",
-                    ""
-                  ]
-                }
               ]
             }
           ]
@@ -2307,7 +2245,28 @@
               "valueIteratorVariableName": "ID_Temp",
               "keyIteratorVariableName": "",
               "conditions": [],
-              "actions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TempStrength",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TempStrengthMult",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
@@ -2321,6 +2280,16 @@
                         "=",
                         "0"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[0]",
+                        "True",
+                        ""
+                      ]
                     }
                   ],
                   "actions": [
@@ -2329,9 +2298,9 @@
                         "value": "SetNumberVariable"
                       },
                       "parameters": [
-                        "Strength",
+                        "TempStrength",
                         "+",
-                        "1"
+                        "(1 + WeaponActionsGainAdd) * SwordStrengthGainMult"
                       ]
                     }
                   ]
@@ -2348,6 +2317,16 @@
                         "=",
                         "1"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[1]",
+                        "True",
+                        ""
+                      ]
                     }
                   ],
                   "actions": [
@@ -2362,7 +2341,869 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "ID_Temp",
+                        "=",
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[2]",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "SwordStrengthGainMult",
+                        "*",
+                        "2"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[2]",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "ID_Temp",
+                        "=",
+                        "3"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[3]",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "WeaponActionsGainAdd",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[3]",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "ID_Temp",
+                        "=",
+                        "4"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[4]",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "PermanentStrengthMult",
+                        "+",
+                        "0.01"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "ID_Temp",
+                        "=",
+                        "5"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[5]",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "EnemyStrengthAdd",
+                        "-",
+                        "2"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "ID_Temp",
+                        "=",
+                        "6"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[6]",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TempStrength",
+                        "+",
+                        "(4 + WeaponActionsGainAdd) * RandomInRange(0, 2)"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "ID_Temp",
+                        "=",
+                        "7"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[7]",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TempStrength",
+                        "+",
+                        "100"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[7]",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "ID_Temp",
+                        "=",
+                        "8"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[8]",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Strength",
+                        "*",
+                        "1.5"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[8]",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "ID_Temp",
+                        "=",
+                        "9"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[9]",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "EnemyStrengthMult",
+                        "=",
+                        "0.9"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[9]",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "ID_Temp",
+                        "=",
+                        "10"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[10]",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "EnemyStrengthMult",
+                        "=",
+                        "0.9"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[10]",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "ID_Temp",
+                        "=",
+                        "11"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[11]",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "TalismanEffect",
+                        "True",
+                        "0.9"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[11]",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Strength",
+                        "+",
+                        "TempStrength"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StrengthMult",
+                        "+",
+                        "TempStrengthMult"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "TalismanEffect.Active",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "TalismanEffect.TimeLeft",
+                            ">",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "TalismanEffect.TimeLeft",
+                            "-",
+                            "1"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "TalismanEffect.TimeLeft",
+                            "<=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "TalismanEffect.TimeLeft",
+                            "=",
+                            "15"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "TalismanEffect.Active",
+                            "False",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
                 }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Action",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Action_Scene::MyObject::Check_Enabled"
+                  },
+                  "parameters": [
+                    "Action",
+                    "ActionInfo.Enabled[Action.ID]",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ActionInfo.Enabled[Action.ID]",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Tmep",
+                        "=",
+                        "ArrayTools::IndexOf(ActiveActions, Action.ID)"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Tmep",
+                            "=",
+                            "-1"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "RemoveVariableAt"
+                          },
+                          "parameters": [
+                            "ActiveActions",
+                            "ArrayTools::IndexOf(ActiveActions, Action.ID)"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "ActionsUsed",
+                            "-",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ActionCountDisplay::MyObject::Update_Values"
+                          },
+                          "parameters": [
+                            "ActionCountDisplay",
+                            "ActionsUsed",
+                            "ActionsCap",
+                            "Coins",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "variables": [
+                    {
+                      "name": "Tmep",
+                      "type": "number",
+                      "value": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Action Toggle"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Action_Scene::MyObject::Button_Pressed"
+              },
+              "parameters": [
+                "Actions",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Action_Returned",
+                "=",
+                "Actions.ID"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "temp",
+                "=",
+                "ArrayTools::IndexOf(ActiveActions, Action.ID)"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "temp",
+                    "=",
+                    "-1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "RemoveVariableAt"
+                  },
+                  "parameters": [
+                    "ActiveActions",
+                    "ArrayTools::IndexOf(ActiveActions, Action.ID)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ActionsUsed",
+                    "-",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Action_Returned",
+                    "=",
+                    "-1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ActionCountDisplay::MyObject::Update_Values"
+                  },
+                  "parameters": [
+                    "ActionCountDisplay",
+                    "ActionsUsed",
+                    "ActionsCap",
+                    "Coins",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Action_Scene::MyObject::Set_Active"
+                  },
+                  "parameters": [
+                    "Action",
+                    "\"Start\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "ActionsUsed",
+                    "<",
+                    "ActionsCap"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Action_Returned",
+                    ">=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PushVariable"
+                  },
+                  "parameters": [
+                    "ActiveActions",
+                    "Action_Returned"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ActionsUsed",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ActionCountDisplay::MyObject::Update_Values"
+                  },
+                  "parameters": [
+                    "ActionCountDisplay",
+                    "ActionsUsed",
+                    "ActionsCap",
+                    "Coins",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Action_Scene::MyObject::Set_Active"
+                  },
+                  "parameters": [
+                    "Action",
+                    "\"Stop\"",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "variables": [
+            {
+              "name": "temp",
+              "type": "number",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "Action_Scene::MyObject::Check_Enabled"
+              },
+              "parameters": [
+                "Actions",
+                "ActionInfo.Enabled[Actions.ID]",
+                ""
               ]
             }
           ]
@@ -2426,7 +3267,7 @@
               "parameters": [
                 "FinalStrength",
                 "=",
-                "Strength * StrengthMultiplierRest"
+                "Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult"
               ]
             }
           ],
@@ -2441,7 +3282,7 @@
                   "parameters": [
                     "FinalStrength",
                     ">=",
-                    "Enemies.Strength[CurrentEnemy]"
+                    "(Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult"
                   ]
                 }
               ],
@@ -2481,7 +3322,7 @@
                   "parameters": [
                     "FinalStrength",
                     ">=",
-                    "Enemies.Strength[CurrentEnemy]"
+                    "(Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult"
                   ]
                 }
               ],
@@ -2539,12 +3380,11 @@
           "actions": [
             {
               "type": {
-                "value": "SetStringVariable"
+                "value": "Delete"
               },
               "parameters": [
-                "VictoryStatus",
-                "=",
-                "\"na\""
+                "Lose_Background",
+                ""
               ]
             },
             {
@@ -2555,33 +3395,100 @@
                 "Winner_Background",
                 ""
               ]
-            },
+            }
+          ],
+          "events": [
             {
-              "type": {
-                "value": "Delete"
-              },
-              "parameters": [
-                "Lose_Background",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "VictoryStatus",
+                    "=",
+                    "\"lose\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "VictoryStatus",
+                    "=",
+                    "\"na\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Reincarnation Scene\"",
+                    ""
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "CurrentEnemy",
-                "+",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "UnPauseTimer"
-              },
-              "parameters": [
-                "",
-                "\"Time Counter\""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "VictoryStatus",
+                    "=",
+                    "\"win\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "VictoryStatus",
+                    "=",
+                    "\"na\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentEnemy",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Coins",
+                    "+",
+                    "CurrentEnemy"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "UnPauseTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Time Counter\""
+                  ]
+                }
               ]
             }
           ]
@@ -3027,15 +3934,15 @@
             },
             {
               "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
               "value": 1
             },
             {
               "type": "number",
-              "value": 2
-            },
-            {
-              "type": "number",
-              "value": 2
+              "value": 1
             },
             {
               "type": "number",
@@ -3043,7 +3950,7 @@
             },
             {
               "type": "number",
-              "value": 5
+              "value": 3
             },
             {
               "type": "number",
@@ -3066,6 +3973,11 @@
               "value": -1
             }
           ]
+        },
+        {
+          "name": "Testing",
+          "type": "number",
+          "value": 0
         },
         {
           "name": "Index",
@@ -3103,14 +4015,19 @@
           "value": false
         },
         {
-          "name": "ShopState",
-          "type": "boolean",
-          "value": false
+          "name": "State",
+          "type": "string",
+          "value": "0"
         },
         {
           "name": "RefreshShop",
           "type": "boolean",
           "value": false
+        },
+        {
+          "name": "EquippedActions",
+          "type": "array",
+          "children": []
         }
       ],
       "instances": [
@@ -3290,7 +4207,7 @@
           "name": "Shop_Button",
           "persistentUuid": "521950c5-7133-46f7-9487-f124dc157230",
           "width": 200,
-          "x": 530,
+          "x": 540,
           "y": 250,
           "zOrder": 8,
           "numberProperties": [],
@@ -3306,7 +4223,7 @@
           "name": "GreySquare",
           "persistentUuid": "f14453de-cd83-40bf-abe1-4318c22bbdaf",
           "width": 490,
-          "x": 770,
+          "x": 790,
           "y": 0,
           "zOrder": 9,
           "numberProperties": [],
@@ -3322,7 +4239,7 @@
           "name": "ShopAction",
           "persistentUuid": "d2655a62-4d7f-4c88-873e-433cb3c441c4",
           "width": 490,
-          "x": 770,
+          "x": 790,
           "y": 60,
           "zOrder": 10,
           "numberProperties": [],
@@ -3344,7 +4261,7 @@
           "name": "ShopAction",
           "persistentUuid": "2aae0e8c-eff1-4f4c-ab65-121e3098a10e",
           "width": 490,
-          "x": 770,
+          "x": 790,
           "y": 150,
           "zOrder": 10,
           "numberProperties": [],
@@ -3371,7 +4288,7 @@
           "name": "ShopAction",
           "persistentUuid": "a5e014ab-077c-4eff-8753-67f4d550a41a",
           "width": 490,
-          "x": 770,
+          "x": 790,
           "y": 240,
           "zOrder": 10,
           "numberProperties": [],
@@ -3398,7 +4315,7 @@
           "name": "ShopAction",
           "persistentUuid": "852658d0-a5eb-4cb7-beb1-b905e7d382db",
           "width": 490,
-          "x": 770,
+          "x": 790,
           "y": 330,
           "zOrder": 10,
           "numberProperties": [],
@@ -3425,7 +4342,7 @@
           "name": "ShopAction",
           "persistentUuid": "bf67761c-4e6c-4ba2-9f60-b6aeffeaaed9",
           "width": 490,
-          "x": 770,
+          "x": 790,
           "y": 420,
           "zOrder": 10,
           "numberProperties": [],
@@ -3452,7 +4369,7 @@
           "name": "ShopAction",
           "persistentUuid": "958246f9-4a12-4ff4-8fc3-3d2477a9b262",
           "width": 490,
-          "x": 770,
+          "x": 790,
           "y": 510,
           "zOrder": 10,
           "numberProperties": [],
@@ -3517,9 +4434,94 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Reincarnation_Back",
+          "persistentUuid": "7bc71338-1f6b-45ff-b5cf-f38f9ac6f1ee",
+          "width": 0,
+          "x": 25,
+          "y": 24,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 48,
+          "height": 70,
+          "layer": "",
+          "name": "Upgrades",
+          "persistentUuid": "d74bc67c-7004-45f3-b537-0d347ef47d14",
+          "width": 200,
+          "x": 540,
+          "y": 350,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Upgrades_Panel",
+          "persistentUuid": "958763b8-bbf0-4540-bd6e-16e974abfc5b",
+          "width": 0,
+          "x": 790,
+          "y": 0,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 26,
+          "keepRatio": true,
+          "layer": "",
+          "name": "CoinsCount",
+          "persistentUuid": "ddbc180a-2f7d-47d1-a3e4-a35d8a5ead41",
+          "width": 142,
+          "x": 1110,
+          "y": 32,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
+        {
+          "assetStoreId": "",
+          "name": "Upgrades_Panel",
+          "type": "Upgrades_Panel::Upgrades_Panel",
+          "variant": "",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {}
+        },
+        {
+          "assetStoreId": "",
+          "name": "Reincarnation_Back",
+          "type": "Reincarnation_Back::Reincarnation_Back",
+          "variant": "",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {}
+        },
         {
           "assetStoreId": "",
           "name": "Equip_Panel",
@@ -3862,6 +4864,133 @@
             "characterSize": 24,
             "color": "255;255;255"
           }
+        },
+        {
+          "assetStoreId": "f0c3d7ae6099e3b9b8beed4e30b555107550b4fb2a5879e984a014b1e06865bf",
+          "name": "Upgrades",
+          "type": "PanelSpriteButton::PanelSpriteButton",
+          "variant": "",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "LeftPadding": 0,
+            "RightPadding": 0,
+            "PressedLabelOffsetY": 4,
+            "BottomPadding": 6,
+            "TopPadding": 0,
+            "HoveredFadeOutDuration": 0
+          },
+          "childrenContent": {
+            "Hovered": {
+              "bottomMargin": 10,
+              "height": 64,
+              "leftMargin": 6,
+              "rightMargin": 6,
+              "texture": "Transparent Button With White Blue Border_Hovered.png",
+              "tiled": false,
+              "topMargin": 10,
+              "width": 192
+            },
+            "Idle": {
+              "bottomMargin": 10,
+              "height": 64,
+              "leftMargin": 6,
+              "rightMargin": 6,
+              "texture": "Transparent Button With White Blue Border_Idle.png",
+              "tiled": false,
+              "topMargin": 10,
+              "width": 192
+            },
+            "Label": {
+              "bold": false,
+              "italic": false,
+              "smoothed": true,
+              "underlined": false,
+              "string": "Upgrades",
+              "font": "assets\\Xolonium-Regular.ttf",
+              "textAlignment": "center",
+              "characterSize": 20,
+              "color": {
+                "b": 255,
+                "g": 255,
+                "r": 255
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Upgrades",
+                "font": "assets\\Xolonium-Regular.ttf",
+                "textAlignment": "center",
+                "verticalTextAlignment": "top",
+                "characterSize": 20,
+                "color": "255;255;255"
+              }
+            },
+            "Pressed": {
+              "bottomMargin": 10,
+              "height": 64,
+              "leftMargin": 6,
+              "rightMargin": 6,
+              "texture": "Transparent Button With White Blue Border_Pressed.png",
+              "tiled": false,
+              "topMargin": 10,
+              "width": 192
+            }
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "CoinsCount",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Text",
+          "font": "assets\\Xolonium-Regular.ttf",
+          "textAlignment": "left",
+          "characterSize": 24,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Text",
+            "font": "assets\\Xolonium-Regular.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "center",
+            "characterSize": 24,
+            "color": "255;255;255"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -3887,11 +5016,24 @@
           },
           {
             "objectName": "ShopText"
+          },
+          {
+            "objectName": "Reincarnation_Back"
+          },
+          {
+            "objectName": "Upgrades"
+          },
+          {
+            "objectName": "Upgrades_Panel"
+          },
+          {
+            "objectName": "CoinsCount"
           }
         ]
       },
       "events": [
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -4159,6 +5301,75 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "Upgrades_Panel"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Upgrades_Panel::Upgrades_Panel::Set_Text"
+                  },
+                  "parameters": [
+                    "Upgrades_Panel",
+                    "UpgradesInfo.Cost[0]",
+                    "UpgradesInfo.Cost[1]",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ClearVariableChildren"
+              },
+              "parameters": [
+                "EquippedActions"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Equipped_Action",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Equipped_Action",
+                    "ID",
+                    ">",
+                    "-1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "PushNumber"
+                  },
+                  "parameters": [
+                    "EquippedActions",
+                    "Equipped_Action.ID"
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -4175,78 +5386,124 @@
               ]
             }
           ],
-          "actions": [
+          "actions": [],
+          "events": [
             {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "TempPlayerY",
-                "=",
-                "PlayerActions.Y()"
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "PlayerActions",
+                    "<=",
+                    "0 + Offset"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "PlayerActions",
+                    ">=",
+                    "0 - Offset"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TempPlayerY",
+                    "=",
+                    "PlayerActions.Y()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Temp",
+                    "=",
+                    "PlayerActions.ID"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TempID",
+                    "=",
+                    "PlayerActions.ID"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TempOrder",
+                    "=",
+                    "PlayerActions.Order"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "CheckOrder",
+                    "True",
+                    "-2"
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Temp",
-                "=",
-                "PlayerActions.ID"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "TempID",
-                "=",
-                "PlayerActions.ID"
-              ]
-            },
-            {
-              "type": {
-                "value": "MettreX"
-              },
-              "parameters": [
-                "PlayerActions",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "MettreY"
-              },
-              "parameters": [
-                "PlayerActions",
-                "=",
-                "PlayerActions.InitYPos"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "TempOrder",
-                "=",
-                "PlayerActions.Order"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "CheckOrder",
-                "True",
-                "-2"
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreX"
+                  },
+                  "parameters": [
+                    "PlayerActions",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreY"
+                  },
+                  "parameters": [
+                    "PlayerActions",
+                    "=",
+                    "PlayerActions.InitYPos"
+                  ]
+                }
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Swap places of actions"
         },
         {
           "folded": true,
@@ -4834,30 +6091,76 @@
               "parameters": []
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "ShopState",
-                "Toggle",
-                ""
-              ]
-            }
-          ],
+          "actions": [],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
                   "type": {
-                    "value": "BooleanVariable"
+                    "value": "StringVariable"
                   },
                   "parameters": [
-                    "ShopState",
-                    "True",
-                    ""
+                    "State",
+                    "=",
+                    "\"action_shop\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "ShopObjects"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "State",
+                    "=",
+                    "\"na\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Temp",
+                    "=",
+                    "-42"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "State",
+                    "=",
+                    "\"action_shop\""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Temp",
+                    "=",
+                    "-42"
                   ]
                 }
               ],
@@ -4870,30 +6173,23 @@
                     "ShopObjects",
                     ""
                   ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "BooleanVariable"
-                  },
-                  "parameters": [
-                    "ShopState",
-                    "False",
-                    ""
-                  ]
-                }
-              ],
-              "actions": [
+                },
                 {
                   "type": {
                     "value": "Cache"
                   },
                   "parameters": [
-                    "ShopObjects"
+                    "Upgrades_Panel"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "State",
+                    "=",
+                    "\"action_shop\""
                   ]
                 }
               ]
@@ -4919,9 +6215,9 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "TempPlayerY",
+                "Tmep",
                 "=",
-                "ShopActions.Y()"
+                "ArrayTools::IndexOf(EquippedActions, ShopActions.ID)"
               ]
             },
             {
@@ -4929,55 +6225,138 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "Temp",
+                "Testing",
                 "=",
-                "ShopActions.ID"
+                "ArrayTools::IndexOf(EquippedActions, ShopActions.ID)"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "ShopActions",
+                    "<=",
+                    "0 + Offset"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PosX"
+                  },
+                  "parameters": [
+                    "ShopActions",
+                    ">=",
+                    "0 - Offset"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Tmep",
+                    "<",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TempPlayerY",
+                    "=",
+                    "ShopActions.Y()"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Temp",
+                    "=",
+                    "ShopActions.ID"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TempID",
+                    "=",
+                    "ShopActions.ID"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "CheckOrder",
+                    "True",
+                    "-2"
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "TempID",
-                "=",
-                "ShopActions.ID"
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MettreX"
+                  },
+                  "parameters": [
+                    "ShopActions",
+                    "=",
+                    "790"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MettreY"
+                  },
+                  "parameters": [
+                    "ShopActions",
+                    "=",
+                    "ShopActions.InitY"
+                  ]
+                }
               ]
-            },
+            }
+          ],
+          "variables": [
             {
-              "type": {
-                "value": "MettreX"
-              },
-              "parameters": [
-                "ShopActions",
-                "=",
-                "770"
-              ]
-            },
-            {
-              "type": {
-                "value": "MettreY"
-              },
-              "parameters": [
-                "ShopActions",
-                "=",
-                "ShopActions.InitY"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetBooleanVariable"
-              },
-              "parameters": [
-                "CheckOrder",
-                "True",
-                "-2"
-              ]
+              "name": "Tmep",
+              "type": "number",
+              "value": 0
             }
           ]
         },
         {
-          "folded": true,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Add action to active actions"
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -4994,7 +6373,6 @@
           "actions": [],
           "events": [
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -5461,6 +6839,18 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Scroll Shop"
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5517,7 +6907,7 @@
                 "value": "SetBooleanVariable"
               },
               "parameters": [
-                "CheckOrder",
+                "RefreshShop",
                 "True",
                 ""
               ]
@@ -5705,66 +7095,101 @@
           ]
         },
         {
-          "type": "BuiltinCommonInstructions::Standard",
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Refresh shop"
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "ShopAction",
           "conditions": [
             {
               "type": {
                 "value": "ShopAction::ShopAction::Buy"
               },
               "parameters": [
-                "ShopActions",
+                "ShopAction",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "Cost[ShopAction.ID]",
+                "<=",
+                "Coins"
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Coins",
+                "-",
+                "Cost[ShopActions.ID]"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "ActionInfo.Unlocked[ShopAction.ID]",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetBooleanVariable"
+              },
+              "parameters": [
+                "RefreshShop",
+                "True",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Index",
+                "-",
+                "6"
               ]
             }
           ],
-          "actions": [],
           "events": [
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberVariable"
-                  },
-                  "parameters": [
-                    "Cost[ShopActions.Get_Cost()]",
-                    "<=",
-                    "Coins"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "Coins",
-                    "-",
-                    "Cost[ShopActions.Get_Cost()]"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "ActionInfo.Unlocked[ShopActions.Get_ID()]",
-                    "=",
-                    "1"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetBooleanVariable"
-                  },
-                  "parameters": [
-                    "RefreshShop",
-                    "True",
-                    ""
-                  ]
-                }
-              ]
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "I have to subtract 6 from index here. Why? What is causing this?"
             }
           ]
         },
@@ -5952,6 +7377,391 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Reincarnation_Back::Reincarnation_Back::OnHover"
+              },
+              "parameters": [
+                "Reincarnation_Back",
+                ""
+              ]
+            }
+          ],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Reincarnation_Back::Reincarnation_Back::OnClick"
+              },
+              "parameters": [
+                "Reincarnation_Back",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Index",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEachChildVariable",
+              "iterableVariableName": "ActionInfo.Enabled",
+              "valueIteratorVariableName": "en",
+              "keyIteratorVariableName": "",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "ActionInfo.Enabled[Index]",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Index",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Main Scene\"",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+              },
+              "parameters": [
+                "Upgrades",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "State",
+                    "=",
+                    "\"upgrades_shop\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "Upgrades_Panel"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "State",
+                    "=",
+                    "\"na\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Temp",
+                    "=",
+                    "-42"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "State",
+                    "=",
+                    "\"upgrades_shop\""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Temp",
+                    "=",
+                    "-42"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Montre"
+                  },
+                  "parameters": [
+                    "Upgrades_Panel",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "ShopObjects"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "State",
+                    "=",
+                    "\"upgrades_shop\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Upgrades_Panel::Upgrades_Panel::Upgrade1"
+              },
+              "parameters": [
+                "Upgrades_Panel",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "UpgradesInfo.Cost[0]",
+                    "<=",
+                    "Coins"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Coins",
+                    "-",
+                    "UpgradesInfo.Cost[0]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "UpgradesInfo.Cost[0]",
+                    "=",
+                    "UpgradesInfo.Cost[0] * UpgradesInfo.Scaling[0]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ActionsCap",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Upgrades_Panel::Upgrades_Panel::Upgrade2"
+              },
+              "parameters": [
+                "Upgrades_Panel",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "UpgradesInfo.Cost[1]",
+                    "<=",
+                    "Coins"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Coins",
+                    "-",
+                    "UpgradesInfo.Cost[1]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "UpgradesInfo.Cost[0]",
+                    "=",
+                    "UpgradesInfo.Cost[1] * UpgradesInfo.Scaling[1]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Time_Max",
+                    "-",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "CoinsCount",
+                "Text",
+                "=",
+                "\"Coins: \" + Coins"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Temp",
+                "=",
+                "0"
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -6042,6 +7852,1189 @@
   ],
   "externalEvents": [],
   "eventsFunctionsExtensions": [
+    {
+      "author": "",
+      "category": "",
+      "extensionNamespace": "",
+      "fullName": "",
+      "gdevelopVersion": "",
+      "helpPath": "",
+      "iconUrl": "",
+      "name": "Upgrades_Panel",
+      "previewIconUrl": "",
+      "shortDescription": "",
+      "version": "",
+      "description": "",
+      "tags": [],
+      "authorIds": [],
+      "dependencies": [],
+      "globalVariables": [],
+      "sceneVariables": [],
+      "eventsFunctions": [],
+      "eventsBasedBehaviors": [],
+      "eventsBasedObjects": [
+        {
+          "areaMaxX": 490,
+          "areaMaxY": 720,
+          "areaMaxZ": 0,
+          "areaMinX": 0,
+          "areaMinY": 0,
+          "areaMinZ": 0,
+          "defaultName": "",
+          "description": "",
+          "fullName": "",
+          "isUsingLegacyInstancesRenderer": false,
+          "name": "Upgrades_Panel",
+          "objects": [
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "GreySquare",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "SpriteRecolorizer",
+                  "type": "Recolorizer::SpriteRecolorizer"
+                }
+              ],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "grey_square.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 0,
+                                "y": 0
+                              },
+                              {
+                                "x": 100,
+                                "y": 0
+                              },
+                              {
+                                "x": 100,
+                                "y": 100
+                              },
+                              {
+                                "x": 0,
+                                "y": 100
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "assetStoreId": "",
+              "bold": false,
+              "italic": false,
+              "name": "UpgradesTitle",
+              "smoothed": true,
+              "type": "TextObject::Text",
+              "underlined": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "string": "Upgrades",
+              "font": "assets\\Xolonium-Regular.ttf",
+              "textAlignment": "left",
+              "characterSize": 24,
+              "color": {
+                "b": 255,
+                "g": 255,
+                "r": 255
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Upgrades",
+                "font": "assets\\Xolonium-Regular.ttf",
+                "textAlignment": "left",
+                "verticalTextAlignment": "top",
+                "characterSize": 24,
+                "color": "255;255;255"
+              }
+            },
+            {
+              "assetStoreId": "",
+              "bold": false,
+              "italic": false,
+              "name": "Upgrade1Text",
+              "smoothed": true,
+              "type": "TextObject::Text",
+              "underlined": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "string": "Increase Max Actions by 1",
+              "font": "assets\\Xolonium-Regular.ttf",
+              "textAlignment": "center",
+              "characterSize": 20,
+              "color": {
+                "b": 255,
+                "g": 255,
+                "r": 255
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Increase Max Actions by 1",
+                "font": "assets\\Xolonium-Regular.ttf",
+                "textAlignment": "center",
+                "verticalTextAlignment": "center",
+                "characterSize": 20,
+                "color": "255;255;255"
+              }
+            },
+            {
+              "assetStoreId": "f0c3d7ae6099e3b9b8beed4e30b555107550b4fb2a5879e984a014b1e06865bf",
+              "name": "UpgradeButton1",
+              "type": "PanelSpriteButton::PanelSpriteButton",
+              "variant": "",
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "content": {
+                "LeftPadding": 0,
+                "RightPadding": 0,
+                "PressedLabelOffsetY": 4,
+                "BottomPadding": 6,
+                "TopPadding": 0,
+                "HoveredFadeOutDuration": 0
+              },
+              "childrenContent": {
+                "Hovered": {
+                  "bottomMargin": 10,
+                  "height": 64,
+                  "leftMargin": 6,
+                  "rightMargin": 6,
+                  "texture": "Transparent Button With White Blue Border_Hovered.png",
+                  "tiled": false,
+                  "topMargin": 10,
+                  "width": 192
+                },
+                "Idle": {
+                  "bottomMargin": 10,
+                  "height": 64,
+                  "leftMargin": 6,
+                  "rightMargin": 6,
+                  "texture": "Transparent Button With White Blue Border_Idle.png",
+                  "tiled": false,
+                  "topMargin": 10,
+                  "width": 192
+                },
+                "Label": {
+                  "bold": false,
+                  "italic": false,
+                  "smoothed": true,
+                  "underlined": false,
+                  "string": "Buy",
+                  "font": "assets\\Xolonium-Regular.ttf",
+                  "textAlignment": "center",
+                  "characterSize": 30,
+                  "color": {
+                    "b": 255,
+                    "g": 255,
+                    "r": 255
+                  },
+                  "content": {
+                    "bold": false,
+                    "isOutlineEnabled": false,
+                    "isShadowEnabled": false,
+                    "italic": false,
+                    "outlineColor": "255;255;255",
+                    "outlineThickness": 2,
+                    "shadowAngle": 90,
+                    "shadowBlurRadius": 2,
+                    "shadowColor": "0;0;0",
+                    "shadowDistance": 4,
+                    "shadowOpacity": 127,
+                    "smoothed": true,
+                    "underlined": false,
+                    "text": "Buy",
+                    "font": "assets\\Xolonium-Regular.ttf",
+                    "textAlignment": "center",
+                    "verticalTextAlignment": "top",
+                    "characterSize": 30,
+                    "color": "255;255;255"
+                  }
+                },
+                "Pressed": {
+                  "bottomMargin": 10,
+                  "height": 64,
+                  "leftMargin": 6,
+                  "rightMargin": 6,
+                  "texture": "Transparent Button With White Blue Border_Pressed.png",
+                  "tiled": false,
+                  "topMargin": 10,
+                  "width": 192
+                }
+              }
+            },
+            {
+              "assetStoreId": "",
+              "bold": false,
+              "italic": false,
+              "name": "Upgrade2Text",
+              "smoothed": true,
+              "type": "TextObject::Text",
+              "underlined": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "string": "Decrease seconds per day by 1",
+              "font": "assets\\Xolonium-Regular.ttf",
+              "textAlignment": "center",
+              "characterSize": 20,
+              "color": {
+                "b": 255,
+                "g": 255,
+                "r": 255
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Decrease seconds per day by 1",
+                "font": "assets\\Xolonium-Regular.ttf",
+                "textAlignment": "center",
+                "verticalTextAlignment": "center",
+                "characterSize": 20,
+                "color": "255;255;255"
+              }
+            },
+            {
+              "assetStoreId": "f0c3d7ae6099e3b9b8beed4e30b555107550b4fb2a5879e984a014b1e06865bf",
+              "name": "UpgradeButton2",
+              "type": "PanelSpriteButton::PanelSpriteButton",
+              "variant": "",
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "content": {
+                "LeftPadding": 0,
+                "RightPadding": 0,
+                "PressedLabelOffsetY": 4,
+                "BottomPadding": 6,
+                "TopPadding": 0,
+                "HoveredFadeOutDuration": 0
+              },
+              "childrenContent": {
+                "Hovered": {
+                  "bottomMargin": 10,
+                  "height": 64,
+                  "leftMargin": 6,
+                  "rightMargin": 6,
+                  "texture": "Transparent Button With White Blue Border_Hovered.png",
+                  "tiled": false,
+                  "topMargin": 10,
+                  "width": 192
+                },
+                "Idle": {
+                  "bottomMargin": 10,
+                  "height": 64,
+                  "leftMargin": 6,
+                  "rightMargin": 6,
+                  "texture": "Transparent Button With White Blue Border_Idle.png",
+                  "tiled": false,
+                  "topMargin": 10,
+                  "width": 192
+                },
+                "Label": {
+                  "bold": false,
+                  "italic": false,
+                  "smoothed": true,
+                  "underlined": false,
+                  "string": "Buy",
+                  "font": "assets\\Xolonium-Regular.ttf",
+                  "textAlignment": "center",
+                  "characterSize": 30,
+                  "color": {
+                    "b": 255,
+                    "g": 255,
+                    "r": 255
+                  },
+                  "content": {
+                    "bold": false,
+                    "isOutlineEnabled": false,
+                    "isShadowEnabled": false,
+                    "italic": false,
+                    "outlineColor": "255;255;255",
+                    "outlineThickness": 2,
+                    "shadowAngle": 90,
+                    "shadowBlurRadius": 2,
+                    "shadowColor": "0;0;0",
+                    "shadowDistance": 4,
+                    "shadowOpacity": 127,
+                    "smoothed": true,
+                    "underlined": false,
+                    "text": "Buy",
+                    "font": "assets\\Xolonium-Regular.ttf",
+                    "textAlignment": "center",
+                    "verticalTextAlignment": "top",
+                    "characterSize": 30,
+                    "color": "255;255;255"
+                  }
+                },
+                "Pressed": {
+                  "bottomMargin": 10,
+                  "height": 64,
+                  "leftMargin": 6,
+                  "rightMargin": 6,
+                  "texture": "Transparent Button With White Blue Border_Pressed.png",
+                  "tiled": false,
+                  "topMargin": 10,
+                  "width": 192
+                }
+              }
+            },
+            {
+              "assetStoreId": "",
+              "bold": false,
+              "italic": false,
+              "name": "NewText",
+              "smoothed": true,
+              "type": "TextObject::Text",
+              "underlined": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "string": "Text",
+              "font": "",
+              "textAlignment": "left",
+              "characterSize": 20,
+              "color": {
+                "b": 0,
+                "g": 0,
+                "r": 0
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Text",
+                "font": "",
+                "textAlignment": "left",
+                "verticalTextAlignment": "top",
+                "characterSize": 20,
+                "color": "0;0;0"
+              }
+            }
+          ],
+          "objectsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "objectName": "GreySquare"
+              },
+              {
+                "objectName": "UpgradesTitle"
+              },
+              {
+                "objectName": "Upgrade1Text"
+              },
+              {
+                "objectName": "UpgradeButton1"
+              },
+              {
+                "objectName": "UpgradeButton2"
+              },
+              {
+                "objectName": "Upgrade2Text"
+              },
+              {
+                "objectName": "NewText"
+              }
+            ]
+          },
+          "objectsGroups": [],
+          "layers": [
+            {
+              "ambientLightColorB": 200,
+              "ambientLightColorG": 200,
+              "ambientLightColorR": 200,
+              "camera3DFarPlaneDistance": 10000,
+              "camera3DFieldOfView": 45,
+              "camera3DNearPlaneDistance": 3,
+              "cameraType": "",
+              "followBaseLayerCamera": false,
+              "isLightingLayer": false,
+              "isLocked": false,
+              "name": "",
+              "renderingType": "",
+              "visibility": true,
+              "cameras": [
+                {
+                  "defaultSize": true,
+                  "defaultViewport": true,
+                  "height": 0,
+                  "viewportBottom": 1,
+                  "viewportLeft": 0,
+                  "viewportRight": 1,
+                  "viewportTop": 0,
+                  "width": 0
+                }
+              ],
+              "effects": []
+            }
+          ],
+          "instances": [
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 0,
+              "height": 720,
+              "layer": "",
+              "name": "GreySquare",
+              "persistentUuid": "2b5b47fa-203e-416e-8445-64ea0d136ba3",
+              "width": 490,
+              "x": 0,
+              "y": 0,
+              "zOrder": 15,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": false,
+              "height": 0,
+              "keepRatio": true,
+              "layer": "",
+              "name": "UpgradesTitle",
+              "persistentUuid": "8afcc3ec-890e-4e14-b2c5-601e9a2670aa",
+              "width": 0,
+              "x": 14,
+              "y": 20,
+              "zOrder": 16,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 0,
+              "height": 40,
+              "layer": "",
+              "name": "Upgrade1Text",
+              "persistentUuid": "bde31cde-e98a-4bac-a1a3-b903a7df319e",
+              "width": 490,
+              "x": 0,
+              "y": 110,
+              "zOrder": 17,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 48,
+              "height": 50,
+              "layer": "",
+              "name": "UpgradeButton1",
+              "persistentUuid": "a4f3bcf7-4404-4cdd-91ed-3719034c1cd4",
+              "width": 150,
+              "x": 170,
+              "y": 150,
+              "zOrder": 18,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 0,
+              "height": 40,
+              "layer": "",
+              "name": "Upgrade2Text",
+              "persistentUuid": "8a1e6cb7-2c8b-4578-a36a-43e2f777166b",
+              "width": 490,
+              "x": 0,
+              "y": 250,
+              "zOrder": 19,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 48,
+              "height": 50,
+              "layer": "",
+              "name": "UpgradeButton2",
+              "persistentUuid": "321e2324-1315-47d8-ac7b-a2a389f2a3de",
+              "width": 150,
+              "x": 170,
+              "y": 290,
+              "zOrder": 20,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            }
+          ],
+          "eventsFunctions": [
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "onCreated",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Recolorizer::SpriteRecolorizer::Recolorize"
+                      },
+                      "parameters": [
+                        "GreySquare",
+                        "SpriteRecolorizer",
+                        "\"196;196;196\"",
+                        "\"37;0;33\"",
+                        "30",
+                        "50",
+                        "50",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "Upgrades_Panel::Upgrades_Panel",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "Set_Text",
+              "sentence": "Init _PARAM0_ (_PARAM1_,_PARAM2_)",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "cost1",
+                        "=",
+                        "64"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Upgrade1Text"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "UpgradeButton1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "cost2",
+                        "=",
+                        "8"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Upgrade2Text"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "UpgradeButton2"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Upgrade1Text",
+                        "Text",
+                        "=",
+                        "\"Increase Max Actions by 1. Cost: \" + cost1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                      },
+                      "parameters": [
+                        "Upgrade2Text",
+                        "Text",
+                        "=",
+                        "\"Decrease seconds per day by 1. Cost: \" + cost2"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "Upgrades_Panel::Upgrades_Panel",
+                  "type": "object"
+                },
+                {
+                  "description": "cost1",
+                  "name": "cost1",
+                  "type": "expression"
+                },
+                {
+                  "description": "cost2",
+                  "name": "cost2",
+                  "type": "expression"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Condition",
+              "name": "Upgrade1",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::PanelSpriteButton::IsPressed"
+                      },
+                      "parameters": [
+                        "UpgradeButton1",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "Upgrades_Panel::Upgrades_Panel",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Condition",
+              "name": "Upgrade2",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::PanelSpriteButton::IsPressed"
+                      },
+                      "parameters": [
+                        "UpgradeButton2",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "Upgrades_Panel::Upgrades_Panel",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": [],
+          "variants": []
+        }
+      ]
+    },
+    {
+      "author": "",
+      "category": "",
+      "extensionNamespace": "",
+      "fullName": "",
+      "gdevelopVersion": "",
+      "helpPath": "",
+      "iconUrl": "",
+      "name": "Reincarnation_Back",
+      "previewIconUrl": "",
+      "shortDescription": "",
+      "version": "",
+      "description": "",
+      "tags": [],
+      "authorIds": [],
+      "dependencies": [],
+      "globalVariables": [],
+      "sceneVariables": [],
+      "eventsFunctions": [],
+      "eventsBasedBehaviors": [],
+      "eventsBasedObjects": [
+        {
+          "areaMaxX": 197,
+          "areaMaxY": 100,
+          "areaMaxZ": 0,
+          "areaMinX": 0,
+          "areaMinY": 0,
+          "areaMinZ": 0,
+          "defaultName": "",
+          "description": "",
+          "fullName": "",
+          "isUsingLegacyInstancesRenderer": false,
+          "name": "Reincarnation_Back",
+          "objects": [
+            {
+              "assetStoreId": "",
+              "bold": false,
+              "italic": false,
+              "name": "ShopText",
+              "smoothed": true,
+              "type": "TextObject::Text",
+              "underlined": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "string": "Go Back?",
+              "font": "assets\\Xolonium-Regular.ttf",
+              "textAlignment": "left",
+              "characterSize": 28,
+              "color": {
+                "b": 255,
+                "g": 255,
+                "r": 255
+              },
+              "content": {
+                "bold": false,
+                "isOutlineEnabled": false,
+                "isShadowEnabled": false,
+                "italic": false,
+                "outlineColor": "255;255;255",
+                "outlineThickness": 2,
+                "shadowAngle": 90,
+                "shadowBlurRadius": 2,
+                "shadowColor": "0;0;0",
+                "shadowDistance": 4,
+                "shadowOpacity": 127,
+                "smoothed": true,
+                "underlined": false,
+                "text": "Go Back?",
+                "font": "assets\\Xolonium-Regular.ttf",
+                "textAlignment": "left",
+                "verticalTextAlignment": "top",
+                "characterSize": 28,
+                "color": "255;255;255"
+              }
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "Left_Arrow",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [
+                {
+                  "name": "ButtonFSM",
+                  "type": "ButtonStates::ButtonFSM",
+                  "ShouldCheckHovering": true,
+                  "State": "Idle",
+                  "TouchId": 0,
+                  "TouchIsInside": false,
+                  "MouseIsInside": false,
+                  "Index": 2.0247e-320
+                }
+              ],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "arrow.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 0,
+                                "y": 0
+                              },
+                              {
+                                "x": 100,
+                                "y": 0
+                              },
+                              {
+                                "x": 100,
+                                "y": 100
+                              },
+                              {
+                                "x": 0,
+                                "y": 100
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "objectsFolderStructure": {
+            "folderName": "__ROOT",
+            "children": [
+              {
+                "objectName": "Left_Arrow"
+              },
+              {
+                "objectName": "ShopText"
+              }
+            ]
+          },
+          "objectsGroups": [],
+          "layers": [
+            {
+              "ambientLightColorB": 200,
+              "ambientLightColorG": 200,
+              "ambientLightColorR": 200,
+              "camera3DFarPlaneDistance": 10000,
+              "camera3DFieldOfView": 45,
+              "camera3DNearPlaneDistance": 3,
+              "cameraType": "",
+              "followBaseLayerCamera": false,
+              "isLightingLayer": false,
+              "isLocked": false,
+              "name": "",
+              "renderingType": "",
+              "visibility": true,
+              "cameras": [
+                {
+                  "defaultSize": true,
+                  "defaultViewport": true,
+                  "height": 0,
+                  "viewportBottom": 1,
+                  "viewportLeft": 0,
+                  "viewportRight": 1,
+                  "viewportTop": 0,
+                  "width": 0
+                }
+              ],
+              "effects": []
+            }
+          ],
+          "instances": [
+            {
+              "angle": 0,
+              "customSize": false,
+              "height": 0,
+              "keepRatio": true,
+              "layer": "",
+              "name": "Left_Arrow",
+              "persistentUuid": "b98c009b-6fdc-4922-8bf2-7fa6429d67ba",
+              "width": 0,
+              "x": 0,
+              "y": 0,
+              "zOrder": 14,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": false,
+              "height": 0,
+              "keepRatio": true,
+              "layer": "",
+              "name": "ShopText",
+              "persistentUuid": "96c54882-e37f-4b2a-ad2e-55567a9fd3bf",
+              "width": 0,
+              "x": 131,
+              "y": 36,
+              "zOrder": 15,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            }
+          ],
+          "eventsFunctions": [
+            {
+              "fullName": "",
+              "functionType": "Condition",
+              "name": "OnHover",
+              "sentence": "Showing or hiding _PARAM0_ text",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::IsHovered"
+                      },
+                      "parameters": [
+                        "Left_Arrow",
+                        "ButtonFSM",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "ShopText",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "ButtonStates::ButtonFSM::IsHovered"
+                      },
+                      "parameters": [
+                        "Left_Arrow",
+                        "ButtonFSM",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "ShopText"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "Reincarnation_Back::Reincarnation_Back",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Condition",
+              "name": "OnClick",
+              "sentence": "_PARAM0_ clicked",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ButtonStates::ButtonFSM::IsClicked"
+                      },
+                      "parameters": [
+                        "Left_Arrow",
+                        "ButtonFSM",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "Reincarnation_Back::Reincarnation_Back",
+                  "type": "object"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": [],
+          "variants": []
+        }
+      ]
+    },
     {
       "author": "",
       "category": "",
@@ -6837,6 +9830,16 @@
                       "parameters": [
                         "TransparentButtonWithWhiteBlueBorder"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                      },
+                      "parameters": [
+                        "TransparentButtonWithWhiteBlueBorder",
+                        "",
+                        ""
+                      ]
                     }
                   ]
                 },
@@ -6861,6 +9864,16 @@
                       },
                       "parameters": [
                         "X",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                      },
+                      "parameters": [
+                        "TransparentButtonWithWhiteBlueBorder",
+                        "yes",
                         ""
                       ]
                     }
@@ -6899,6 +9912,16 @@
                             "TransparentButtonWithWhiteBlueBorder",
                             ""
                           ]
+                        },
+                        {
+                          "type": {
+                            "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                          },
+                          "parameters": [
+                            "TransparentButtonWithWhiteBlueBorder",
+                            "yes",
+                            ""
+                          ]
                         }
                       ]
                     },
@@ -6923,6 +9946,16 @@
                           },
                           "parameters": [
                             "TransparentButtonWithWhiteBlueBorder"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                          },
+                          "parameters": [
+                            "TransparentButtonWithWhiteBlueBorder",
+                            "",
+                            ""
                           ]
                         }
                       ]
@@ -9458,7 +12491,7 @@
               "fullName": "Button Pressed",
               "functionType": "Condition",
               "name": "Button_Pressed",
-              "sentence": "_PARAM0_ toggled",
+              "sentence": "_PARAM0_ toggled. Natural click: _PARAM1_",
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
@@ -9491,6 +12524,11 @@
                   "name": "Object",
                   "supplementaryInformation": "Action_Scene::MyObject",
                   "type": "object"
+                },
+                {
+                  "description": "click",
+                  "name": "click",
+                  "type": "trueorfalse"
                 }
               ],
               "objectGroups": []
@@ -9676,6 +12714,104 @@
                   "name": "Object",
                   "supplementaryInformation": "Action_Scene::MyObject",
                   "type": "object"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "Check_Enabled",
+              "sentence": "_PARAM0_ enabled = _PARAM1_",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Enabled",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Action_Start_Button"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                      },
+                      "parameters": [
+                        "Action_Start_Button",
+                        "",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Enabled",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "Action_Start_Button",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                      },
+                      "parameters": [
+                        "Action_Start_Button",
+                        "yes",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": []
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "supplementaryInformation": "Action_Scene::MyObject",
+                  "type": "object"
+                },
+                {
+                  "description": "Enabled",
+                  "name": "Enabled",
+                  "type": "expression"
                 }
               ],
               "objectGroups": []
