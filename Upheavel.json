@@ -730,7 +730,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.546875,
+        "zoomFactor": 0.870023285985729,
         "windowMask": false
       },
       "objectsGroups": [
@@ -1082,7 +1082,7 @@
         {
           "assetStoreId": "",
           "name": "ActionCountDisplay",
-          "type": "ActionCountDisplay::MyObject",
+          "type": "ActionCountDisplay::ActionCountDisplay",
           "variant": "",
           "variables": [],
           "effects": [],
@@ -1092,7 +1092,7 @@
         {
           "assetStoreId": "",
           "name": "Action",
-          "type": "Action_Scene::MyObject",
+          "type": "Action::Action",
           "variant": "",
           "variables": [
             {
@@ -1797,7 +1797,7 @@
             },
             {
               "type": {
-                "value": "ActionCountDisplay::MyObject::Update_Values"
+                "value": "ActionCountDisplay::ActionCountDisplay::Update_Values"
               },
               "parameters": [
                 "ActionCountDisplay",
@@ -1874,7 +1874,7 @@
               "actions": [
                 {
                   "type": {
-                    "value": "Action_Scene::MyObject::Set_Text"
+                    "value": "Action::Action::Set_Text"
                   },
                   "parameters": [
                     "Actions",
@@ -1885,7 +1885,7 @@
                 },
                 {
                   "type": {
-                    "value": "Action_Scene::MyObject::Set_ID"
+                    "value": "Action::Action::Set_ID"
                   },
                   "parameters": [
                     "Actions",
@@ -1895,7 +1895,7 @@
                 },
                 {
                   "type": {
-                    "value": "Action_Scene::MyObject::Set_Color"
+                    "value": "Action::Action::Set_Color"
                   },
                   "parameters": [
                     "Actions",
@@ -2013,7 +2013,7 @@
           "conditions": [
             {
               "type": {
-                "value": "Action_Scene::MyObject::Button_Pressed"
+                "value": "Action::Action::Button_Pressed"
               },
               "parameters": [
                 "Actions",
@@ -2109,7 +2109,7 @@
                     },
                     {
                       "type": {
-                        "value": "ActionCountDisplay::MyObject::Update_Values"
+                        "value": "ActionCountDisplay::ActionCountDisplay::Update_Values"
                       },
                       "parameters": [
                         "ActionCountDisplay",
@@ -2121,7 +2121,7 @@
                     },
                     {
                       "type": {
-                        "value": "Action_Scene::MyObject::Set_Active"
+                        "value": "Action::Action::Set_Active"
                       },
                       "parameters": [
                         "Action",
@@ -2199,7 +2199,7 @@
                 },
                 {
                   "type": {
-                    "value": "ActionCountDisplay::MyObject::Update_Values"
+                    "value": "ActionCountDisplay::ActionCountDisplay::Update_Values"
                   },
                   "parameters": [
                     "ActionCountDisplay",
@@ -2211,7 +2211,7 @@
                 },
                 {
                   "type": {
-                    "value": "Action_Scene::MyObject::Set_Active"
+                    "value": "Action::Action::Set_Active"
                   },
                   "parameters": [
                     "Action",
@@ -3252,9 +3252,9 @@
           "effects": [],
           "behaviors": [
             {
-              "checkCollisionMask": true,
               "name": "Draggable",
-              "type": "DraggableBehavior::Draggable"
+              "type": "DraggableBehavior::Draggable",
+              "checkCollisionMask": true
             }
           ],
           "content": {}
@@ -5270,11 +5270,11 @@
           "areaMinX": 0,
           "areaMinY": 0,
           "areaMinZ": 0,
-          "defaultName": "",
+          "defaultName": "ActionCountDisplay",
           "description": "",
-          "fullName": "",
+          "fullName": "ActionCountDisplay",
           "isUsingLegacyInstancesRenderer": false,
-          "name": "MyObject",
+          "name": "ActionCountDisplay",
           "objects": [
             {
               "assetStoreId": "",
@@ -5561,7 +5561,7 @@
                 {
                   "description": "Object",
                   "name": "Object",
-                  "supplementaryInformation": "ActionCountDisplay::MyObject",
+                  "supplementaryInformation": "ActionCountDisplay::ActionCountDisplay",
                   "type": "object"
                 },
                 {
@@ -5614,7 +5614,7 @@
                 {
                   "description": "Object",
                   "name": "Object",
-                  "supplementaryInformation": "ActionCountDisplay::MyObject",
+                  "supplementaryInformation": "ActionCountDisplay::ActionCountDisplay",
                   "type": "object"
                 }
               ],
@@ -5634,7 +5634,7 @@
       "gdevelopVersion": "",
       "helpPath": "",
       "iconUrl": "",
-      "name": "Action_Scene",
+      "name": "Action",
       "previewIconUrl": "",
       "shortDescription": "",
       "version": "",
@@ -5660,11 +5660,11 @@
           "areaMinX": 0,
           "areaMinY": 0,
           "areaMinZ": 0,
-          "defaultName": "",
+          "defaultName": "Action",
           "description": "",
-          "fullName": "",
+          "fullName": "ActionScene",
           "isUsingLegacyInstancesRenderer": false,
-          "name": "MyObject",
+          "name": "Action",
           "objects": [
             {
               "assetStoreId": "",
@@ -6054,7 +6054,7 @@
                 {
                   "description": "Object",
                   "name": "Object",
-                  "supplementaryInformation": "Action_Scene::MyObject",
+                  "supplementaryInformation": "Action::Action",
                   "type": "object"
                 }
               ],
@@ -6087,7 +6087,7 @@
                 {
                   "description": "Object",
                   "name": "Object",
-                  "supplementaryInformation": "Action_Scene::MyObject",
+                  "supplementaryInformation": "Action::Action",
                   "type": "object"
                 },
                 {
@@ -6125,7 +6125,7 @@
                 {
                   "description": "Object",
                   "name": "Object",
-                  "supplementaryInformation": "Action_Scene::MyObject",
+                  "supplementaryInformation": "Action::Action",
                   "type": "object"
                 },
                 {
@@ -6175,7 +6175,7 @@
                 {
                   "description": "Object",
                   "name": "Object",
-                  "supplementaryInformation": "Action_Scene::MyObject",
+                  "supplementaryInformation": "Action::Action",
                   "type": "object"
                 },
                 {
@@ -6239,7 +6239,7 @@
                 {
                   "description": "Object",
                   "name": "Object",
-                  "supplementaryInformation": "Action_Scene::MyObject",
+                  "supplementaryInformation": "Action::Action",
                   "type": "object"
                 }
               ],
