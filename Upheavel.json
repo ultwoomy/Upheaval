@@ -246,6 +246,46 @@
         "name": "arrow2.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "disablePreload": false,
+        "file": "assets/Tutorial_Reincarnation.json",
+        "kind": "json",
+        "metadata": "{\"extension\":\".json\",\"localFilePath\":\"assets/Tutorial_Reincarnation.json\"}",
+        "name": "Tutorial_Reincarnation",
+        "userAdded": false
+      },
+      {
+        "file": "accountant2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "accountant2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "pink_slim.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "pink_slim.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "pink_slim2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "pink_slim2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "pink_slim3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "pink_slim3.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -315,11 +355,24 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "name": "Dialogue_Container",
+      "type": "Dialogue_Container::Dialogue_Container",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {}
     }
   ],
   "objectsFolderStructure": {
     "folderName": "__ROOT",
     "children": [
+      {
+        "objectName": "Dialogue_Container"
+      },
       {
         "objectName": "GreySquare"
       }
@@ -348,7 +401,6 @@
       "value": 0
     },
     {
-      "folded": true,
       "name": "Enemies",
       "type": "structure",
       "children": [
@@ -358,7 +410,7 @@
           "children": [
             {
               "type": "number",
-              "value": 10
+              "value": 1
             },
             {
               "type": "number",
@@ -379,6 +431,36 @@
             {
               "type": "number",
               "value": 70
+            }
+          ]
+        },
+        {
+          "name": "DialogueLength",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 6
+            },
+            {
+              "type": "number",
+              "value": 8
+            },
+            {
+              "type": "number",
+              "value": 5
+            },
+            {
+              "type": "number",
+              "value": 8
+            },
+            {
+              "type": "number",
+              "value": 3
+            },
+            {
+              "type": "number",
+              "value": 0
             }
           ]
         },
@@ -443,6 +525,36 @@
           ]
         },
         {
+          "name": "Passives",
+          "type": "array",
+          "children": [
+            {
+              "type": "string",
+              "value": "Reduce the strength gain of all actions by 5%"
+            },
+            {
+              "type": "string",
+              "value": "Increase own strength by 5 per day"
+            },
+            {
+              "type": "string",
+              "value": "Reduce your strength by 1% a day"
+            },
+            {
+              "type": "string",
+              "value": "Halve the strength gain of all sword actions"
+            },
+            {
+              "type": "string",
+              "value": "All non weapon actions reduce strength gain instead"
+            },
+            {
+              "type": "string",
+              "value": "Disable your first 3 actions"
+            }
+          ]
+        },
+        {
           "name": "Strength",
           "type": "array",
           "children": [
@@ -452,7 +564,7 @@
             },
             {
               "type": "number",
-              "value": 70
+              "value": 20
             },
             {
               "type": "number",
@@ -484,6 +596,7 @@
       "type": "structure",
       "children": [
         {
+          "folded": true,
           "name": "Description",
           "type": "array",
           "children": [
@@ -497,7 +610,7 @@
             },
             {
               "type": "string",
-              "value": "Multiply sword strength gain by 2. Disable this action"
+              "value": "Multiply sword strength gain by 3. Disable this action"
             },
             {
               "type": "string",
@@ -529,7 +642,7 @@
             },
             {
               "type": "string",
-              "value": "Increase base strength by 5"
+              "value": "Increase base strength by 10"
             },
             {
               "type": "string",
@@ -538,6 +651,7 @@
           ]
         },
         {
+          "folded": true,
           "name": "Enabled",
           "type": "array",
           "children": [
@@ -647,7 +761,60 @@
           ]
         },
         {
-          "folded": true,
+          "name": "Purchasable",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 0
+            },
+            {
+              "type": "number",
+              "value": 0
+            }
+          ]
+        },
+        {
           "name": "Unlocked",
           "type": "array",
           "children": [
@@ -778,6 +945,21 @@
       "name": "PermanentStrengthMult",
       "type": "number",
       "value": 1
+    },
+    {
+      "name": "ReincarnationTutorialCompletion",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "LossText",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "ActionUnlocked",
+      "type": "boolean",
+      "value": false
     }
   ],
   "layouts": [
@@ -912,6 +1094,7 @@
           "value": 1
         },
         {
+          "folded": true,
           "name": "TalismanEffect",
           "type": "structure",
           "children": [
@@ -926,6 +1109,21 @@
               "value": 15
             }
           ]
+        },
+        {
+          "name": "EnemySwordStrengthMult",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "DialogueSprite",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "Variable",
+          "type": "number",
+          "value": 0
         }
       ],
       "instances": [
@@ -1214,19 +1412,26 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 21,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Enemy_Passive",
+          "persistentUuid": "fcd3580a-d69e-4a20-983c-8b8e6d82dd9b",
+          "width": 471,
+          "x": 784,
+          "y": 100,
+          "zOrder": 19,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
-        {
-          "assetStoreId": "",
-          "name": "Dialogue_Container",
-          "type": "Dialogue_Container::Dialogue_Container",
-          "variant": "",
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "content": {}
-        },
         {
           "assetStoreId": "",
           "name": "Settings_Bar",
@@ -1876,6 +2081,48 @@
             "characterSize": 24,
             "color": "0;0;0"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "Enemy_Passive",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Passive Effect: ",
+          "font": "assets\\Xolonium-Regular.ttf",
+          "textAlignment": "left",
+          "characterSize": 16,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Passive Effect: ",
+            "font": "assets\\Xolonium-Regular.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 16,
+            "color": "255;255;255"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -1930,7 +2177,7 @@
             "objectName": "Settings_Bar"
           },
           {
-            "objectName": "Dialogue_Container"
+            "objectName": "Enemy_Passive"
           }
         ]
       },
@@ -2187,6 +2434,17 @@
                 "=",
                 "\"Fight Day: \" + NewLine() + Enemies.Deadline[CurrentEnemy]"
               ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Enemy_Passive",
+                "Text",
+                "=",
+                "\"Passive: \" + Enemies.Passives[CurrentEnemy]"
+              ]
             }
           ]
         },
@@ -2273,6 +2531,100 @@
                   "conditions": [
                     {
                       "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Enemies.Name[CurrentEnemy]",
+                        "=",
+                        "\"Mercenary Ying\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "TalismanEffect.Active",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "EnemySwordStrengthMult",
+                        "=",
+                        "0.5"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BooleanVariable"
+                          },
+                          "parameters": [
+                            "TalismanEffect.Active",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "EnemySwordStrengthMult",
+                            "=",
+                            "1"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Enemies.Name[CurrentEnemy]",
+                        "=",
+                        "\"Mercenary Ying\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "EnemySwordStrengthMult",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
                         "value": "NumberVariable"
                       },
                       "parameters": [
@@ -2300,7 +2652,7 @@
                       "parameters": [
                         "TempStrength",
                         "+",
-                        "(1 + WeaponActionsGainAdd) * SwordStrengthGainMult"
+                        "(1 + WeaponActionsGainAdd) * SwordStrengthGainMult * EnemySwordStrengthMult"
                       ]
                     }
                   ]
@@ -2374,7 +2726,7 @@
                       "parameters": [
                         "SwordStrengthGainMult",
                         "*",
-                        "2"
+                        "3"
                       ]
                     },
                     {
@@ -2718,19 +3070,9 @@
                         "value": "SetNumberVariable"
                       },
                       "parameters": [
-                        "EnemyStrengthMult",
-                        "=",
-                        "0.9"
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "ActionInfo.Enabled[10]",
-                        "False",
-                        ""
+                        "TempStrength",
+                        "+",
+                        "10 * SwordStrengthGainMult * EnemySwordStrengthMult"
                       ]
                     }
                   ]
@@ -2778,6 +3120,117 @@
                         "ActionInfo.Enabled[11]",
                         "False",
                         ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Enemies.Name[CurrentEnemy]",
+                        "=",
+                        "\"Shu The Accountant\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "TalismanEffect.Active",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "TempStrength",
+                        "*",
+                        "0.95"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Enemies.Name[CurrentEnemy]",
+                        "=",
+                        "\"Fiery Chicken Ji\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "TalismanEffect.Active",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "EnemyStrengthAdd",
+                        "+",
+                        "5"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Enemies.Name[CurrentEnemy]",
+                        "=",
+                        "\"Hunter Yong\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "TalismanEffect.Active",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Strength",
+                        "*",
+                        "0.99"
                       ]
                     }
                   ]
@@ -3329,23 +3782,11 @@
               "actions": [
                 {
                   "type": {
-                    "value": "SetStringVariable"
+                    "value": "SetBooleanVariable"
                   },
                   "parameters": [
-                    "VictoryStatus",
-                    "=",
-                    "\"lose\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Create"
-                  },
-                  "parameters": [
-                    "",
-                    "Lose_Background",
-                    "0",
-                    "0",
+                    "LossText",
+                    "True",
                     ""
                   ]
                 }
@@ -3383,58 +3824,32 @@
                 "value": "Delete"
               },
               "parameters": [
-                "Lose_Background",
+                "Winner_Background",
                 ""
               ]
             },
             {
               "type": {
-                "value": "Delete"
+                "value": "SetNumberVariable"
               },
               "parameters": [
-                "Winner_Background",
-                ""
+                "EnemyStrengthMult",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "EnemyStrengthAdd",
+                "=",
+                "0"
               ]
             }
           ],
           "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "StringVariable"
-                  },
-                  "parameters": [
-                    "VictoryStatus",
-                    "=",
-                    "\"lose\""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetStringVariable"
-                  },
-                  "parameters": [
-                    "VictoryStatus",
-                    "=",
-                    "\"na\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "Scene"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Reincarnation Scene\"",
-                    ""
-                  ]
-                }
-              ]
-            },
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
@@ -3477,7 +3892,7 @@
                   "parameters": [
                     "Coins",
                     "+",
-                    "CurrentEnemy"
+                    "CurrentEnemy + 1"
                   ]
                 },
                 {
@@ -3514,46 +3929,100 @@
                 "value": "DialogueTree::IsDialogueRunning"
               },
               "parameters": []
-            },
-            {
-              "type": {
-                "value": "BooleanVariable"
-              },
-              "parameters": [
-                "TutorialCompletion",
-                "=",
-                ""
-              ]
             }
           ],
-          "actions": [
+          "actions": [],
+          "events": [
             {
-              "type": {
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "Dialogue_Container",
-                "200",
-                "500",
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "TutorialCompletion",
+                    "=",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Dialogue_Container",
+                    "200",
+                    "500",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Scroll_Text\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DialogueTree::StartDialogueFromBranch"
+                  },
+                  "parameters": [
+                    "\"Tutorial\""
+                  ]
+                }
               ]
             },
             {
-              "type": {
-                "value": "ResetTimer"
-              },
-              "parameters": [
-                "",
-                "\"Scroll_Text\""
-              ]
-            },
-            {
-              "type": {
-                "value": "DialogueTree::StartDialogueFromBranch"
-              },
-              "parameters": [
-                "\"Tutorial\""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "LossText",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "Dialogue_Container",
+                    "200",
+                    "500",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Scroll_Text\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DialogueTree::StartDialogueFromBranch"
+                  },
+                  "parameters": [
+                    "\"Loss\" + ToString(CurrentEnemy)"
+                  ]
+                }
               ]
             }
           ]
@@ -3570,70 +4039,11 @@
               ]
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "value": "Dialogue_Container::Dialogue_Container::Set_Text"
-              },
-              "parameters": [
-                "Dialogue_Container",
-                "DialogueTree::ClippedLineText()",
-                ""
-              ]
-            }
-          ],
+          "actions": [],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
-                {
-                  "type": {
-                    "value": "CompareTimer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Scroll_Text\"",
-                    ">=",
-                    "TextScrollSpeed"
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "DialogueTree::ScrollClippedText"
-                  },
-                  "parameters": []
-                },
-                {
-                  "type": {
-                    "value": "ResetTimer"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Scroll_Text\""
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "MouseButtonFromTextPressed"
-                  },
-                  "parameters": [
-                    "",
-                    "\"Left\""
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "DialogueTree::HasClippedTextScrollingCompleted"
-                  },
-                  "parameters": []
-                },
                 {
                   "type": {
                     "value": "BooleanVariable"
@@ -3645,39 +4055,41 @@
                   ]
                 }
               ],
-              "actions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                  },
+                  "parameters": [
+                    "Dialogue_Container",
+                    "DialogueTree::ClippedLineText()",
+                    "\"Di\"",
+                    ""
+                  ]
+                }
+              ],
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
                       "type": {
-                        "value": "DialogueTree::WasBranchVisited"
+                        "value": "CompareTimer"
                       },
                       "parameters": [
-                        "\"Tutorial8\""
+                        "",
+                        "\"Scroll_Text\"",
+                        ">=",
+                        "TextScrollSpeed"
                       ]
                     }
                   ],
                   "actions": [
                     {
                       "type": {
-                        "value": "Delete"
+                        "value": "DialogueTree::ScrollClippedText"
                       },
-                      "parameters": [
-                        "Dialogue_Container",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "TutorialCompletion",
-                        "True",
-                        ""
-                      ]
+                      "parameters": []
                     },
                     {
                       "type": {
@@ -3685,7 +4097,7 @@
                       },
                       "parameters": [
                         "",
-                        "\"Time Counter\""
+                        "\"Scroll_Text\""
                       ]
                     }
                   ]
@@ -3695,20 +4107,399 @@
                   "conditions": [
                     {
                       "type": {
-                        "inverted": true,
-                        "value": "DialogueTree::WasBranchVisited"
+                        "value": "MouseButtonFromTextPressed"
                       },
                       "parameters": [
-                        "\"Tutorial8\""
+                        "",
+                        "\"Left\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "DialogueTree::HasClippedTextScrollingCompleted"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "DialogueTree::WasBranchVisited"
+                          },
+                          "parameters": [
+                            "\"Tutorial8\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Delete"
+                          },
+                          "parameters": [
+                            "Dialogue_Container",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "TutorialCompletion",
+                            "True",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "ResetTimer"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Time Counter\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "DialogueTree::StopRunningDialogue"
+                          },
+                          "parameters": []
+                        },
+                        {
+                          "type": {
+                            "value": "DialogueTree::ClearState"
+                          },
+                          "parameters": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "DialogueTree::WasBranchVisited"
+                          },
+                          "parameters": [
+                            "\"Tutorial8\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "DialogueTree::GoToNextLine"
+                          },
+                          "parameters": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "LossText",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "DialogueSprite",
+                        "=",
+                        "0"
                       ]
                     }
                   ],
                   "actions": [
                     {
                       "type": {
-                        "value": "DialogueTree::GoToNextLine"
+                        "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                      },
+                      "parameters": [
+                        "Dialogue_Container",
+                        "DialogueTree::ClippedLineText()",
+                        "\"Di\"",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "DialogueSprite",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                      },
+                      "parameters": [
+                        "Dialogue_Container",
+                        "DialogueTree::ClippedLineText()",
+                        "\"Accountant\"",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "CompareTimer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Scroll_Text\"",
+                        ">=",
+                        "TextScrollSpeed"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "DialogueTree::ScrollClippedText"
                       },
                       "parameters": []
+                    },
+                    {
+                      "type": {
+                        "value": "ResetTimer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Scroll_Text\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonFromTextPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Left\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "DialogueTree::HasClippedTextScrollingCompleted"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "DialogueTree::WasBranchVisited"
+                          },
+                          "parameters": [
+                            "\"Loss\" + ToString(CurrentEnemy) + \"\" + ToString(Enemies.DialogueLength[CurrentEnemy])"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Delete"
+                          },
+                          "parameters": [
+                            "Dialogue_Container",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "LossText",
+                            "False",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "DialogueTree::StopRunningDialogue"
+                          },
+                          "parameters": []
+                        },
+                        {
+                          "type": {
+                            "value": "DialogueTree::ClearState"
+                          },
+                          "parameters": []
+                        },
+                        {
+                          "type": {
+                            "value": "Scene"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Reincarnation Scene\"",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "DialogueTree::WasBranchVisited"
+                          },
+                          "parameters": [
+                            "\"Loss\" + ToString(CurrentEnemy) + \"\" + ToString(Enemies.DialogueLength[CurrentEnemy])"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "DialogueTree::GoToNextLine"
+                          },
+                          "parameters": []
+                        }
+                      ],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "DialogueSprite",
+                                "=",
+                                "0"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "DialogueSprite",
+                                "=",
+                                "CurrentEnemy + 1"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "Variable",
+                                "=",
+                                "1"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "DialogueSprite",
+                                "=",
+                                "0"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "NumberVariable"
+                              },
+                              "parameters": [
+                                "Variable",
+                                "=",
+                                "0"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "DialogueSprite",
+                                "=",
+                                "0"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "Variable",
+                                "=",
+                                "0"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
@@ -3920,7 +4711,6 @@
       ],
       "variables": [
         {
-          "folded": true,
           "name": "Cost",
           "type": "array",
           "children": [
@@ -4028,6 +4818,16 @@
           "name": "EquippedActions",
           "type": "array",
           "children": []
+        },
+        {
+          "name": "TextScrollSpeed",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "TutorialSprite",
+          "type": "string",
+          "value": "Id"
         }
       ],
       "instances": [
@@ -4499,6 +5299,22 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "UpdateNotice",
+          "persistentUuid": "cb24b6d1-8665-4333-91d2-00f71009be35",
+          "width": 0,
+          "x": 380,
+          "y": 187,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -4519,7 +5335,18 @@
           "variant": "",
           "variables": [],
           "effects": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "ButtonFSM",
+              "type": "ButtonStates::ButtonFSM",
+              "ShouldCheckHovering": true,
+              "State": "Idle",
+              "TouchId": 0,
+              "TouchIsInside": false,
+              "MouseIsInside": false,
+              "Index": 2.0247e-320
+            }
+          ],
           "content": {}
         },
         {
@@ -4991,6 +5818,48 @@
             "characterSize": 24,
             "color": "255;255;255"
           }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "UpdateNotice",
+          "smoothed": true,
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "A new action is purchasable in the shop.",
+          "font": "assets\\Xolonium-Regular.ttf",
+          "textAlignment": "left",
+          "characterSize": 24,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "A new action is purchasable in the shop.",
+            "font": "assets\\Xolonium-Regular.ttf",
+            "textAlignment": "left",
+            "verticalTextAlignment": "top",
+            "characterSize": 24,
+            "color": "255;255;255"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -5021,6 +5890,9 @@
             "objectName": "Reincarnation_Back"
           },
           {
+            "objectName": "UpdateNotice"
+          },
+          {
             "objectName": "Upgrades"
           },
           {
@@ -5033,7 +5905,6 @@
       },
       "events": [
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -5069,6 +5940,15 @@
                 "50",
                 "50",
                 ""
+              ]
+            },
+            {
+              "type": {
+                "value": "DialogueTree::LoadDialogueFromJsonFile"
+              },
+              "parameters": [
+                "",
+                "Tutorial_Reincarnation"
               ]
             }
           ],
@@ -5216,6 +6096,7 @@
                         "Cost[Index]",
                         "ActionInfo.Unlocked[Index]",
                         "Index",
+                        "ActionInfo.Purchasable[Index]",
                         ""
                       ]
                     },
@@ -5322,6 +6203,58 @@
                     "Upgrades_Panel",
                     "UpgradesInfo.Cost[0]",
                     "UpgradesInfo.Cost[1]",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "ActionUnlocked",
+                    "True",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Montre"
+                  },
+                  "parameters": [
+                    "UpdateNotice",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "ActionUnlocked",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "UpdateNotice",
                     ""
                   ]
                 }
@@ -7260,6 +8193,7 @@
                         "Cost[Index]",
                         "ActionInfo.Unlocked[Index]",
                         "Index",
+                        "ActionInfo.Purchasable[Index]",
                         ""
                       ]
                     },
@@ -7402,6 +8336,16 @@
               },
               "parameters": [
                 "Reincarnation_Back",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "ReincarnationTutorialCompletion",
+                "True",
                 ""
               ]
             }
@@ -7744,13 +8688,7 @@
                 "=",
                 "\"Coins: \" + Coins"
               ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
+            },
             {
               "type": {
                 "value": "SetNumberVariable"
@@ -7759,6 +8697,369 @@
                 "Temp",
                 "=",
                 "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Dialogue"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "DialogueTree::IsDialogueRunning"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "ReincarnationTutorialCompletion",
+                "=",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Dialogue_Container",
+                "200",
+                "500",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Scroll_Text\""
+              ]
+            },
+            {
+              "type": {
+                "value": "DialogueTree::StartDialogueFromBranch"
+              },
+              "parameters": [
+                "\"TutorialB\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DialogueTree::IsDialogueLineType"
+              },
+              "parameters": [
+                "\"text\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+              },
+              "parameters": [
+                "Dialogue_Container",
+                "DialogueTree::ClippedLineText()",
+                "TutorialSprite",
+                ""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Scroll_Text\"",
+                    ">=",
+                    "TextScrollSpeed"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "DialogueTree::ScrollClippedText"
+                  },
+                  "parameters": []
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Scroll_Text\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DialogueTree::HasClippedTextScrollingCompleted"
+                  },
+                  "parameters": []
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "ReincarnationTutorialCompletion",
+                    "=",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "DialogueTree::WasBranchVisited"
+                      },
+                      "parameters": [
+                        "\"Tutorial13B\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Dialogue_Container",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "ReincarnationTutorialCompletion",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "DialogueTree::StopRunningDialogue"
+                      },
+                      "parameters": []
+                    },
+                    {
+                      "type": {
+                        "value": "DialogueTree::ClearState"
+                      },
+                      "parameters": []
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "DialogueTree::WasBranchVisited"
+                      },
+                      "parameters": [
+                        "\"Tutorial13B\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "DialogueTree::GoToNextLine"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "TutorialSprite",
+                            "=",
+                            "\"Id\""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetStringVariable"
+                          },
+                          "parameters": [
+                            "TutorialSprite",
+                            "=",
+                            "\"Di\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "Temp",
+                            "False",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "StringVariable"
+                          },
+                          "parameters": [
+                            "TutorialSprite",
+                            "=",
+                            "\"Di\""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "BooleanVariable"
+                          },
+                          "parameters": [
+                            "Temp",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetStringVariable"
+                          },
+                          "parameters": [
+                            "TutorialSprite",
+                            "=",
+                            "\"Id\""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "variables": [
+                {
+                  "name": "Temp",
+                  "type": "boolean",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TextScrollSpeed",
+                    "=",
+                    "0.01"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "MouseButtonFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TextScrollSpeed",
+                    "=",
+                    "0.03"
+                  ]
+                }
               ]
             }
           ]
@@ -9761,7 +11062,7 @@
               "fullName": "Set Text",
               "functionType": "Action",
               "name": "Set_Text",
-              "sentence": "Init _PARAM0_ text (_PARAM1_,_PARAM2_,_PARAM3_,_PARAM4_)",
+              "sentence": "Init _PARAM0_ text (_PARAM1_,_PARAM2_,_PARAM3_,_PARAM4_,_PARAM5_)",
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
@@ -9887,8 +11188,8 @@
                             "value": "NumberVariable"
                           },
                           "parameters": [
-                            "cost",
-                            ">=",
+                            "buyable",
+                            "!=",
                             "0"
                           ]
                         }
@@ -9933,8 +11234,8 @@
                             "value": "NumberVariable"
                           },
                           "parameters": [
-                            "cost",
-                            "<",
+                            "buyable",
+                            "=",
                             "0"
                           ]
                         }
@@ -10072,6 +11373,11 @@
                 {
                   "description": "Id",
                   "name": "id",
+                  "type": "expression"
+                },
+                {
+                  "description": "buyable",
+                  "name": "buyable",
                   "type": "expression"
                 }
               ],
@@ -10902,6 +12208,126 @@
                   ]
                 }
               ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "Accountant",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "accountant2.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 128,
+                                "y": 140
+                              },
+                              {
+                                "x": 549,
+                                "y": 140
+                              },
+                              {
+                                "x": 549,
+                                "y": 492
+                              },
+                              {
+                                "x": 128,
+                                "y": 492
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "Id",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "pink_slim3.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 14,
+                                "y": 14
+                              },
+                              {
+                                "x": 372,
+                                "y": 14
+                              },
+                              {
+                                "x": 372,
+                                "y": 193
+                              },
+                              {
+                                "x": 14,
+                                "y": 193
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ],
           "objectsFolderStructure": {
@@ -10918,10 +12344,31 @@
               },
               {
                 "objectName": "Di"
+              },
+              {
+                "objectName": "Accountant"
+              },
+              {
+                "objectName": "Id"
               }
             ]
           },
-          "objectsGroups": [],
+          "objectsGroups": [
+            {
+              "name": "Sprites",
+              "objects": [
+                {
+                  "name": "Di"
+                },
+                {
+                  "name": "Accountant"
+                },
+                {
+                  "name": "Id"
+                }
+              ]
+            }
+          ],
           "layers": [
             {
               "ambientLightColorB": 200,
@@ -11019,6 +12466,40 @@
               "numberProperties": [],
               "stringProperties": [],
               "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 0,
+              "height": 233.33333333333337,
+              "keepRatio": true,
+              "layer": "",
+              "name": "Accountant",
+              "persistentUuid": "55481a6a-21a2-4d9c-ad42-f6b1ecea07d5",
+              "width": 200,
+              "x": -231,
+              "y": -30,
+              "zOrder": 23,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": true,
+              "depth": 0,
+              "height": 112.91139240506328,
+              "keepRatio": true,
+              "layer": "",
+              "name": "Id",
+              "persistentUuid": "01dff15f-4eaa-4c8d-a1e7-c521cab0a9d4",
+              "width": 200,
+              "x": -214,
+              "y": 28,
+              "zOrder": 24,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
             }
           ],
           "eventsFunctions": [
@@ -11026,7 +12507,7 @@
               "fullName": "",
               "functionType": "Action",
               "name": "Set_Text",
-              "sentence": "_PARAM0_ text set to _PARAM1_",
+              "sentence": "_PARAM0_ text set to _PARAM1_, sprite _PARAM2_",
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::Standard",
@@ -11042,6 +12523,92 @@
                         "=",
                         "Text"
                       ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Sprites"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Char",
+                        "=",
+                        "\"Di\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "Di",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Char",
+                        "=",
+                        "\"Accountant\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "Accountant",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Char",
+                        "=",
+                        "\"Id\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "Id",
+                        ""
+                      ]
                     }
                   ]
                 }
@@ -11056,6 +12623,11 @@
                 {
                   "description": "Text",
                   "name": "Text",
+                  "type": "string"
+                },
+                {
+                  "description": "Char",
+                  "name": "Char",
                   "type": "string"
                 }
               ],

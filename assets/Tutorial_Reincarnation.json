@@ -1,0 +1,132 @@
+[
+	{
+		"title": "TutorialB",
+		"tags": "",
+		"body": "Heh, kicked the bucket already huh?[[Answer:Tutorial2|Tutorial2B]]",
+		"position": {
+			"x": 513,
+			"y": 355
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial2B",
+		"tags": "",
+		"body": "Huh? Why are you me? Where am I? [[Answer:Tutorial3|Tutorial3B]]",
+		"position": {
+			"x": 515,
+			"y": 125
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial3B",
+		"tags": "",
+		"body": "I'm Id, and this is your afterlife. [[Answer:Tutorial4|Tutorial4B]]",
+		"position": {
+			"x": 515,
+			"y": -101
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial4B",
+		"tags": "",
+		"body": "I'm dead? Finished? Kaput?[[Answer:Tutorial5|Tutorial5B]]",
+		"position": {
+			"x": 513,
+			"y": -323
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial5B",
+		"tags": "",
+		"body": "Don't worry you'll get another chance. First let me explain how you can get stronger. [[Answer:Tutorial6|Tutorial6B]]",
+		"position": {
+			"x": 517,
+			"y": -539
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial6B",
+		"tags": "",
+		"body": "So I never got to be the strongest warrior... How irritating![[Answer:Tutorial7|Tutorial7B]]",
+		"position": {
+			"x": 508,
+			"y": -756
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial7B",
+		"tags": "",
+		"body": "You get coins for beating up enemies. You can spend those in the shop to buy actions. Drag and drop any unlocked actions you have into your equipped actions on the left.[[Answer:Tutorial8|Tutorial8B]]",
+		"position": {
+			"x": 519,
+			"y": -966
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial8B",
+		"tags": "",
+		"body": "Died to the first duelist... unacceptable! [[Answer:Tutorial9|Tutorial9B]]",
+		"position": {
+			"x": 507,
+			"y": -1190
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial9B",
+		"tags": "",
+		"body": "The first action is free. You'll need it to defeat the accountant. You can also spend some coin on upgrades. The one that increases the maximum number of actions you can run at once is pretty important. [[Answer:Tutorial10|Tutorial10B]]",
+		"position": {
+			"x": 503,
+			"y": -1410
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial10B",
+		"tags": "",
+		"body": "I cannot accept a death like this. I must break free from this hell and begin my warriors journey anew! [[Answer:Tutorial11|Tutorial11B]]",
+		"position": {
+			"x": 495,
+			"y": -1647
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial11B",
+		"tags": "",
+		"body": "Haven't you been listening? I've been telling you how to leave stronger! Sheesh, just remember to equip that free action alright? The arrows at the bottom of the shop will show you more options to buy from! [[Answer:Tutorial12|Tutorial12B]]",
+		"position": {
+			"x": 488,
+			"y": -1878
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial12B",
+		"tags": "",
+		"body": "You got all that, right player? Kit me up and send me back with that arrow in the top left. [[Answer:Tutorial13|Tutorial13B]]",
+		"position": {
+			"x": 498,
+			"y": -2109
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Tutorial13B",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": 545,
+			"y": -2347
+		},
+		"colorID": 0
+	}
+]

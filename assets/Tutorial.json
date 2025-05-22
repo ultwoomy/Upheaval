@@ -78,5 +78,355 @@
 			"y": -1325
 		},
 		"colorID": 0
+	},
+	{
+		"title": "Loss0",
+		"tags": "",
+		"body": "Kuh... You have bested me... bested me with your blade. [[Answer:Loss01|Loss01]]",
+		"position": {
+			"x": 866,
+			"y": 376
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss01",
+		"tags": "",
+		"body": "Right, I figured it wouldn't be too hard to win. Your lack of talent has always betrayed you. [[Answer:Loss02|Loss02]]",
+		"position": {
+			"x": 855,
+			"y": 141
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss02",
+		"tags": "",
+		"body": "But worry not, I have found a capable helper. Our next fight shall not be so easy! [[Answer:Loss03|Loss03]]",
+		"position": {
+			"x": 846,
+			"y": -99
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss03",
+		"tags": "",
+		"body": "Next? What? No, you die here. I can't die so soon so it has to be you. [[Answer:Loss04|Loss04]]",
+		"position": {
+			"x": 844,
+			"y": -359
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss04",
+		"tags": "",
+		"body": "...Huh? [[Answer:Loss05|Loss05]]",
+		"position": {
+			"x": 845,
+			"y": -613
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss05",
+		"tags": "",
+		"body": "Don't resent me too harshly. [[Answer:Loss06|Loss06]]",
+		"position": {
+			"x": 835,
+			"y": -881
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss06",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": 845,
+			"y": -1121
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss1",
+		"tags": "",
+		"body": "This chicken... too much... [[Answer:Loss11|Loss11]]",
+		"position": {
+			"x": 1124,
+			"y": 379
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss11",
+		"tags": "",
+		"body": "You were a worthy challenger, but you failed to properly take care of your hunger, and thus you have fallen. [[Answer:Loss12|Loss12]]",
+		"position": {
+			"x": 1114,
+			"y": 136
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss12",
+		"tags": "",
+		"body": "Are you going to kill me too? [[Answer:Loss13|Loss13]]",
+		"position": {
+			"x": 1104,
+			"y": -110
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss13",
+		"tags": "",
+		"body": "Of course. [[Answer:Loss14|Loss14]]",
+		"position": {
+			"x": 1108,
+			"y": -326
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss14",
+		"tags": "",
+		"body": "Why? There's no reason to go this far. [[Answer:Loss15|Loss15]]",
+		"position": {
+			"x": 1093,
+			"y": -602
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss15",
+		"tags": "",
+		"body": "You don't know? Then allow me to enlighten you. We must follow the mandate of Heaven's will, delivered to us by the Son of Heaven. To kill as many mortals as we can for a chance to be spared Heaven's wrath. [[Answer:Lose16|Lose16]]",
+		"position": {
+			"x": 1094,
+			"y": -878
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lose16",
+		"tags": "",
+		"body": "You're telling me that the reason everyone around me is embroiled in war is for such a dumb reason? [[Answer:Lose17|Lose17]]",
+		"position": {
+			"x": 1085,
+			"y": -1120
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lose17",
+		"tags": "",
+		"body": "To go against the will of the heavens is to court death, and I'm not quite ready to pass on. Goodbye, Di. [[Answer:Lose18|Lose18]]",
+		"position": {
+			"x": 1083,
+			"y": -1365
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Lose18",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": 1074,
+			"y": -1625
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss2",
+		"tags": "",
+		"body": "Wait wait wait, stop! [[Answer:Loss21|Loss21]]",
+		"position": {
+			"x": 1396,
+			"y": 374
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss21",
+		"tags": "",
+		"body": "Huh? What is it, I have to k-kill you now.[[Answer:Loss21|Loss22]]",
+		"position": {
+			"x": 1402,
+			"y": 126
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss22",
+		"tags": "",
+		"body": "But we don't have to! If we just join together, surely we can defy the heavens and survive together![[Answer:Loss21|Loss23]]",
+		"position": {
+			"x": 1395,
+			"y": -92
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss23",
+		"tags": "",
+		"body": "No way, there's no way. I'm nowhere near strong enough. Maybe if I was a hundred, no, a thousand times stronger I could have... maybe I... no, there's no point thinking.[[Answer:Loss21|Loss24]]",
+		"position": {
+			"x": 1407,
+			"y": -346
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss24",
+		"tags": "",
+		"body": "What if I was a hundred times stronger than I was now? Would you believe I could overthrow the heavens?[[Answer:Loss21|Loss25]]",
+		"position": {
+			"x": 1404,
+			"y": -609
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss25",
+		"tags": "",
+		"body": "I-I guess? Not that it matters. We're all weak, and we're all doomed. I'm probably coming after you anyway, so just return to the cycle of reincarnation quietly!",
+		"position": {
+			"x": 1388,
+			"y": -869
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss3",
+		"tags": "",
+		"body": "Ugh, forget it. Just finish me off already. [[Answer:Loss31|Loss31]]",
+		"position": {
+			"x": 1653,
+			"y": 377
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss31",
+		"tags": "",
+		"body": "You seem... oddly calm for someone about to lose their life.[[Answer:Loss31|Loss32]]",
+		"position": {
+			"x": 1654,
+			"y": 122
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss32",
+		"tags": "",
+		"body": "What does it matter what I tell you? You'll forget the next time I come here anyway.[[Answer:Loss31|Loss33]]",
+		"position": {
+			"x": 1660,
+			"y": -108
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss33",
+		"tags": "",
+		"body": "Next time huh... do you possibly know something greater about this mandate of heaven?[[Answer:Loss31|Loss34]]",
+		"position": {
+			"x": 1669,
+			"y": -342
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss34",
+		"tags": "",
+		"body": "I know about as much as you do, but the next time I fight you, I'll cut you down and reach this Son of Heaven. Then maybe there I'll figure out how to split apart the heavens.[[Answer:Loss31|Loss35]]",
+		"position": {
+			"x": 1660,
+			"y": -604
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss35",
+		"tags": "",
+		"body": "Your life still belongs to me, but if what you say about having multiple chances is true, then perhaps I can give you a gift to take along the way.[[Answer:Loss31|Loss36]]",
+		"position": {
+			"x": 1666,
+			"y": -872
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss36",
+		"tags": "",
+		"body": "Hm, what's that? I can't take any items with me, except these coins for some reason. If you want to give me anything, maybe you can give me more time to train.[[Answer:Loss31|Loss37]]",
+		"position": {
+			"x": 1661,
+			"y": -1108
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss37",
+		"tags": "",
+		"body": "I can't do that, you may be trying to trick me and escape. No, instead I'll teach you part of my swordsmanship. If you meet me in another life a thousand times stronger, then I'll teach you the whole thing. Until then, goodbye.[[Answer:Loss31|Loss38]]",
+		"position": {
+			"x": 1674,
+			"y": -1354
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss38",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": 1677,
+			"y": -1636
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss4",
+		"tags": "",
+		"body": "Those talismans are pretty tricky, ya gotta teach me how to use them.\n [[Answer:Loss41|Loss41]]",
+		"position": {
+			"x": 1926,
+			"y": 366
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss41",
+		"tags": "",
+		"body": "Enough talk you murderous slime! This is the end for you!\n [[Answer:Loss42|Loss42]]",
+		"position": {
+			"x": 1933,
+			"y": 136
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss42",
+		"tags": "",
+		"body": "Ugh, getting your skills are going to be tough huh. Well whatever, its nothing a little strength can't fix. See you next time. [[Answer:Loss43|Loss43]]",
+		"position": {
+			"x": 1934,
+			"y": -128
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss43",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": 1948,
+			"y": -377
+		},
+		"colorID": 0
 	}
 ]
