@@ -762,7 +762,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 2.3530036678721644,
+        "zoomFactor": 0.9296875000000014,
         "windowMask": false
       },
       "objectsGroups": [
@@ -790,6 +790,11 @@
           "name": "TextScrollSpeed",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "PreviousStrength",
+          "type": "number",
+          "value": -1
         }
       ],
       "instances": [
@@ -2648,7 +2653,7 @@
                 "textG": 0,
                 "textR": 0
               },
-              "comment": "!!!!!!! TODO: Figure out how to get the difference of previous strength to current strength\nMake Strength_Change_Visual delete itself using tween."
+              "comment": "@Strength Gain Text Visual\nWhenever the Player gains Strength, show how much they gained.\n(!) Could have the Tween be done in an object of Strength_Change_Visual."
             },
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -2667,14 +2672,47 @@
               "actions": [
                 {
                   "type": {
-                    "value": "SetNumberVariable"
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "StrengthGainTextValue",
+                    "=",
+                    "ToString(roundTo(Strength * StrengthMultiplierRest, 2))"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
                   },
                   "parameters": [
                     "PreviousStrength",
-                    "=",
-                    "roundTo(Strength * StrengthMultiplierRest, 2)"
+                    ">=",
+                    "0"
                   ]
-                },
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetStringVariable"
+                  },
+                  "parameters": [
+                    "StrengthGainTextValue",
+                    "=",
+                    "ToString(roundTo(Strength * StrengthMultiplierRest - PreviousStrength, 2))"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
                 {
                   "type": {
                     "value": "Create"
@@ -2695,7 +2733,45 @@
                     "Strength_Change_Visual",
                     "Text",
                     "=",
-                    "\"+\" + ToString(PreviousStrength)"
+                    "\"+\" + StrengthGainTextValue"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectPositionYTween2"
+                  },
+                  "parameters": [
+                    "Strength_Change_Visual",
+                    "Tween",
+                    "\"FloatAway\"",
+                    "Strength_Change_Visual.Y() - 25",
+                    "\"linear\"",
+                    "LifeSpan",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Tween::TweenBehavior::AddObjectOpacityTween2"
+                  },
+                  "parameters": [
+                    "Strength_Change_Visual",
+                    "Tween",
+                    "\"FadeAway\"",
+                    "0",
+                    "\"linear\"",
+                    "LifeSpan",
+                    "yes"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "PreviousStrength",
+                    "=",
+                    "roundTo(Strength * StrengthMultiplierRest, 2)"
                   ]
                 }
               ]
@@ -2703,9 +2779,14 @@
           ],
           "variables": [
             {
-              "name": "PreviousStrength",
+              "name": "LifeSpan",
               "type": "number",
-              "value": -1
+              "value": 3
+            },
+            {
+              "name": "StrengthGainTextValue",
+              "type": "string",
+              "value": "0"
             }
           ]
         },
