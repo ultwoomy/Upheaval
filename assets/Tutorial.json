@@ -428,5 +428,105 @@
 			"y": -377
 		},
 		"colorID": 0
+	},
+	{
+		"title": "Loss5",
+		"tags": "",
+		"body": "And so ends your tale, you upstart mortal. Your efforts to struggle against the flow are futile. Join your fallen comrades in death's embrace. [[Answer:Loss51|Loss51]]",
+		"position": {
+			"x": 2201,
+			"y": 357
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss51",
+		"tags": "",
+		"body": "Piece of shit... what even is the point of all this, this mandate, this killing. [[Answer:Loss52|Loss52]]",
+		"position": {
+			"x": 2209,
+			"y": 111
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss52",
+		"tags": "",
+		"body": "I merely execute heaven's will. There's no need to question what's beyond you. You lived longer than most ant, and be grateful, for you strength has bought you that time. [[Answer:Loss53|Loss53]]",
+		"position": {
+			"x": 2210,
+			"y": -129
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss53",
+		"tags": "",
+		"body": "Unacceptable answer, unacceptable world. I won't stand for this. Next time, next time you will fall. [[Answer:Loss54|Loss54]]",
+		"position": {
+			"x": 2221,
+			"y": -374
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss54",
+		"tags": "",
+		"body": "Ha! Good luck with that, killer star. [[Answer:Loss55|Loss55]]",
+		"position": {
+			"x": 2225,
+			"y": -626
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss55",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": 2220,
+			"y": -853
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win1",
+		"tags": "",
+		"body": "You see it right? You have no chance of victory, not even if you train for 100 years.",
+		"position": {
+			"x": 135,
+			"y": 396
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win11",
+		"tags": "",
+		"body": "Yeah. I get it. Looks like I'll be the first one on out. Just end things here.",
+		"position": {
+			"x": 136,
+			"y": 166
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win12",
+		"tags": "",
+		"body": "No. I won't. I have no intention of letting things continue like this. If the heavens will our deaths, then I will sever the heavens.",
+		"position": {
+			"x": 144,
+			"y": -74
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win13",
+		"tags": "",
+		"body": "I would've thought you were full of nonsense, but... To get from your powerless state to heights of strength I can't comprehend... I hope I can put my faith in you, because if you fail, we're bought bound for and eternal suffering worse than death.",
+		"position": {
+			"x": 143,
+			"y": -314
+		},
+		"colorID": 0
 	}
 ]

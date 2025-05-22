@@ -286,6 +286,62 @@
         "name": "pink_slim3.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "fiery_chicken.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "fiery_chicken.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "hunter_yong.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "hunter_yong.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "mercenary_ying.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "mercenary_ying.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "talisman.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "talisman.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "talisman2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "talisman2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Gourd.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Gourd.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Gourd2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Gourd2.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -460,7 +516,37 @@
             },
             {
               "type": "number",
-              "value": 0
+              "value": 4
+            }
+          ]
+        },
+        {
+          "name": "FirstLoss",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
             }
           ]
         },
@@ -491,36 +577,6 @@
             {
               "type": "string",
               "value": "Tian, Son of Heaven"
-            }
-          ]
-        },
-        {
-          "name": "Overpower",
-          "type": "array",
-          "children": [
-            {
-              "type": "number",
-              "value": 1800
-            },
-            {
-              "type": "number",
-              "value": 7000
-            },
-            {
-              "type": "number",
-              "value": 50000
-            },
-            {
-              "type": "number",
-              "value": 120000
-            },
-            {
-              "type": "number",
-              "value": 600000
-            },
-            {
-              "type": "number",
-              "value": 3000000
             }
           ]
         },
@@ -4023,6 +4079,66 @@
                     "\"Loss\" + ToString(CurrentEnemy)"
                   ]
                 }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Enemies.FirstLoss[CurrentEnemy]",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Dialogue_Container",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "LossText",
+                        "False",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "DialogueTree::StopRunningDialogue"
+                      },
+                      "parameters": []
+                    },
+                    {
+                      "type": {
+                        "value": "DialogueTree::ClearState"
+                      },
+                      "parameters": []
+                    },
+                    {
+                      "type": {
+                        "value": "Scene"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Reincarnation Scene\"",
+                        ""
+                      ]
+                    }
+                  ]
+                }
               ]
             }
           ]
@@ -4281,6 +4397,146 @@
                   "conditions": [
                     {
                       "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "DialogueSprite",
+                        "=",
+                        "2"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                      },
+                      "parameters": [
+                        "Dialogue_Container",
+                        "DialogueTree::ClippedLineText()",
+                        "\"Fiery_Chicken\"",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "DialogueSprite",
+                        "=",
+                        "3"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                      },
+                      "parameters": [
+                        "Dialogue_Container",
+                        "DialogueTree::ClippedLineText()",
+                        "\"Hunter_Yong\"",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "DialogueSprite",
+                        "=",
+                        "4"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                      },
+                      "parameters": [
+                        "Dialogue_Container",
+                        "DialogueTree::ClippedLineText()",
+                        "\"Mercenary_Ying\"",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "DialogueSprite",
+                        "=",
+                        "5"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                      },
+                      "parameters": [
+                        "Dialogue_Container",
+                        "DialogueTree::ClippedLineText()",
+                        "\"Talisman\"",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "DialogueSprite",
+                        "=",
+                        "6"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                      },
+                      "parameters": [
+                        "Dialogue_Container",
+                        "DialogueTree::ClippedLineText()",
+                        "\"Gourd\"",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
                         "value": "CompareTimer"
                       },
                       "parameters": [
@@ -4350,6 +4606,16 @@
                           "parameters": [
                             "Dialogue_Container",
                             ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Enemies.FirstLoss[CurrentEnemy]",
+                            "=",
+                            "0"
                           ]
                         },
                         {
@@ -12328,6 +12594,306 @@
                   ]
                 }
               ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "Fiery_Chicken",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "fiery_chicken.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 78,
+                                "y": 71
+                              },
+                              {
+                                "x": 242,
+                                "y": 71
+                              },
+                              {
+                                "x": 242,
+                                "y": 227
+                              },
+                              {
+                                "x": 78,
+                                "y": 227
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "Hunter_Yong",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "hunter_yong.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 108,
+                                "y": 69
+                              },
+                              {
+                                "x": 237,
+                                "y": 69
+                              },
+                              {
+                                "x": 237,
+                                "y": 217
+                              },
+                              {
+                                "x": 108,
+                                "y": 217
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "Mercenary_Ying",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "mercenary_ying.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 84,
+                                "y": 33
+                              },
+                              {
+                                "x": 279,
+                                "y": 33
+                              },
+                              {
+                                "x": 279,
+                                "y": 219
+                              },
+                              {
+                                "x": 84,
+                                "y": 219
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "Talisman",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "talisman2.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 81,
+                                "y": 49
+                              },
+                              {
+                                "x": 177,
+                                "y": 49
+                              },
+                              {
+                                "x": 177,
+                                "y": 251
+                              },
+                              {
+                                "x": 81,
+                                "y": 251
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "adaptCollisionMaskAutomatically": true,
+              "assetStoreId": "",
+              "name": "Gourd",
+              "type": "Sprite",
+              "updateIfNotVisible": false,
+              "variables": [],
+              "effects": [],
+              "behaviors": [],
+              "animations": [
+                {
+                  "name": "",
+                  "useMultipleDirections": false,
+                  "directions": [
+                    {
+                      "looping": false,
+                      "timeBetweenFrames": 0.08,
+                      "sprites": [
+                        {
+                          "hasCustomCollisionMask": true,
+                          "image": "Gourd2.png",
+                          "points": [],
+                          "originPoint": {
+                            "name": "origine",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "centerPoint": {
+                            "automatic": true,
+                            "name": "centre",
+                            "x": 0,
+                            "y": 0
+                          },
+                          "customCollisionMask": [
+                            [
+                              {
+                                "x": 120,
+                                "y": 78
+                              },
+                              {
+                                "x": 207,
+                                "y": 78
+                              },
+                              {
+                                "x": 207,
+                                "y": 211
+                              },
+                              {
+                                "x": 120,
+                                "y": 211
+                              }
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ],
           "objectsFolderStructure": {
@@ -12350,6 +12916,21 @@
               },
               {
                 "objectName": "Id"
+              },
+              {
+                "objectName": "Fiery_Chicken"
+              },
+              {
+                "objectName": "Hunter_Yong"
+              },
+              {
+                "objectName": "Mercenary_Ying"
+              },
+              {
+                "objectName": "Talisman"
+              },
+              {
+                "objectName": "Gourd"
               }
             ]
           },
@@ -12365,6 +12946,21 @@
                 },
                 {
                   "name": "Id"
+                },
+                {
+                  "name": "Fiery_Chicken"
+                },
+                {
+                  "name": "Hunter_Yong"
+                },
+                {
+                  "name": "Talisman"
+                },
+                {
+                  "name": "Mercenary_Ying"
+                },
+                {
+                  "name": "Gourd"
                 }
               ]
             }
@@ -12500,6 +13096,86 @@
               "numberProperties": [],
               "stringProperties": [],
               "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": false,
+              "height": 0,
+              "keepRatio": true,
+              "layer": "",
+              "name": "Fiery_Chicken",
+              "persistentUuid": "75e95d39-70a3-481b-81c7-b08041614726",
+              "width": 0,
+              "x": -285,
+              "y": -54,
+              "zOrder": 25,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": false,
+              "height": 0,
+              "keepRatio": true,
+              "layer": "",
+              "name": "Hunter_Yong",
+              "persistentUuid": "8f525449-8cf1-4299-bc2e-9301a2694dba",
+              "width": 0,
+              "x": -295,
+              "y": -53,
+              "zOrder": 26,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": false,
+              "height": 0,
+              "keepRatio": true,
+              "layer": "",
+              "name": "Mercenary_Ying",
+              "persistentUuid": "3e4a6ad2-6381-48f9-83e8-c6ecb5e242d1",
+              "width": 0,
+              "x": -306,
+              "y": -27,
+              "zOrder": 27,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": false,
+              "height": 0,
+              "keepRatio": true,
+              "layer": "",
+              "name": "Talisman",
+              "persistentUuid": "a8448224-ad86-4597-a61e-3723d3c092bd",
+              "width": 0,
+              "x": -245,
+              "y": -31,
+              "zOrder": 28,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
+            },
+            {
+              "angle": 0,
+              "customSize": false,
+              "height": 0,
+              "keepRatio": true,
+              "layer": "",
+              "name": "Gourd",
+              "persistentUuid": "bd9ca257-1af8-4325-92fc-d86b2035a3c2",
+              "width": 0,
+              "x": -255,
+              "y": -36,
+              "zOrder": 29,
+              "numberProperties": [],
+              "stringProperties": [],
+              "initialVariables": []
             }
           ],
           "eventsFunctions": [
@@ -12596,6 +13272,32 @@
                       "parameters": [
                         "Char",
                         "=",
+                        "\"Fiery_Chicken\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "Fiery_Chicken",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Char",
+                        "=",
                         "\"Id\""
                       ]
                     }
@@ -12607,6 +13309,110 @@
                       },
                       "parameters": [
                         "Id",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Char",
+                        "=",
+                        "\"Hunter_Yong\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "Hunter_Yong",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Char",
+                        "=",
+                        "\"Mercenary Ying\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "Mercenary_Ying",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Char",
+                        "=",
+                        "\"Talisman\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "Talisman",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "Char",
+                        "=",
+                        "\"Gourd\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "Gourd",
                         ""
                       ]
                     }
