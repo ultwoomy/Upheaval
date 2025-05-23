@@ -822,12 +822,10 @@
       "value": true
     },
     {
-      "folded": true,
       "name": "ActionInfo",
       "type": "structure",
       "children": [
         {
-          "folded": true,
           "name": "Description",
           "type": "array",
           "children": [
@@ -917,7 +915,7 @@
             },
             {
               "type": "string",
-              "value": "Multiply strength by 100. Disable Reincarnation"
+              "value": "Multiply strength by 100. Disable Reincarnation (No more chances)"
             }
           ]
         },

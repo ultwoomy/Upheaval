@@ -65,9 +65,25 @@
       "name": "GreySquare",
       "persistentUuid": "a73bd030-7981-4df8-9c53-f37c950a3df0",
       "width": 640,
-      "x": 7,
-      "y": 297,
+      "x": 320,
+      "y": 180,
       "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 330,
+      "layer": "",
+      "name": "EndingText",
+      "persistentUuid": "18caddeb-1de0-4afb-b123-3b66d76d4a54",
+      "width": 620,
+      "x": 330,
+      "y": 195,
+      "zOrder": 4,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -193,6 +209,48 @@
           ]
         }
       ]
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "EndingText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Text",
+      "font": "assets\\Xolonium-Regular.ttf",
+      "textAlignment": "center",
+      "characterSize": 20,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Text",
+        "font": "assets\\Xolonium-Regular.ttf",
+        "textAlignment": "center",
+        "verticalTextAlignment": "top",
+        "characterSize": 20,
+        "color": "0;0;0"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -203,6 +261,9 @@
       },
       {
         "objectName": "Hvn"
+      },
+      {
+        "objectName": "EndingText"
       }
     ]
   },
@@ -243,6 +304,41 @@
               "parameters": [
                 "Hvn"
               ]
+            },
+            {
+              "type": {
+                "value": "Recolorizer::SpriteRecolorizer::Recolorize"
+              },
+              "parameters": [
+                "GreySquare",
+                "SpriteRecolorizer",
+                "\"211;211;211\"",
+                "\"0;0;0\"",
+                "30",
+                "50",
+                "50",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::ChangeColor"
+              },
+              "parameters": [
+                "EndingText",
+                "\"255;255;255\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "EndingText",
+                "Text",
+                "=",
+                "NewLine() + \"You were strong enough to kill the Son of Heaven, but not strong enough to avoid heaven's wrath.\" + NewLine() + \"Cut off from the cycle of reincarnation, you wander the fallen mortal plane\" + NewLine() + NewLine() + \"Ending 1/2, Mountain of Corpses, Sea of Blood\""
+              ]
             }
           ]
         },
@@ -267,6 +363,41 @@
               },
               "parameters": [
                 "Mtn"
+              ]
+            },
+            {
+              "type": {
+                "value": "Recolorizer::SpriteRecolorizer::Recolorize"
+              },
+              "parameters": [
+                "GreySquare",
+                "SpriteRecolorizer",
+                "\"211;211;211\"",
+                "\"255;255;255\"",
+                "30",
+                "50",
+                "50",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::ChangeColor"
+              },
+              "parameters": [
+                "EndingText",
+                "\"0;0;0\""
+              ]
+            },
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "EndingText",
+                "Text",
+                "=",
+                "NewLine() + \"You split the heavens, voiding heaven's decree.\" + NewLine() + \"At least in this world, everyone's strength together was able to overcome fate.\" + NewLine() + \"You live, once again, in peace\" + NewLine() + NewLine() + \"Ending 2/2, Eternal Rest\""
               ]
             }
           ]
@@ -348,6 +479,10 @@
     {
       "name": "SpriteRecolorizer",
       "type": "Recolorizer::SpriteRecolorizer"
+    },
+    {
+      "name": "Text",
+      "type": "TextContainerCapability::TextContainerBehavior"
     }
   ]
 }
