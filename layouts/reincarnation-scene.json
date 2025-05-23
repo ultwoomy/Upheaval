@@ -1,0 +1,816 @@
+{
+  "b": 0,
+  "disableInputWhenNotFocused": true,
+  "mangledName": "Reincarnation_32Scene",
+  "name": "Reincarnation Scene",
+  "r": 0,
+  "standardSortMethod": true,
+  "stopSoundsOnStartup": true,
+  "title": "",
+  "v": 0,
+  "uiSettings": {
+    "grid": false,
+    "gridType": "rectangular",
+    "gridWidth": 32,
+    "gridHeight": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": false,
+    "zoomFactor": 0.546875,
+    "windowMask": false
+  },
+  "objectsGroups": [
+    {
+      "name": "PlayerActions",
+      "objects": [
+        {
+          "name": "Equipped_Action"
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "folded": true,
+      "name": "Cost",
+      "type": "array",
+      "children": [
+        {
+          "type": "number",
+          "value": -1
+        },
+        {
+          "type": "number",
+          "value": -1
+        },
+        {
+          "type": "number",
+          "value": 1
+        },
+        {
+          "type": "number",
+          "value": 2
+        },
+        {
+          "type": "number",
+          "value": 2
+        },
+        {
+          "type": "number",
+          "value": 3
+        },
+        {
+          "type": "number",
+          "value": 5
+        },
+        {
+          "type": "number",
+          "value": -1
+        },
+        {
+          "type": "number",
+          "value": -1
+        },
+        {
+          "type": "number",
+          "value": -1
+        },
+        {
+          "type": "number",
+          "value": -1
+        },
+        {
+          "type": "number",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "name": "Index",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "Offset",
+      "type": "number",
+      "value": 15
+    },
+    {
+      "name": "Temp",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "TempPlayerY",
+      "type": "number",
+      "value": 0
+    }
+  ],
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 720,
+      "layer": "",
+      "name": "GreySquare",
+      "persistentUuid": "2417b8b9-bc00-4fc6-bc2b-75d57f234f9e",
+      "width": 980,
+      "x": 300,
+      "y": 0,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1.9917012448132778,
+      "height": 720,
+      "layer": "",
+      "name": "GreySquare",
+      "persistentUuid": "89ce1286-ad82-4cbc-be1e-07a17e01a66a",
+      "width": 490,
+      "x": 300,
+      "y": 0,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "EquippedActionsText",
+      "persistentUuid": "bdba9132-dfdc-4981-82c4-f638c3cddb50",
+      "width": 0,
+      "x": 338,
+      "y": 20,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Equipped_Action",
+      "persistentUuid": "f1a01a8b-e633-498a-a039-6543ed903a87",
+      "width": 0,
+      "x": 300,
+      "y": 60,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Equipped_Action",
+      "persistentUuid": "a3fe3edb-cf02-4aa4-8761-a9cb91cc9bde",
+      "width": 0,
+      "x": 300,
+      "y": 150,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "Order",
+          "type": "number",
+          "value": 1
+        },
+        {
+          "name": "InitYPos",
+          "type": "number",
+          "value": 150
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Equipped_Action",
+      "persistentUuid": "2da5f5cb-9fa4-4d59-aac1-4a602a8a9662",
+      "width": 0,
+      "x": 300,
+      "y": 240,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "Order",
+          "type": "number",
+          "value": 2
+        },
+        {
+          "name": "InitYPos",
+          "type": "number",
+          "value": 240
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Equipped_Action",
+      "persistentUuid": "010aa310-efc0-4f10-ad4c-2540d5f3ea66",
+      "width": 0,
+      "x": 300,
+      "y": 330,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "Order",
+          "type": "number",
+          "value": 3
+        },
+        {
+          "name": "InitYPos",
+          "type": "number",
+          "value": 330
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Equipped_Action",
+      "persistentUuid": "d5379a87-bb4d-4beb-ac63-f58faeb0d897",
+      "width": 0,
+      "x": 300,
+      "y": 420,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "Order",
+          "type": "number",
+          "value": 4
+        },
+        {
+          "name": "InitYPos",
+          "type": "number",
+          "value": 420
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "Equipped_Action",
+      "persistentUuid": "a6134525-a148-495a-a79a-cd138c8fa32d",
+      "width": 0,
+      "x": 300,
+      "y": 510,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "Order",
+          "type": "number",
+          "value": 5
+        },
+        {
+          "name": "InitYPos",
+          "type": "number",
+          "value": 510
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "assetStoreId": "",
+      "name": "Equipped_Action",
+      "type": "Equipped_Action::Equipped_Action",
+      "variant": "",
+      "variables": [
+        {
+          "name": "ID",
+          "type": "number",
+          "value": -1
+        },
+        {
+          "name": "InitYPos",
+          "type": "number",
+          "value": 60
+        },
+        {
+          "name": "Order",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Draggable",
+          "type": "DraggableBehavior::Draggable",
+          "checkCollisionMask": true
+        }
+      ],
+      "content": {}
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "EquippedActionsText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Equipped Actions",
+      "font": "assets\\Xolonium-Regular.ttf",
+      "textAlignment": "left",
+      "characterSize": 24,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Equipped Actions",
+        "font": "assets\\Xolonium-Regular.ttf",
+        "textAlignment": "left",
+        "verticalTextAlignment": "top",
+        "characterSize": 24,
+        "color": "255;255;255"
+      }
+    }
+  ],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "objectName": "EquippedActionsText"
+      },
+      {
+        "objectName": "Equipped_Action"
+      }
+    ]
+  },
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Recolorizer::SpriteRecolorizer::Recolorize"
+          },
+          "parameters": [
+            "GreySquare",
+            "SpriteRecolorizer",
+            "\"199;199;199\"",
+            "\"0;0;0\"",
+            "30",
+            "50",
+            "50",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "Index",
+            "=",
+            "0"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "Equipped_Action",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "Equipped_Action::Equipped_Action::Hide_Text"
+              },
+              "parameters": [
+                "Equipped_Action"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "ActionIDList[Index]",
+                    ">=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Equipped_Action::Equipped_Action::Set_Info"
+                  },
+                  "parameters": [
+                    "Equipped_Action",
+                    "ActionInfo.Name[ActionIDList[Index]]",
+                    "ActionInfo.Description[ActionIDList[Index]]",
+                    "ActionIDList[Index]",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberObjectVariable"
+                  },
+                  "parameters": [
+                    "Equipped_Action",
+                    "ID",
+                    "=",
+                    "ActionIDList[Index]"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Index",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Equipped_Action::Equipped_Action::Show_Text"
+                  },
+                  "parameters": [
+                    "Equipped_Action",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DraggableBehavior::Dropped"
+          },
+          "parameters": [
+            "PlayerActions",
+            "Draggable"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "MettreX"
+          },
+          "parameters": [
+            "PlayerActions",
+            "=",
+            "300"
+          ]
+        },
+        {
+          "type": {
+            "value": "MettreY"
+          },
+          "parameters": [
+            "PlayerActions",
+            "=",
+            "PlayerActions.InitYPos"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "Temp",
+            "=",
+            "PlayerActions.ID"
+          ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "TempPlayerY",
+            "=",
+            "PlayerActions.Y()"
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "PlayerActions",
+                ">=",
+                "300-Offset"
+              ]
+            },
+            {
+              "type": {
+                "value": "PosX"
+              },
+              "parameters": [
+                "PlayerActions",
+                "<=",
+                "300+Offset"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PosY"
+                  },
+                  "parameters": [
+                    "PlayerActions",
+                    ">=",
+                    "60-Offset"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PosY"
+                  },
+                  "parameters": [
+                    "PlayerActions",
+                    "<=",
+                    "60+Offset"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Index",
+                    "=",
+                    "-1"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Index",
+                "=",
+                "0"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Equipped_Action",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Equipped_Action::Equipped_Action::Hide_Text"
+                  },
+                  "parameters": [
+                    "Equipped_Action"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "ActionIDList[Index]",
+                        ">=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Equipped_Action::Equipped_Action::Set_Info"
+                      },
+                      "parameters": [
+                        "Equipped_Action",
+                        "ActionInfo.Name[ActionIDList[Index]]",
+                        "ActionInfo.Description[ActionIDList[Index]]",
+                        "ActionIDList[Index]",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Equipped_Action",
+                        "ID",
+                        "=",
+                        "ActionIDList[Index]"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Index",
+                        "+",
+                        "1"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Equipped_Action::Equipped_Action::Show_Text"
+                      },
+                      "parameters": [
+                        "Equipped_Action",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 3,
+      "cameraType": "",
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [
+        {
+          "defaultSize": true,
+          "defaultViewport": true,
+          "height": 0,
+          "viewportBottom": 1,
+          "viewportLeft": 0,
+          "viewportRight": 1,
+          "viewportTop": 0,
+          "width": 0
+        }
+      ],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
+    }
+  ],
+  "behaviorsSharedData": [
+    {
+      "name": "Animation",
+      "type": "AnimatableCapability::AnimatableBehavior"
+    },
+    {
+      "name": "Effect",
+      "type": "EffectCapability::EffectBehavior"
+    },
+    {
+      "name": "Flippable",
+      "type": "FlippableCapability::FlippableBehavior"
+    },
+    {
+      "name": "Opacity",
+      "type": "OpacityCapability::OpacityBehavior"
+    },
+    {
+      "name": "Resizable",
+      "type": "ResizableCapability::ResizableBehavior"
+    },
+    {
+      "name": "Scale",
+      "type": "ScalableCapability::ScalableBehavior"
+    },
+    {
+      "name": "SpriteRecolorizer",
+      "type": "Recolorizer::SpriteRecolorizer"
+    },
+    {
+      "name": "Text",
+      "type": "TextContainerCapability::TextContainerBehavior"
+    }
+  ]
+}
