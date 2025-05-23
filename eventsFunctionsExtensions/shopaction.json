@@ -701,6 +701,15 @@
                     "50",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::ChangeColor"
+                  },
+                  "parameters": [
+                    "EquippedActionsText",
+                    "\"255;255;255\""
+                  ]
                 }
               ]
             },
@@ -743,6 +752,15 @@
                     "50",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::ChangeColor"
+                  },
+                  "parameters": [
+                    "EquippedActionsText",
+                    "\"255;255;255\""
+                  ]
                 }
               ]
             },
@@ -784,6 +802,15 @@
                     "50",
                     "50",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::ChangeColor"
+                  },
+                  "parameters": [
+                    "EquippedActionsText",
+                    "\"255;255;255\""
                   ]
                 }
               ]

@@ -711,6 +711,22 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 0,
+      "height": 200,
+      "layer": "",
+      "name": "Passives",
+      "persistentUuid": "b6298bc3-9c1e-4884-9a53-62d0a40ff5fc",
+      "width": 400,
+      "x": 440,
+      "y": 500,
+      "zOrder": 17,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -1256,6 +1272,48 @@
         "characterSize": 24,
         "color": "255;255;255"
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "Passives",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Passives:",
+      "font": "assets\\Xolonium-Regular.ttf",
+      "textAlignment": "center",
+      "characterSize": 24,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Passives:",
+        "font": "assets\\Xolonium-Regular.ttf",
+        "textAlignment": "center",
+        "verticalTextAlignment": "top",
+        "characterSize": 24,
+        "color": "255;255;255"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1293,6 +1351,9 @@
       },
       {
         "objectName": "Upgrades_Panel"
+      },
+      {
+        "objectName": "Passives"
       },
       {
         "objectName": "CoinsCount"
@@ -1663,6 +1724,81 @@
                 "ActionUnlocked",
                 "False",
                 ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+              },
+              "parameters": [
+                "Passives",
+                "Text",
+                "=",
+                "\"Passives\" + NewLine()"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DiPassives.Followers",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Passives",
+                    "Text",
+                    "+",
+                    "\"Each soul that has put their faith in you buffs your strength gain. Total: \" + ToString(DiPassives.Followers * 5) + \"%\" + NewLine()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DiPassives.SwordArt",
+                    ">",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Passives",
+                    "Text",
+                    "+",
+                    "\"Your skill with the blade persists. Initial strength: \" + ToString(pow(2,DiPassives.Followers))"
+                  ]
+                }
               ]
             }
           ]
@@ -3216,6 +3352,16 @@
         },
         {
           "type": {
+            "value": "StringVariable"
+          },
+          "parameters": [
+            "State",
+            "=",
+            "\"action_shop\""
+          ]
+        },
+        {
+          "type": {
             "value": "BuiltinCommonInstructions::Once"
           },
           "parameters": []
@@ -3336,6 +3482,16 @@
             "Right_Arrow",
             "ButtonFSM",
             ""
+          ]
+        },
+        {
+          "type": {
+            "value": "StringVariable"
+          },
+          "parameters": [
+            "State",
+            "=",
+            "\"action_shop\""
           ]
         },
         {
@@ -4006,6 +4162,18 @@
                 "+",
                 "1"
               ]
+            },
+            {
+              "type": {
+                "value": "Upgrades_Panel::Upgrades_Panel::Set_Text"
+              },
+              "parameters": [
+                "Upgrades_Panel",
+                "UpgradesInfo.Cost[0]",
+                "UpgradesInfo.Cost[1]",
+                "UpgradesInfo.Cost[2]",
+                ""
+              ]
             }
           ]
         }
@@ -4076,6 +4244,18 @@
                 "-",
                 "1"
               ]
+            },
+            {
+              "type": {
+                "value": "Upgrades_Panel::Upgrades_Panel::Set_Text"
+              },
+              "parameters": [
+                "Upgrades_Panel",
+                "UpgradesInfo.Cost[0]",
+                "UpgradesInfo.Cost[1]",
+                "UpgradesInfo.Cost[2]",
+                ""
+              ]
             }
           ]
         }
@@ -4142,9 +4322,21 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "Enemies.Deadline[0]",
+                "DeadlineOffset",
                 "+",
                 "5"
+              ]
+            },
+            {
+              "type": {
+                "value": "Upgrades_Panel::Upgrades_Panel::Set_Text"
+              },
+              "parameters": [
+                "Upgrades_Panel",
+                "UpgradesInfo.Cost[0]",
+                "UpgradesInfo.Cost[1]",
+                "UpgradesInfo.Cost[2]",
+                ""
               ]
             }
           ]

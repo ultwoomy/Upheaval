@@ -370,6 +370,30 @@
         "name": "Gourd2.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "heavenlock.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "heavenlock.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "mtn.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "mtn.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "hvnsplit.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "hvnsplit.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -477,7 +501,7 @@
     {
       "name": "Time_Max",
       "type": "number",
-      "value": 6
+      "value": 0.5
     },
     {
       "name": "Action_Returned",
@@ -485,11 +509,11 @@
       "value": 0
     },
     {
-      "folded": true,
       "name": "Enemies",
       "type": "structure",
       "children": [
         {
+          "folded": true,
           "name": "Deadline",
           "type": "array",
           "children": [
@@ -499,7 +523,7 @@
             },
             {
               "type": "number",
-              "value": 22
+              "value": 20
             },
             {
               "type": "number",
@@ -516,11 +540,51 @@
             {
               "type": "number",
               "value": 70
+            },
+            {
+              "type": "number",
+              "value": 71
             }
           ]
         },
         {
-          "name": "DialogueLength",
+          "folded": true,
+          "name": "DialogueLengthDominate",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 6
+            },
+            {
+              "type": "number",
+              "value": 4
+            },
+            {
+              "type": "number",
+              "value": 6
+            },
+            {
+              "type": "number",
+              "value": 2
+            },
+            {
+              "type": "number",
+              "value": 6
+            },
+            {
+              "type": "number",
+              "value": 5
+            },
+            {
+              "type": "number",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "folded": true,
+          "name": "DialogueLengthLoss",
           "type": "array",
           "children": [
             {
@@ -545,14 +609,58 @@
             },
             {
               "type": "number",
-              "value": 4
+              "value": 6
+            },
+            {
+              "type": "number",
+              "value": 0
             }
           ]
         },
         {
+          "folded": true,
+          "name": "FirstDominate",
+          "type": "array",
+          "children": [
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            },
+            {
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "folded": true,
           "name": "FirstLoss",
           "type": "array",
           "children": [
+            {
+              "type": "number",
+              "value": 1
+            },
             {
               "type": "number",
               "value": 1
@@ -606,10 +714,15 @@
             {
               "type": "string",
               "value": "Tian, Son of Heaven"
+            },
+            {
+              "type": "string",
+              "value": "Heaven's Blessing"
             }
           ]
         },
         {
+          "folded": true,
           "name": "Passives",
           "type": "array",
           "children": [
@@ -635,11 +748,16 @@
             },
             {
               "type": "string",
-              "value": "Disable your first 3 actions"
+              "value": "Disable a different action each day"
+            },
+            {
+              "type": "string",
+              "value": "Await Judgement"
             }
           ]
         },
         {
+          "folded": true,
           "name": "Strength",
           "type": "array",
           "children": [
@@ -666,21 +784,43 @@
             {
               "type": "number",
               "value": 10000
+            },
+            {
+              "type": "number",
+              "value": 2147483647
             }
           ]
         }
       ]
     },
     {
+      "folded": true,
+      "name": "DiPassives",
+      "type": "structure",
+      "children": [
+        {
+          "name": "Followers",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "SwordArt",
+          "type": "number",
+          "value": 0
+        }
+      ]
+    },
+    {
       "name": "TutorialCompletion",
       "type": "boolean",
-      "value": false
+      "value": true
     },
     {
       "name": "ActionInfo",
       "type": "structure",
       "children": [
         {
+          "folded": true,
           "name": "Description",
           "type": "array",
           "children": [
@@ -870,6 +1010,7 @@
           ]
         },
         {
+          "folded": true,
           "name": "Name",
           "type": "array",
           "children": [
@@ -927,7 +1068,7 @@
             },
             {
               "type": "string",
-              "value": "Tianyu 4 Star Sword"
+              "value": "Tianjiu 4 Point Sword"
             },
             {
               "type": "string",
@@ -1253,6 +1394,11 @@
       "name": "ActionUnlocked",
       "type": "boolean",
       "value": false
+    },
+    {
+      "name": "DeadlineOffset",
+      "type": "number",
+      "value": 0
     }
   ],
   "layouts": [
@@ -1263,6 +1409,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/layouts/reincarnation-scene"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/ending"
     }
   ],
   "externalEvents": [],

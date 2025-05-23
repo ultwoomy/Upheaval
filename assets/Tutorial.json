@@ -202,7 +202,7 @@
 	{
 		"title": "Loss15",
 		"tags": "",
-		"body": "You don't know? Then allow me to enlighten you. We must follow the mandate of Heaven's will, delivered to us by the Son of Heaven. To kill as many mortals as we can for a chance to be spared Heaven's wrath. [[Answer:Lose16|Lose16]]",
+		"body": "You don't know? Then allow me to enlighten you. We must follow the mandate of Heaven's will, delivered to us by the Son of Heaven. To kill as many mortals as we can for a chance to be spared Heaven's wrath. [[Answer:Lose16|Loss16]]",
 		"position": {
 			"x": 1094,
 			"y": -878
@@ -210,31 +210,31 @@
 		"colorID": 0
 	},
 	{
-		"title": "Lose16",
+		"title": "Loss16",
 		"tags": "",
-		"body": "You're telling me that the reason everyone around me is embroiled in war is for such a dumb reason? [[Answer:Lose17|Lose17]]",
+		"body": "You're telling me that the reason everyone around me is embroiled in war is for such a dumb reason? [[Answer:Lose17|Loss17]]",
 		"position": {
-			"x": 1085,
-			"y": -1120
+			"x": 1084,
+			"y": -1116
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Lose17",
+		"title": "Loss17",
 		"tags": "",
-		"body": "To go against the will of the heavens is to court death, and I'm not quite ready to pass on. Goodbye, Di. [[Answer:Lose18|Lose18]]",
+		"body": "To go against the will of the heavens is to court death, and I'm not quite ready to pass on. Goodbye, Di. [[Answer:Lose18|Loss18]]",
 		"position": {
-			"x": 1083,
-			"y": -1365
+			"x": 1081,
+			"y": -1367
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Lose18",
+		"title": "Loss18",
 		"tags": "",
 		"body": ".",
 		"position": {
-			"x": 1074,
+			"x": 1075,
 			"y": -1625
 		},
 		"colorID": 0
@@ -352,10 +352,10 @@
 	{
 		"title": "Loss35",
 		"tags": "",
-		"body": "Your life still belongs to me, but if what you say about having multiple chances is true, then perhaps I can give you a gift to take along the way.[[Answer:Loss31|Loss36]]",
+		"body": "Your life is still in my hands, but if what you say about having multiple chances is true, then perhaps I can give you a gift to take along the way.[[Answer:Loss31|Loss36]]",
 		"position": {
 			"x": 1666,
-			"y": -872
+			"y": -882
 		},
 		"colorID": 0
 	},
@@ -430,9 +430,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "Loss5",
+		"title": "Loss51",
 		"tags": "",
-		"body": "And so ends your tale, you upstart mortal. Your efforts to struggle against the flow are futile. Join your fallen comrades in death's embrace. [[Answer:Loss51|Loss51]]",
+		"body": "And so ends your tale, you upstart mortal. Your efforts to struggle against the flow are futile. Join your fallen comrades in death's embrace. [[Answer:Loss51|Loss52]]",
 		"position": {
 			"x": 2201,
 			"y": 357
@@ -440,9 +440,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "Loss51",
+		"title": "Loss52",
 		"tags": "",
-		"body": "Piece of shit... what even is the point of all this, this mandate, this killing. [[Answer:Loss52|Loss52]]",
+		"body": "Piece of shit... what even is the point of all this, this mandate, this killing. [[Answer:Loss52|Loss53]]",
 		"position": {
 			"x": 2209,
 			"y": 111
@@ -450,9 +450,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "Loss52",
+		"title": "Loss53",
 		"tags": "",
-		"body": "I merely execute heaven's will. There's no need to question what's beyond you. You lived longer than most ant, and be grateful, for you strength has bought you that time. [[Answer:Loss53|Loss53]]",
+		"body": "I merely execute heaven's will. There's no need to question what's beyond you. You lived longer than most ant, and be grateful, for you strength has bought you that time. [[Answer:Loss53|Loss54]]",
 		"position": {
 			"x": 2210,
 			"y": -129
@@ -460,9 +460,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "Loss53",
+		"title": "Loss54",
 		"tags": "",
-		"body": "Unacceptable answer, unacceptable world. I won't stand for this. Next time, next time you will fall. [[Answer:Loss54|Loss54]]",
+		"body": "Unacceptable answer, unacceptable world. I won't stand for this. Next time, next time you will fall. [[Answer:Loss54|Loss55]]",
 		"position": {
 			"x": 2221,
 			"y": -374
@@ -470,9 +470,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "Loss54",
+		"title": "Loss55",
 		"tags": "",
-		"body": "Ha! Good luck with that, killer star. [[Answer:Loss55|Loss55]]",
+		"body": "Ha! Good luck with that, killer star. [[Answer:Loss55|Loss56]]",
 		"position": {
 			"x": 2225,
 			"y": -626
@@ -480,7 +480,7 @@
 		"colorID": 0
 	},
 	{
-		"title": "Loss55",
+		"title": "Loss56",
 		"tags": "",
 		"body": ".",
 		"position": {
@@ -490,19 +490,19 @@
 		"colorID": 0
 	},
 	{
-		"title": "Win1",
+		"title": "Win0",
 		"tags": "",
-		"body": "You see it right? You have no chance of victory, not even if you train for 100 years.",
+		"body": "You see it right? You have no chance of victory, not even if you train for 100 years. [[Answer:Win11|Win01]]",
 		"position": {
-			"x": 135,
-			"y": 396
+			"x": 133,
+			"y": 394
 		},
 		"colorID": 0
 	},
 	{
-		"title": "Win11",
+		"title": "Win01",
 		"tags": "",
-		"body": "Yeah. I get it. Looks like I'll be the first one on out. Just end things here.",
+		"body": "Yeah. I get it. Looks like I'll be the first one on out. Just end things here. [[Answer:Win12|Win02]]",
 		"position": {
 			"x": 136,
 			"y": 166
@@ -510,9 +510,9 @@
 		"colorID": 0
 	},
 	{
-		"title": "Win12",
+		"title": "Win02",
 		"tags": "",
-		"body": "No. I won't. I have no intention of letting things continue like this. If the heavens will our deaths, then I will sever the heavens.",
+		"body": "No. I won't. I have no intention of letting things continue like this. If the heavens will our deaths, then I will sever the heavens. [[Answer:Win13|Win03]]",
 		"position": {
 			"x": 144,
 			"y": -74
@@ -520,12 +520,422 @@
 		"colorID": 0
 	},
 	{
+		"title": "Win03",
+		"tags": "",
+		"body": "I would've thought you were full of nonsense, but... To get from your powerless state to heights of strength I can't comprehend... I hope I can put my faith in you, because if you fail, we're bought bound for and eternal suffering worse than death. [[Answer:Win21|Win04]]",
+		"position": {
+			"x": 142,
+			"y": -315
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win04",
+		"tags": "",
+		"body": "...Wait actually? Nice. [[Answer:Win15|Win05]]",
+		"position": {
+			"x": 142,
+			"y": -567
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win05",
+		"tags": "",
+		"body": "I'll teach you my skills, use them on your next go at this if this still isn't enough strength to overturn the heavens. [[Answer:Win16|Win06]]",
+		"position": {
+			"x": 134,
+			"y": -811
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win06",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": 141,
+			"y": -1054
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win1",
+		"tags": "",
+		"body": "Even a thousand hearty meals won't make you strong enough to beat me. [[Answer:Win21|Win11]]",
+		"position": {
+			"x": -137,
+			"y": 401
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win11",
+		"tags": "",
+		"body": "I know, but I have no choice. I must fight to live, or be robbed of life. [[Answer:Win21|Win12]]",
+		"position": {
+			"x": -142,
+			"y": 161
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win12",
+		"tags": "",
+		"body": "There is another option. Support me with your strength and destroy the heavens. Without the heavenly decree, there's no need for me to kill you. [[Answer:Win21|Win13]]",
+		"position": {
+			"x": -146,
+			"y": -82
+		},
+		"colorID": 0
+	},
+	{
 		"title": "Win13",
 		"tags": "",
-		"body": "I would've thought you were full of nonsense, but... To get from your powerless state to heights of strength I can't comprehend... I hope I can put my faith in you, because if you fail, we're bought bound for and eternal suffering worse than death.",
+		"body": "I would have derided anyone else, but if it's someone of your strength... you may just be able to do it. Take my cooking skills and make it to the end for the sake of all mortals. [[Answer:Win21|Win14]]",
 		"position": {
-			"x": 143,
-			"y": -314
+			"x": -145,
+			"y": -326
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win14",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": -140,
+			"y": -598
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win21",
+		"tags": "",
+		"body": "Eek! Please don't kill me, I know you must, but maybe don't. [[Answer:Win31|Win22]]",
+		"position": {
+			"x": -456,
+			"y": 396
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win22",
+		"tags": "",
+		"body": "Ok, I won't. [[Answer:Win31|Win23]]",
+		"position": {
+			"x": -449,
+			"y": 156
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win23",
+		"tags": "",
+		"body": "I'll give you any- oh wait you will? [[Answer:Win31|Win24]]",
+		"position": {
+			"x": -448,
+			"y": -78
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win24",
+		"tags": "",
+		"body": "Yeah. Just give me your bug poison so I can weaken that Son of Heaven and smack him. [[Answer:Win31|Win25]]",
+		"position": {
+			"x": -448,
+			"y": -321
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win25",
+		"tags": "",
+		"body": "No more killing? That sounds great to me, I'll help you out in any way you need! [[Answer:Win31|Win26]]",
+		"position": {
+			"x": -441,
+			"y": -607
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win26",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": -447,
+			"y": -837
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win3",
+		"tags": "",
+		"body": "I kept my word. I came back a thousand times stronger, and I'm ready to learn your sword. [[Answer:Win31|Win31]]",
+		"position": {
+			"x": -715,
+			"y": 404
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win31",
+		"tags": "",
+		"body": "Promise..? Ah, I see, you must have lost to me in the past. If that's the case, then you must truly be the chosen warrior. Take my sword arts and slay the heavens. [[Answer:Win32|Win32]]",
+		"position": {
+			"x": -729,
+			"y": 156
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win32",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": -722,
+			"y": -84
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win2",
+		"tags": "",
+		"body": "Your poison didn't even tickle. It's over. [[Answer:Win21|Win21]]",
+		"position": {
+			"x": -459,
+			"y": 618
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win4",
+		"tags": "",
+		"body": "Get your slips of paper out of here, I've won, and won by quite a lot. [[Answer:Win41|Win41]]",
+		"position": {
+			"x": -972,
+			"y": 415
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win41",
+		"tags": "",
+		"body": "For everyone's sakes, I can't let a powerful being like you exterminate mortal kind?[[Answer:Win41|Win42]]",
+		"position": {
+			"x": -965,
+			"y": 159
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win42",
+		"tags": "",
+		"body": "Oh come on, stop yapping at me I haven't even killed anyone (In this timeline at least)[[Answer:Win41|Win43]]",
+		"position": {
+			"x": -971,
+			"y": -102
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win43",
+		"tags": "",
+		"body": "Then... are you on the same quest as I, to seal heaven's mandate and restore peace to this Earth?[[Answer:Win41|Win44]]",
+		"position": {
+			"x": -990,
+			"y": -328
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win44",
+		"tags": "",
+		"body": "Uh, probably. More importantly, I'm interested in those healing techniques. How about you teach me those so I can bring them with me next time?[[Answer:Win41|Win45]]",
+		"position": {
+			"x": -981,
+			"y": -583
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win45",
+		"tags": "",
+		"body": "Of course warrior, my strength is yours.[[Answer:Win41|Win46]]",
+		"position": {
+			"x": -999,
+			"y": -836
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win46",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": -1000,
+			"y": -1053
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Kill",
+		"tags": "",
+		"body": "It is done. [[Answer:Kill1|Kill1]]",
+		"position": {
+			"x": 425,
+			"y": 657
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Kill1",
+		"tags": "",
+		"body": "Indeed it is... by killing me, you'll ensure your karma with heaven is the highest. I'm sure great merit will await you as you are reincarnated.[[Answer:Kill1|Kill2]]",
+		"position": {
+			"x": 440,
+			"y": 916
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Kill2",
+		"tags": "",
+		"body": "Karma? Whatever, tell me how to cut down the heavens.[[Answer:Kill1|Kill3]]",
+		"position": {
+			"x": 430,
+			"y": 1142
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Kill3",
+		"tags": "",
+		"body": "Hehe... even if you're the strongest mortal, even though you've killed your way through myriads, you're still an ant before the heavens, as am I.[[Answer:Kill1|Kill4]]",
+		"position": {
+			"x": 447,
+			"y": 1386
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Kill4",
+		"tags": "",
+		"body": "Nonsense, I will split the heavens in 2 save everyone's lives! Where is the mandate.[[Answer:Kill1|Kill5]]",
+		"position": {
+			"x": 442,
+			"y": 1617
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Kill5",
+		"tags": "",
+		"body": "Still a foolish mortal to the end. Heaven's will is inherent in all things, the mandate is in your blood, can't you feel it? Soon, very soon, tribulation lightning will incinerate us both and we will be reincarnated as rulers of mortal kind![[Answer:Kill1|Kill6]]",
+		"position": {
+			"x": 444,
+			"y": 1854
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Kill6",
+		"tags": "",
+		"body": "I figured there'd be something like this at the end. Just how strong do I have to be to rend the heavens.[[Answer:Kill1|Kill7]]",
+		"position": {
+			"x": 452,
+			"y": 2093
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Kill7",
+		"tags": "",
+		"body": "A thousand times, a thousand times your strength would be enough but it's too late! Death comes for us both![[Answer:Kill1|Kill8]]",
+		"position": {
+			"x": 706,
+			"y": 2094
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Kill8",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": 826,
+			"y": 1874
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss5",
+		"tags": "",
+		"body": "Ugh! Damn it all! [[Answer:Loss51|Loss51]]",
+		"position": {
+			"x": 2202,
+			"y": 580
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win5",
+		"tags": "",
+		"body": "So? Who's stronger, those heavens of yours or I? [[Answer:Win51|Win51]]",
+		"position": {
+			"x": -1240,
+			"y": 423
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win51",
+		"tags": "",
+		"body": "How... could this be? This is ludicrous, you can't just become as powerful as the sky above in a matter of days! [[Answer:Win52|Win52]]",
+		"position": {
+			"x": -1246,
+			"y": 162
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win52",
+		"tags": "",
+		"body": "And yet it has. There's no need for me to kill you, as, if I remember correctly, you're just a pawn of the heavens as well. [[Answer:Win53|Win53]]",
+		"position": {
+			"x": -1247,
+			"y": -81
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win53",
+		"tags": "",
+		"body": "We-we were supposed to end this world together and perish ourselves! This kind of ending doesn't make any sense! [[Answer:Win54|Win54]]",
+		"position": {
+			"x": -1252,
+			"y": -327
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win54",
+		"tags": "",
+		"body": "I decide what is sensible and what isn't, and I think these so called heavens are insensible. I think its about time I tore them a visit. [[Answer:Win55|Win55]]",
+		"position": {
+			"x": -1246,
+			"y": -570
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Win55",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": -1251,
+			"y": -806
 		},
 		"colorID": 0
 	}

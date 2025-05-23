@@ -61,7 +61,7 @@
     {
       "name": "Strength",
       "type": "number",
-      "value": 0
+      "value": 800
     },
     {
       "name": "Days",
@@ -156,7 +156,7 @@
       "value": 0
     },
     {
-      "name": "Variable",
+      "name": "SpriteConfirm",
       "type": "number",
       "value": 0
     },
@@ -177,6 +177,26 @@
     },
     {
       "name": "DisabledReincarnation",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "WinText",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "Action21StrengthMult",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "HeavenBan",
+      "type": "array",
+      "children": []
+    },
+    {
+      "name": "Variable",
       "type": "number",
       "value": 0
     }
@@ -481,6 +501,22 @@
       "x": 784,
       "y": 100,
       "zOrder": 19,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 1,
+      "height": 25,
+      "layer": "",
+      "name": "OverpowerText",
+      "persistentUuid": "005a5b8c-331e-4a0c-a123-95d838369c8f",
+      "width": 400,
+      "x": 440,
+      "y": 12.5,
+      "zOrder": 20,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -1178,6 +1214,48 @@
         "characterSize": 16,
         "color": "255;255;255"
       }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "OverpowerText",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Overpower: Strength",
+      "font": "assets\\Xolonium-Regular.ttf",
+      "textAlignment": "center",
+      "characterSize": 20,
+      "color": {
+        "b": 96,
+        "g": 244,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "Overpower: Strength",
+        "font": "assets\\Xolonium-Regular.ttf",
+        "textAlignment": "center",
+        "verticalTextAlignment": "center",
+        "characterSize": 20,
+        "color": "255;244;96"
+      }
     }
   ],
   "objectsFolderStructure": {
@@ -1209,6 +1287,9 @@
       },
       {
         "objectName": "Action"
+      },
+      {
+        "objectName": "OverpowerText"
       },
       {
         "objectName": "ActionCountDisplay"
@@ -1279,6 +1360,16 @@
         },
         {
           "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "Index",
+            "=",
+            "-1"
+          ]
+        },
+        {
+          "type": {
             "value": "DialogueTree::LoadDialogueFromJsonFile"
           },
           "parameters": [
@@ -1291,9 +1382,9 @@
             "value": "SetNumberVariable"
           },
           "parameters": [
-            "Index",
-            "=",
-            "-1"
+            "Strength",
+            "+",
+            "pow(10,DiPassives.SwordArt)"
           ]
         }
       ],
@@ -1454,7 +1545,7 @@
             "Player_Strength",
             "Text",
             "=",
-            "ToString(roundTo(Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult, 2))"
+            "ToString(roundTo(Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult * Action15StrengthMult * Action20StrengthMult * Action21StrengthMult * (1 + (DiPassives.Followers * 5)/100),2))"
           ]
         },
         {
@@ -1487,7 +1578,7 @@
             "Deadline",
             "Text",
             "=",
-            "\"Fight Day: \" + NewLine() + Enemies.Deadline[CurrentEnemy]"
+            "\"Fight Day: \" + NewLine() + ToString(Enemies.Deadline[CurrentEnemy] + DeadlineOffset)"
           ]
         },
         {
@@ -1499,6 +1590,29 @@
             "Text",
             "=",
             "\"Passive: \" + Enemies.Passives[CurrentEnemy]"
+          ]
+        },
+        {
+          "type": {
+            "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+          },
+          "parameters": [
+            "OverpowerText",
+            "Text",
+            "=",
+            "\"Overpower: \" + ToString((Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult * 1000)"
+          ]
+        },
+        {
+          "type": {
+            "value": "ActionCountDisplay::MyObject::Update_Values"
+          },
+          "parameters": [
+            "ActionCountDisplay",
+            "ActionsUsed",
+            "ActionsCap",
+            "Coins",
+            ""
           ]
         }
       ]
@@ -1557,12 +1671,13 @@
           "parameters": [
             "FinalStrength",
             "=",
-            "Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult * Action15StrengthMult * Action20StrengthMult"
+            "Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult * Action15StrengthMult * Action20StrengthMult * Action21StrengthMult * (1 + (DiPassives.Followers * 5)/100)"
           ]
         }
       ],
       "events": [
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::ForEachChildVariable",
           "iterableVariableName": "ActiveActions",
           "valueIteratorVariableName": "ID_Temp",
@@ -1626,33 +1741,41 @@
                     "0.5"
                   ]
                 }
-              ],
-              "events": [
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "value": "BooleanVariable"
-                      },
-                      "parameters": [
-                        "TalismanEffect.Active",
-                        "True",
-                        ""
-                      ]
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "value": "SetNumberVariable"
-                      },
-                      "parameters": [
-                        "EnemySwordStrengthMult",
-                        "=",
-                        "1"
-                      ]
-                    }
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "TalismanEffect.Active",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Enemies.Name[CurrentEnemy]",
+                    "=",
+                    "\"Mercenary Ying\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EnemySwordStrengthMult",
+                    "=",
+                    "1"
                   ]
                 }
               ]
@@ -1681,6 +1804,136 @@
                     "EnemySwordStrengthMult",
                     "=",
                     "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Enemies.Name[CurrentEnemy]",
+                    "=",
+                    "\"Tian, Son of Heaven\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "TalismanEffect.Active",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ClearVariableChildren"
+                  },
+                  "parameters": [
+                    "HeavenBan"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Ind",
+                    "=",
+                    "mod(Days,6)"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "PushNumber"
+                      },
+                      "parameters": [
+                        "HeavenBan",
+                        "ActionIDList[Ind]"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "variables": [
+                {
+                  "name": "Ind",
+                  "type": "number",
+                  "value": 0
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "TalismanEffect.Active",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Enemies.Name[CurrentEnemy]",
+                    "=",
+                    "\"Tian, Son of Heaven\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ClearVariableChildren"
+                  },
+                  "parameters": [
+                    "HeavenBan"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Enemies.Name[CurrentEnemy]",
+                    "=",
+                    "\"Tian, Son of Heaven\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ClearVariableChildren"
+                  },
+                  "parameters": [
+                    "HeavenBan"
                   ]
                 }
               ]
@@ -2321,7 +2574,6 @@
               ]
             },
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -2508,7 +2760,6 @@
               ]
             },
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -2577,7 +2828,6 @@
               ]
             },
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -2752,7 +3002,6 @@
               ]
             },
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -2936,6 +3185,16 @@
                     "ActionInfo.Enabled[21]",
                     "False",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Action21StrengthMult",
+                    "=",
+                    "100"
                   ]
                 }
               ]
@@ -3475,6 +3734,44 @@
             ""
           ]
         }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEachChildVariable",
+          "iterableVariableName": "HeavenBan",
+          "valueIteratorVariableName": "Variable",
+          "keyIteratorVariableName": "",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberObjectVariable"
+              },
+              "parameters": [
+                "Actions",
+                "ID",
+                "=",
+                "Variable"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Action_Scene::MyObject::Check_Enabled"
+              },
+              "parameters": [
+                "Actions",
+                "0",
+                ""
+              ]
+            }
+          ]
+        }
       ]
     },
     {
@@ -3515,7 +3812,7 @@
           "parameters": [
             "Days",
             ">=",
-            "Enemies.Deadline[CurrentEnemy]"
+            "Enemies.Deadline[CurrentEnemy] + DeadlineOffset"
           ]
         }
       ],
@@ -3536,7 +3833,7 @@
           "parameters": [
             "FinalStrength",
             "=",
-            "Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult * Action15StrengthMult * Action20StrengthMult"
+            "Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult * Action15StrengthMult * Action20StrengthMult * Action21StrengthMult * (1 + (DiPassives.Followers * 5)/100)"
           ]
         }
       ],
@@ -3568,14 +3865,12 @@
             },
             {
               "type": {
-                "value": "Create"
+                "value": "SetNumberVariable"
               },
               "parameters": [
-                "",
-                "Winner_Background",
-                "0",
-                "0",
-                ""
+                "WinText",
+                "=",
+                "1"
               ]
             }
           ]
@@ -3719,6 +4014,87 @@
               ]
             }
           ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentEnemy",
+                    "=",
+                    "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Reincarnation Scene\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentEnemy",
+                    "=",
+                    "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentEnemy",
+                    "+",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Coins",
+                    "+",
+                    "CurrentEnemy"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "UnPauseTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Time Counter\""
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
           "actions": [
             {
               "type": {
@@ -3728,35 +4104,6 @@
                 "VictoryStatus",
                 "=",
                 "\"na\""
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "CurrentEnemy",
-                "+",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Coins",
-                "+",
-                "CurrentEnemy + 1"
-              ]
-            },
-            {
-              "type": {
-                "value": "UnPauseTimer"
-              },
-              "parameters": [
-                "",
-                "\"Time Counter\""
               ]
             }
           ]
@@ -3939,6 +4286,121 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "WinText",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "Dialogue_Container",
+                "200",
+                "500",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Scroll_Text\""
+              ]
+            },
+            {
+              "type": {
+                "value": "DialogueTree::StartDialogueFromBranch"
+              },
+              "parameters": [
+                "\"Win\" + ToString(CurrentEnemy)"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "Enemies.FirstDominate[CurrentEnemy]",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Dialogue_Container",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "WinText",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DialogueTree::StopRunningDialogue"
+                  },
+                  "parameters": []
+                },
+                {
+                  "type": {
+                    "value": "DialogueTree::ClearState"
+                  },
+                  "parameters": []
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Time Counter\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "DiPassives.Followers",
+                    "+",
+                    "1"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -3957,6 +4419,7 @@
       "actions": [],
       "events": [
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -4386,6 +4849,7 @@
               "actions": [],
               "events": [
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -4393,7 +4857,7 @@
                         "value": "DialogueTree::WasBranchVisited"
                       },
                       "parameters": [
-                        "\"Loss\" + ToString(CurrentEnemy) + \"\" + ToString(Enemies.DialogueLength[CurrentEnemy])"
+                        "\"Loss\" + ToString(CurrentEnemy) + ToString(Enemies.DialogueLengthLoss[CurrentEnemy])"
                       ]
                     }
                   ],
@@ -4438,15 +4902,278 @@
                         "value": "DialogueTree::ClearState"
                       },
                       "parameters": []
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "CurrentEnemy",
+                            "=",
+                            "0"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[7]",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[7]",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "ActionUnlocked",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ]
                     },
                     {
-                      "type": {
-                        "value": "Scene"
-                      },
-                      "parameters": [
-                        "",
-                        "\"Reincarnation Scene\"",
-                        ""
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "CurrentEnemy",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[8]",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[8]",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "ActionUnlocked",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "CurrentEnemy",
+                            "=",
+                            "2"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[9]",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[9]",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "ActionUnlocked",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "CurrentEnemy",
+                            "=",
+                            "3"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "DiPassives.SwordArt",
+                            "=",
+                            "0"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[10]",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "DiPassives.SwordArt",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[10]",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "ActionUnlocked",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "CurrentEnemy",
+                            "=",
+                            "4"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[11]",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[11]",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "ActionUnlocked",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Scene"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Reincarnation Scene\"",
+                            ""
+                          ]
+                        }
                       ]
                     }
                   ]
@@ -4460,7 +5187,7 @@
                         "value": "DialogueTree::WasBranchVisited"
                       },
                       "parameters": [
-                        "\"Loss\" + ToString(CurrentEnemy) + \"\" + ToString(Enemies.DialogueLength[CurrentEnemy])"
+                        "\"Loss\" + ToString(CurrentEnemy) + ToString(Enemies.DialogueLengthLoss[CurrentEnemy])"
                       ]
                     }
                   ],
@@ -4503,7 +5230,7 @@
                             "value": "SetNumberVariable"
                           },
                           "parameters": [
-                            "Variable",
+                            "SpriteConfirm",
                             "=",
                             "1"
                           ]
@@ -4529,7 +5256,7 @@
                             "value": "NumberVariable"
                           },
                           "parameters": [
-                            "Variable",
+                            "SpriteConfirm",
                             "=",
                             "0"
                           ]
@@ -4557,7 +5284,725 @@
                             "value": "SetNumberVariable"
                           },
                           "parameters": [
-                            "Variable",
+                            "SpriteConfirm",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "NumberVariable"
+              },
+              "parameters": [
+                "WinText",
+                "=",
+                "1"
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DialogueSprite",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                  },
+                  "parameters": [
+                    "Dialogue_Container",
+                    "DialogueTree::ClippedLineText()",
+                    "\"Di\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DialogueSprite",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                  },
+                  "parameters": [
+                    "Dialogue_Container",
+                    "DialogueTree::ClippedLineText()",
+                    "\"Accountant\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DialogueSprite",
+                    "=",
+                    "2"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                  },
+                  "parameters": [
+                    "Dialogue_Container",
+                    "DialogueTree::ClippedLineText()",
+                    "\"Fiery_Chicken\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DialogueSprite",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                  },
+                  "parameters": [
+                    "Dialogue_Container",
+                    "DialogueTree::ClippedLineText()",
+                    "\"Hunter_Yong\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DialogueSprite",
+                    "=",
+                    "4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                  },
+                  "parameters": [
+                    "Dialogue_Container",
+                    "DialogueTree::ClippedLineText()",
+                    "\"Mercenary_Ying\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DialogueSprite",
+                    "=",
+                    "5"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                  },
+                  "parameters": [
+                    "Dialogue_Container",
+                    "DialogueTree::ClippedLineText()",
+                    "\"Talisman\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DialogueSprite",
+                    "=",
+                    "6"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+                  },
+                  "parameters": [
+                    "Dialogue_Container",
+                    "DialogueTree::ClippedLineText()",
+                    "\"Gourd\"",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "CompareTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Scroll_Text\"",
+                    ">=",
+                    "TextScrollSpeed"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "DialogueTree::ScrollClippedText"
+                  },
+                  "parameters": []
+                },
+                {
+                  "type": {
+                    "value": "ResetTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Scroll_Text\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DialogueTree::HasClippedTextScrollingCompleted"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "folded": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "DialogueTree::WasBranchVisited"
+                      },
+                      "parameters": [
+                        "\"Win\" + ToString(CurrentEnemy) + ToString(Enemies.DialogueLengthDominate[CurrentEnemy])"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "Dialogue_Container",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Enemies.FirstDominate[CurrentEnemy]",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "LossText",
+                        "False",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "DialogueTree::StopRunningDialogue"
+                      },
+                      "parameters": []
+                    },
+                    {
+                      "type": {
+                        "value": "DialogueTree::ClearState"
+                      },
+                      "parameters": []
+                    },
+                    {
+                      "type": {
+                        "value": "ResetTimer"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Time Counter\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "DiPassives.Followers",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "CurrentEnemy",
+                            "=",
+                            "0"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[17]",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[17]",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "ActionUnlocked",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "CurrentEnemy",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[18]",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[18]",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "ActionUnlocked",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "CurrentEnemy",
+                            "=",
+                            "2"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[19]",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[19]",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "ActionUnlocked",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "CurrentEnemy",
+                            "=",
+                            "3"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "DiPassives.SwordArt",
+                            "<",
+                            "3"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[20]",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "DiPassives.SwordArt",
+                            "=",
+                            "3"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "ActionUnlocked",
+                            "True",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[20]",
+                            "=",
+                            "1"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "CurrentEnemy",
+                            "=",
+                            "4"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[21]",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "ActionUnlocked",
+                            "True",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "ActionInfo.Purchasable[21]",
+                            "=",
+                            "1"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "DialogueTree::WasBranchVisited"
+                      },
+                      "parameters": [
+                        "\"Win\" + ToString(CurrentEnemy) + ToString(Enemies.DialogueLengthDominate[CurrentEnemy])"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "DialogueTree::GoToNextLine"
+                      },
+                      "parameters": []
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "DialogueSprite",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "DialogueSprite",
+                            "=",
+                            "CurrentEnemy + 1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "SpriteConfirm",
+                            "=",
+                            "1"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "DialogueSprite",
+                            "=",
+                            "0"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "SpriteConfirm",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "DialogueSprite",
+                            "=",
+                            "0"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "SpriteConfirm",
                             "=",
                             "0"
                           ]
