@@ -394,6 +394,30 @@
         "name": "hvnsplit.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/sprites/miniatures/Blue_Slime_Body.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\sprites\\miniatures\\Blue_Slime_Body.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprites/miniatures/Blue_Slime_Face.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\sprites\\miniatures\\Blue_Slime_Face.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/sprites/miniatures/Blue_Slime_Dagger.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\sprites\\miniatures\\Blue_Slime_Dagger.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -473,6 +497,16 @@
       "effects": [],
       "behaviors": [],
       "content": {}
+    },
+    {
+      "assetStoreId": "",
+      "name": "NewDi_Miniature",
+      "type": "Di_Miniature::Di_Miniature",
+      "variant": "",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {}
     }
   ],
   "objectsFolderStructure": {
@@ -483,6 +517,9 @@
       },
       {
         "objectName": "GreySquare"
+      },
+      {
+        "objectName": "NewDi_Miniature"
       }
     ]
   },
@@ -1481,6 +1518,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/buttonstates"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/di_miniature"
     }
   ],
   "externalLayouts": []

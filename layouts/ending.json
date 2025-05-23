@@ -87,6 +87,23 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "depth": 25.858585858585855,
+      "height": 129.29292929292927,
+      "keepRatio": true,
+      "layer": "",
+      "name": "NewDi_Miniature",
+      "persistentUuid": "69b2c2b7-6940-455c-b986-d2310db4e40b",
+      "width": 200,
+      "x": 550,
+      "y": 20,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -338,6 +355,14 @@
                 "Text",
                 "=",
                 "NewLine() + \"You were strong enough to kill the Son of Heaven, but not strong enough to avoid heaven's wrath.\" + NewLine() + \"Cut off from the cycle of reincarnation, you wander the fallen mortal plane\" + NewLine() + NewLine() + \"Ending 1/2, Mountain of Corpses, Sea of Blood\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "NewDi_Miniature"
               ]
             }
           ]
