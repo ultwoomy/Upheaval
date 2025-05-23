@@ -3860,7 +3860,7 @@
               "parameters": [
                 "VictoryStatus",
                 "=",
-                "\"dominate\""
+                "\"win\""
               ]
             },
             {
@@ -5598,12 +5598,12 @@
                     },
                     {
                       "type": {
-                        "value": "SetBooleanVariable"
+                        "value": "SetNumberVariable"
                       },
                       "parameters": [
-                        "LossText",
-                        "False",
-                        ""
+                        "WinText",
+                        "=",
+                        "0"
                       ]
                     },
                     {
