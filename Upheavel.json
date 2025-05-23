@@ -1425,7 +1425,7 @@
     {
       "name": "ReincarnationTutorialCompletion",
       "type": "boolean",
-      "value": false
+      "value": true
     },
     {
       "name": "LossText",
