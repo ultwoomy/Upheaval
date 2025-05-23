@@ -61,7 +61,7 @@
     {
       "name": "Strength",
       "type": "number",
-      "value": 800
+      "value": 0
     },
     {
       "name": "Days",
@@ -197,6 +197,11 @@
     },
     {
       "name": "Variable",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "TempActionsCap",
       "type": "number",
       "value": 0
     }
@@ -1677,7 +1682,6 @@
       ],
       "events": [
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::ForEachChildVariable",
           "iterableVariableName": "ActiveActions",
           "valueIteratorVariableName": "ID_Temp",
@@ -1809,6 +1813,119 @@
               ]
             },
             {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Enemies.Name[CurrentEnemy]",
+                    "=",
+                    "\"Shaman Fu\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "TalismanEffect.Active",
+                    "False",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TempActionsCap",
+                    "=",
+                    "ActionsCap"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ActionsCap",
+                    "-",
+                    "1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "TalismanEffect.Active",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Enemies.Name[CurrentEnemy]",
+                    "=",
+                    "\"Shaman Fu\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ActionsCap",
+                    "=",
+                    "TempActionsCap"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "StringVariable"
+                  },
+                  "parameters": [
+                    "Enemies.Name[CurrentEnemy]",
+                    "=",
+                    "\"Shaman Fu\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "ActionsCap",
+                    "=",
+                    "TempActionsCap"
+                  ]
+                }
+              ]
+            },
+            {
+              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -3940,6 +4057,45 @@
                 ""
               ]
             }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "DisabledReincarnation",
+                    "=",
+                    "1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "EndingType",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Ending\"",
+                    ""
+                  ]
+                }
+              ]
+            }
           ]
         }
       ]
@@ -5564,7 +5720,6 @@
               "actions": [],
               "events": [
                 {
-                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -5890,6 +6045,43 @@
                             "ActionInfo.Purchasable[21]",
                             "=",
                             "1"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "CurrentEnemy",
+                            "=",
+                            "5"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "EndingType",
+                            "=",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Scene"
+                          },
+                          "parameters": [
+                            "",
+                            "\"Ending\"",
+                            ""
                           ]
                         }
                       ]

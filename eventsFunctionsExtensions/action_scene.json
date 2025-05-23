@@ -752,6 +752,24 @@
                     "50",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::ChangeColor"
+                  },
+                  "parameters": [
+                    "Action_Text",
+                    "\"255;255;255\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::ChangeColor"
+                  },
+                  "parameters": [
+                    "Action_Desc",
+                    "\"255;255;255\""
+                  ]
                 }
               ]
             },
@@ -794,6 +812,24 @@
                     "50",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::ChangeColor"
+                  },
+                  "parameters": [
+                    "Action_Desc",
+                    "\"255;255;255\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::ChangeColor"
+                  },
+                  "parameters": [
+                    "Action_Text",
+                    "\"255;255;255\""
+                  ]
                 }
               ]
             },
@@ -835,6 +871,24 @@
                     "50",
                     "50",
                     ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::ChangeColor"
+                  },
+                  "parameters": [
+                    "Action_Desc",
+                    "\"255;255;255\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "TextObject::ChangeColor"
+                  },
+                  "parameters": [
+                    "Action_Text",
+                    "\"255;255;255\""
                   ]
                 }
               ]

@@ -509,6 +509,7 @@
       "value": 0
     },
     {
+      "folded": true,
       "name": "Enemies",
       "type": "structure",
       "children": [
@@ -583,7 +584,6 @@
           ]
         },
         {
-          "folded": true,
           "name": "DialogueLengthLoss",
           "type": "array",
           "children": [
@@ -597,7 +597,7 @@
             },
             {
               "type": "number",
-              "value": 5
+              "value": 6
             },
             {
               "type": "number",
@@ -688,6 +688,7 @@
           ]
         },
         {
+          "folded": true,
           "name": "Name",
           "type": "array",
           "children": [
@@ -744,7 +745,7 @@
             },
             {
               "type": "string",
-              "value": "All non weapon actions reduce strength gain instead"
+              "value": "Reduce your max actions by 1"
             },
             {
               "type": "string",
@@ -767,11 +768,11 @@
             },
             {
               "type": "number",
-              "value": 20
+              "value": 70
             },
             {
               "type": "number",
-              "value": 200
+              "value": 300
             },
             {
               "type": "number",
@@ -787,11 +788,16 @@
             },
             {
               "type": "number",
-              "value": 2147483647
+              "value": 9999999
             }
           ]
         }
       ]
+    },
+    {
+      "name": "EndingType",
+      "type": "number",
+      "value": 0
     },
     {
       "folded": true,
@@ -816,6 +822,7 @@
       "value": true
     },
     {
+      "folded": true,
       "name": "ActionInfo",
       "type": "structure",
       "children": [

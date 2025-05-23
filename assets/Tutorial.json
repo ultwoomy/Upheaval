@@ -292,7 +292,7 @@
 	{
 		"title": "Loss25",
 		"tags": "",
-		"body": "I-I guess? Not that it matters. We're all weak, and we're all doomed. I'm probably coming after you anyway, so just return to the cycle of reincarnation quietly!",
+		"body": "I-I guess? Not that it matters. We're all weak, and we're all doomed. I'm probably coming after you anyway, so just return to the cycle of reincarnation quietly! [[Answer:Loss26|Loss26]]",
 		"position": {
 			"x": 1388,
 			"y": -869
@@ -936,6 +936,16 @@
 		"position": {
 			"x": -1251,
 			"y": -806
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Loss26",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": 1390,
+			"y": -1116
 		},
 		"colorID": 0
 	}

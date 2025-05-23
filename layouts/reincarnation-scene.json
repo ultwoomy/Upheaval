@@ -723,7 +723,7 @@
       "width": 400,
       "x": 440,
       "y": 500,
-      "zOrder": 17,
+      "zOrder": 2,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -1796,7 +1796,7 @@
                     "Passives",
                     "Text",
                     "+",
-                    "\"Your skill with the blade persists. Initial strength: \" + ToString(pow(2,DiPassives.Followers))"
+                    "\"Your skill with the blade persists. Initial strength: \" + ToString(pow(10,DiPassives.SwordArt))"
                   ]
                 }
               ]
