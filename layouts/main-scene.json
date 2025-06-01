@@ -61,7 +61,7 @@
     {
       "name": "Strength",
       "type": "number",
-      "value": 0
+      "value": 1000000
     },
     {
       "name": "Days",
@@ -204,6 +204,21 @@
       "name": "TempActionsCap",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "ShamanEffect",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "Action16StrengthMult",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "Action16EnemyMult",
+      "type": "number",
+      "value": 1
     }
   ],
   "instances": [
@@ -1475,6 +1490,7 @@
               },
               "parameters": [
                 "Action",
+                "Action.ID",
                 ""
               ]
             }
@@ -1502,6 +1518,18 @@
               "parameters": [
                 "",
                 "\"Time Counter\""
+              ]
+            },
+            {
+              "type": {
+                "value": "PlayMusic"
+              },
+              "parameters": [
+                "",
+                "Main.mp3",
+                "yes",
+                "50",
+                ""
               ]
             }
           ]
@@ -1560,7 +1588,7 @@
             "Player_Strength",
             "Text",
             "=",
-            "ToString(roundTo(Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult * Action15StrengthMult * Action20StrengthMult * Action21StrengthMult * (1 + (DiPassives.Followers * 5)/100),2))"
+            "ToString(roundTo(Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult * Action15StrengthMult * Action20StrengthMult * Action21StrengthMult * (1 + (DiPassives.Followers * 5)/100) * Action16StrengthMult,2))"
           ]
         },
         {
@@ -1571,7 +1599,7 @@
             "Enemy_Strength",
             "Text",
             "=",
-            "ToString(roundTo((Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult,2))"
+            "ToString(roundTo((Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult * Action16EnemyMult,2))"
           ]
         },
         {
@@ -1615,7 +1643,7 @@
             "OverpowerText",
             "Text",
             "=",
-            "\"Overpower: \" + ToString((Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult * 1000)"
+            "\"Overpower: \" + ToString(roundTo((Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult * Action16EnemyMult* 1000,2))"
           ]
         },
         {
@@ -1627,6 +1655,15 @@
             "ActionsUsed",
             "ActionsCap",
             "Coins",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "Settings_Bar::Settings_Bar::SliderSlid"
+          },
+          "parameters": [
+            "Settings_Bar",
             ""
           ]
         }
@@ -1645,6 +1682,7 @@
       "comment": "Time Updates"
     },
     {
+      "folded": true,
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {
@@ -1655,7 +1693,7 @@
             "",
             "\"Time Counter\"",
             ">=",
-            "Time_Max"
+            "Time_Max - DiPassives.CatchUpValue"
           ]
         }
       ],
@@ -1686,7 +1724,7 @@
           "parameters": [
             "FinalStrength",
             "=",
-            "Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult * Action15StrengthMult * Action20StrengthMult * Action21StrengthMult * (1 + (DiPassives.Followers * 5)/100)"
+            "Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult * Action15StrengthMult * Action20StrengthMult * Action21StrengthMult * (1 + (DiPassives.Followers * 5)/100) * Action16StrengthMult"
           ]
         },
         {
@@ -1708,11 +1746,20 @@
             "=",
             "0"
           ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "TotalDays",
+            "+",
+            "1"
+          ]
         }
       ],
       "events": [
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::ForEachChildVariable",
           "iterableVariableName": "ActiveActions",
           "valueIteratorVariableName": "ID_Temp",
@@ -1740,6 +1787,18 @@
                   "parameters": [
                     "ActionInfo.Enabled[0]",
                     "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "0",
                     ""
                   ]
                 }
@@ -1779,6 +1838,18 @@
                     "True",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "1",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -1814,6 +1885,18 @@
                   "parameters": [
                     "ActionInfo.Enabled[2]",
                     "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "2",
                     ""
                   ]
                 }
@@ -1863,6 +1946,18 @@
                     "True",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "3",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -1910,6 +2005,18 @@
                     "True",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "4",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -1945,6 +2052,18 @@
                   "parameters": [
                     "ActionInfo.Enabled[5]",
                     "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "5",
                     ""
                   ]
                 }
@@ -1984,6 +2103,18 @@
                     "True",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "6",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -2019,6 +2150,18 @@
                   "parameters": [
                     "ActionInfo.Enabled[7]",
                     "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "7",
                     ""
                   ]
                 }
@@ -2068,6 +2211,18 @@
                     "True",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "8",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -2113,6 +2268,18 @@
                   "parameters": [
                     "ActionInfo.Enabled[9]",
                     "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "9",
                     ""
                   ]
                 }
@@ -2162,6 +2329,18 @@
                     "True",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "10",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -2199,6 +2378,18 @@
                     "True",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "11",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -2207,7 +2398,7 @@
                     "value": "SetBooleanVariable"
                   },
                   "parameters": [
-                    "TalismanEffect",
+                    "TalismanEffect.Active",
                     "True",
                     "0.9"
                   ]
@@ -2256,6 +2447,18 @@
                     ">",
                     "FinalStrength"
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "12",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -2303,6 +2506,18 @@
                     "=",
                     "4"
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "13",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -2340,6 +2555,18 @@
                     "True",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "14",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -2351,6 +2578,16 @@
                     "Coins",
                     "+",
                     "Days/10"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "ActionInfo.Enabled[14]",
+                    "False",
+                    ""
                   ]
                 }
               ]
@@ -2377,6 +2614,18 @@
                     "True",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "15",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -2394,7 +2643,7 @@
               "events": [
                 {
                   "type": "BuiltinCommonInstructions::ForEachChildVariable",
-                  "iterableVariableName": "ActiveActions",
+                  "iterableVariableName": "ActionIDList",
                   "valueIteratorVariableName": "Variable",
                   "keyIteratorVariableName": "",
                   "conditions": [
@@ -2469,6 +2718,18 @@
                     "True",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "16",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -2477,9 +2738,9 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "TempStrengthMult",
-                    "-",
-                    "0.01"
+                    "Action16StrengthMult",
+                    "*",
+                    "0.99"
                   ]
                 },
                 {
@@ -2487,9 +2748,9 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "EnemyStrengthMult",
-                    "-",
-                    "0.02"
+                    "Action16EnemyMult",
+                    "*",
+                    "0.98"
                   ]
                 }
               ]
@@ -2526,6 +2787,18 @@
                     ">",
                     "40"
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "17",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -2561,6 +2834,18 @@
                   "parameters": [
                     "ActionInfo.Enabled[18]",
                     "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "18",
                     ""
                   ]
                 }
@@ -2629,6 +2914,18 @@
                   "parameters": [
                     "ActionInfo.Enabled[19]",
                     "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "19",
                     ""
                   ]
                 }
@@ -2805,6 +3102,18 @@
                     "True",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "20",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -2946,6 +3255,18 @@
                     "True",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ArrayTools::HasNumber"
+                  },
+                  "parameters": [
+                    "",
+                    "HeavenBan",
+                    "21",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -3066,7 +3387,6 @@
           ]
         },
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
           "actions": [
@@ -3348,6 +3668,16 @@
                     "=",
                     "TempActionsCap"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "ShamanEffect",
+                    "False",
+                    ""
+                  ]
                 }
               ]
             },
@@ -3385,6 +3715,16 @@
                     "=",
                     "TempActionsCap"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "ShamanEffect",
+                    "False",
+                    ""
+                  ]
                 }
               ]
             },
@@ -3410,6 +3750,16 @@
                     "False",
                     ""
                   ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "ShamanEffect",
+                    "=",
+                    ""
+                  ]
                 }
               ],
               "actions": [
@@ -3431,6 +3781,16 @@
                     "ActionsCap",
                     "-",
                     "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "ShamanEffect",
+                    "True",
+                    ""
                   ]
                 }
               ]
@@ -3670,6 +4030,33 @@
                   "type": "number",
                   "value": 0
                 }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "DiPassives.CatchUpEnabled",
+                "True",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "DiPassives.CatchUpValue",
+                "=",
+                "(5 - CurrentEnemy)/5"
               ]
             }
           ]
@@ -3983,7 +4370,7 @@
           "parameters": [
             "FinalStrength",
             "=",
-            "Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult * Action15StrengthMult * Action20StrengthMult * Action21StrengthMult * (1 + (DiPassives.Followers * 5)/100)"
+            "Strength * StrengthMultiplierRest * StrengthMult * PermanentStrengthMult * Action15StrengthMult * Action20StrengthMult * Action21StrengthMult * (1 + (DiPassives.Followers * 5)/100) * Action16StrengthMult"
           ]
         }
       ],
@@ -3998,7 +4385,7 @@
               "parameters": [
                 "FinalStrength",
                 ">=",
-                "(Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult * 1000"
+                "(Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult * 1000 * Action16EnemyMult"
               ]
             }
           ],
@@ -4010,7 +4397,7 @@
               "parameters": [
                 "VictoryStatus",
                 "=",
-                "\"win\""
+                "\"dominate\""
               ]
             },
             {
@@ -4035,7 +4422,18 @@
               "parameters": [
                 "FinalStrength",
                 ">=",
-                "(Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult"
+                "(Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult * Action16EnemyMult"
+              ]
+            },
+            {
+              "type": {
+                "inverted": true,
+                "value": "StringVariable"
+              },
+              "parameters": [
+                "VictoryStatus",
+                "=",
+                "\"dominate\""
               ]
             }
           ],
@@ -4075,7 +4473,7 @@
               "parameters": [
                 "FinalStrength",
                 ">=",
-                "(Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult"
+                "(Enemies.Strength[CurrentEnemy] + EnemyStrengthAdd) * EnemyStrengthMult * Action16EnemyMult"
               ]
             }
           ],
@@ -4138,6 +4536,41 @@
       "conditions": [
         {
           "type": {
+            "value": "Settings_Bar::Settings_Bar::ResetPressed"
+          },
+          "parameters": [
+            "Settings_Bar",
+            ""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetBooleanVariable"
+          },
+          "parameters": [
+            "LossText",
+            "True",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "PauseTimer"
+          },
+          "parameters": [
+            "",
+            "\"Time Counter\""
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
             "value": "MouseButtonFromTextPressed"
           },
           "parameters": [
@@ -4186,6 +4619,16 @@
             "=",
             "0"
           ]
+        },
+        {
+          "type": {
+            "value": "SetNumberVariable"
+          },
+          "parameters": [
+            "StrengthMultiplierRest",
+            "=",
+            "1"
+          ]
         }
       ],
       "events": [
@@ -4203,18 +4646,7 @@
               ]
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "StrengthMultiplierRest",
-                "=",
-                "1"
-              ]
-            }
-          ],
+          "actions": [],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -4230,24 +4662,113 @@
                   ]
                 }
               ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "FailedLastFight",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "FailedLastFight",
+                        "=",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "DiPassives.CatchUpEnabled",
+                        "True",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "ActionsCap",
+                        "=",
+                        "TempActionsCap"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Scene"
+                      },
+                      "parameters": [
+                        "",
+                        "\"Reincarnation Scene\"",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentEnemy",
+                    "=",
+                    "3"
+                  ]
+                }
+              ],
               "actions": [
                 {
                   "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "ActionsCap",
+                    "ActionsUsed",
                     "=",
-                    "TempActionsCap"
+                    "0"
                   ]
                 },
                 {
                   "type": {
-                    "value": "Scene"
+                    "value": "ClearVariableChildren"
                   },
                   "parameters": [
-                    "",
-                    "\"Reincarnation Scene\"",
+                    "ActiveActions"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Action_Scene::MyObject::Set_Active"
+                  },
+                  "parameters": [
+                    "Actions",
+                    "\"Start\"",
                     ""
                   ]
                 }
@@ -4316,6 +4837,33 @@
                 "\"na\""
               ]
             }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "StringVariable"
+          },
+          "parameters": [
+            "VictoryStatus",
+            "=",
+            "\"dominate\""
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "SetStringVariable"
+          },
+          "parameters": [
+            "VictoryStatus",
+            "=",
+            "\"na\""
           ]
         }
       ]
@@ -4570,11 +5118,12 @@
                 },
                 {
                   "type": {
-                    "value": "ResetTimer"
+                    "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "",
-                    "\"Time Counter\""
+                    "DiPassives.Followers",
+                    "+",
+                    "1"
                   ]
                 },
                 {
@@ -4582,9 +5131,28 @@
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
-                    "DiPassives.Followers",
+                    "CurrentEnemy",
                     "+",
                     "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "Exit",
+                    "True",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "UnPauseTimer"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Time Counter\""
                   ]
                 }
               ]
@@ -4601,6 +5169,16 @@
                     "Enemies.FirstDominate[CurrentEnemy]",
                     "=",
                     "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "Exit",
+                    "=",
+                    ""
                   ]
                 }
               ],
@@ -4636,6 +5214,13 @@
                 }
               ]
             }
+          ],
+          "variables": [
+            {
+              "name": "Exit",
+              "type": "boolean",
+              "value": false
+            }
           ]
         }
       ]
@@ -4655,7 +5240,6 @@
       "actions": [],
       "events": [
         {
-          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -4789,6 +5373,18 @@
                         "value": "DialogueTree::ClearState"
                       },
                       "parameters": []
+                    },
+                    {
+                      "type": {
+                        "value": "PlayMusic"
+                      },
+                      "parameters": [
+                        "",
+                        "Main.mp3",
+                        "yes",
+                        "50",
+                        ""
+                      ]
                     }
                   ]
                 },
@@ -5864,7 +6460,7 @@
                     },
                     {
                       "type": {
-                        "value": "ResetTimer"
+                        "value": "UnPauseTimer"
                       },
                       "parameters": [
                         "",
@@ -6171,6 +6767,32 @@
                             "",
                             "\"Ending\"",
                             ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "CurrentEnemy",
+                            "+",
+                            "1"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "Coins",
+                            "+",
+                            "CurrentEnemy"
                           ]
                         }
                       ]

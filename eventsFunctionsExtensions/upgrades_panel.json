@@ -831,6 +831,16 @@
                   "parameters": [
                     "UpgradeButton1"
                   ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                  },
+                  "parameters": [
+                    "UpgradeButton1",
+                    "",
+                    ""
+                  ]
                 }
               ]
             },
@@ -863,6 +873,16 @@
                   },
                   "parameters": [
                     "UpgradeButton2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::Activate"
+                  },
+                  "parameters": [
+                    "UpgradeButton2",
+                    "",
+                    ""
                   ]
                 }
               ]

@@ -124,27 +124,27 @@
         },
         {
           "type": "number",
-          "value": 3
-        },
-        {
-          "type": "number",
           "value": 5
-        },
-        {
-          "type": "number",
-          "value": 5
-        },
-        {
-          "type": "number",
-          "value": 7
-        },
-        {
-          "type": "number",
-          "value": 7
         },
         {
           "type": "number",
           "value": 9
+        },
+        {
+          "type": "number",
+          "value": 5
+        },
+        {
+          "type": "number",
+          "value": 12
+        },
+        {
+          "type": "number",
+          "value": 12
+        },
+        {
+          "type": "number",
+          "value": 12
         },
         {
           "type": "number",
@@ -1813,7 +1813,35 @@
                     "Passives",
                     "Text",
                     "+",
-                    "\"Your skill with the blade persists. Initial strength: \" + ToString(pow(10,DiPassives.SwordArt))"
+                    "\"Your skill with the blade persists. Initial strength: \" + ToString(pow(10,DiPassives.SwordArt)) + NewLine()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BooleanVariable"
+                  },
+                  "parameters": [
+                    "DiPassives.CatchUpEnabled",
+                    "True",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "TextContainerCapability::TextContainerBehavior::SetValue"
+                  },
+                  "parameters": [
+                    "Passives",
+                    "Text",
+                    "+",
+                    "\"Time flows quicker until you fight\""
                   ]
                 }
               ]
@@ -2628,6 +2656,23 @@
                 "=",
                 "-42"
               ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "Passives",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "UpdateNotice"
+              ]
             }
           ]
         },
@@ -2683,6 +2728,22 @@
                 "State",
                 "=",
                 "\"action_shop\""
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Passives"
+              ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "UpdateNotice"
               ]
             }
           ]
@@ -4053,6 +4114,23 @@
                 "=",
                 "-42"
               ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "UpdateNotice"
+              ]
+            },
+            {
+              "type": {
+                "value": "Montre"
+              },
+              "parameters": [
+                "Passives",
+                ""
+              ]
             }
           ]
         },
@@ -4109,6 +4187,14 @@
                 "=",
                 "\"upgrades_shop\""
               ]
+            },
+            {
+              "type": {
+                "value": "Cache"
+              },
+              "parameters": [
+                "Passives"
+              ]
             }
           ]
         }
@@ -4124,6 +4210,16 @@
           "parameters": [
             "Upgrades_Panel",
             ""
+          ]
+        },
+        {
+          "type": {
+            "value": "StringVariable"
+          },
+          "parameters": [
+            "State",
+            "=",
+            "\"upgrades_shop\""
           ]
         },
         {
@@ -4199,6 +4295,16 @@
     {
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
+        {
+          "type": {
+            "value": "StringVariable"
+          },
+          "parameters": [
+            "State",
+            "=",
+            "\"upgrades_shop\""
+          ]
+        },
         {
           "type": {
             "value": "Upgrades_Panel::Upgrades_Panel::Upgrade2"
@@ -4281,6 +4387,16 @@
     {
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
+        {
+          "type": {
+            "value": "StringVariable"
+          },
+          "parameters": [
+            "State",
+            "=",
+            "\"upgrades_shop\""
+          ]
+        },
         {
           "type": {
             "value": "Upgrades_Panel::Upgrades_Panel::Upgrade3"
@@ -4457,10 +4573,75 @@
       "conditions": [
         {
           "type": {
+            "inverted": true,
+            "value": "DialogueTree::IsDialogueRunning"
+          },
+          "parameters": []
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "FailedLastFight",
+            "=",
+            "1"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "Dialogue_Container",
+            "200",
+            "500",
+            ""
+          ]
+        },
+        {
+          "type": {
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"Scroll_Text\""
+          ]
+        },
+        {
+          "type": {
+            "value": "DialogueTree::StartDialogueFromBranch"
+          },
+          "parameters": [
+            "\"Endloss1\""
+          ]
+        }
+      ]
+    },
+    {
+      "folded": true,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
             "value": "DialogueTree::IsDialogueLineType"
           },
           "parameters": [
             "\"text\""
+          ]
+        },
+        {
+          "type": {
+            "inverted": true,
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "FailedLastFight",
+            "=",
+            "1"
           ]
         }
       ],
@@ -4598,6 +4779,314 @@
                   },
                   "parameters": [
                     "\"Tutorial13B\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "DialogueTree::GoToNextLine"
+                  },
+                  "parameters": []
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "TutorialSprite",
+                        "=",
+                        "\"Id\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TutorialSprite",
+                        "=",
+                        "\"Di\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "Temp",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "TutorialSprite",
+                        "=",
+                        "\"Di\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "Temp",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "TutorialSprite",
+                        "=",
+                        "\"Id\""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "variables": [
+            {
+              "name": "Temp",
+              "type": "boolean",
+              "value": true
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "TextScrollSpeed",
+                "=",
+                "0.01"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "MouseButtonFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "TextScrollSpeed",
+                "=",
+                "0.03"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "value": "DialogueTree::IsDialogueLineType"
+          },
+          "parameters": [
+            "\"text\""
+          ]
+        },
+        {
+          "type": {
+            "value": "NumberVariable"
+          },
+          "parameters": [
+            "FailedLastFight",
+            "=",
+            "1"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "value": "Dialogue_Container::Dialogue_Container::Set_Text"
+          },
+          "parameters": [
+            "Dialogue_Container",
+            "DialogueTree::ClippedLineText()",
+            "TutorialSprite",
+            ""
+          ]
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CompareTimer"
+              },
+              "parameters": [
+                "",
+                "\"Scroll_Text\"",
+                ">=",
+                "TextScrollSpeed"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "DialogueTree::ScrollClippedText"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"Scroll_Text\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "MouseButtonFromTextPressed"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "DialogueTree::HasClippedTextScrollingCompleted"
+              },
+              "parameters": []
+            },
+            {
+              "type": {
+                "value": "BooleanVariable"
+              },
+              "parameters": [
+                "ReincarnationTutorialCompletion",
+                "=",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DialogueTree::WasBranchVisited"
+                  },
+                  "parameters": [
+                    "\"Endloss7\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "Dialogue_Container",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "FailedLastFight",
+                    "=",
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "DialogueTree::StopRunningDialogue"
+                  },
+                  "parameters": []
+                },
+                {
+                  "type": {
+                    "value": "DialogueTree::ClearState"
+                  },
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "DialogueTree::WasBranchVisited"
+                  },
+                  "parameters": [
+                    "\"Endloss7\""
                   ]
                 }
               ],

@@ -128,5 +128,75 @@
 			"y": -2347
 		},
 		"colorID": 0
+	},
+	{
+		"title": "Endloss1",
+		"tags": "",
+		"body": "HA! Nice try, but welcome back. [[Answer:Endloss2|Endloss2]]",
+		"position": {
+			"x": 841,
+			"y": 351
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Endloss2",
+		"tags": "",
+		"body": "Huh? How am I back here, I killed the Son of Heaven. [[Answer:Endloss3|Endloss3]]",
+		"position": {
+			"x": 830,
+			"y": 102
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Endloss3",
+		"tags": "",
+		"body": "Not that easy I'm afraid. You were struck down by heaven's wrath the moment you succeeded. How could you kill their chosen and still survive? [[Answer:Endloss4|Endloss4]]",
+		"position": {
+			"x": 832,
+			"y": -133
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Endloss4",
+		"tags": "",
+		"body": "Wait then what am I supposed to do about it? [[Answer:Endloss5|Endloss5]]",
+		"position": {
+			"x": 824,
+			"y": -343
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Endloss5",
+		"tags": "",
+		"body": "What else? Fight, grow, reach the tips of the sky and rend the heavens in two. Just get a thousandfold stronger again.",
+		"position": {
+			"x": 829,
+			"y": -582
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Endloss6",
+		"tags": "",
+		"body": "The same thing, a thousandfold. No problem. My bloomed talent is limitless after all. Let me shield my friends with my strength and leap into a new era. [[Answer:Endloss5|Endloss7]]",
+		"position": {
+			"x": 805,
+			"y": -795
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Endloss7",
+		"tags": "",
+		"body": ".",
+		"position": {
+			"x": 820,
+			"y": -1010
+		},
+		"colorID": 0
 	}
 ]

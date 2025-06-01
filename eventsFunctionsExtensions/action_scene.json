@@ -651,7 +651,7 @@
           "fullName": "Set Color",
           "functionType": "Action",
           "name": "Set_Color",
-          "sentence": "Set _PARAM0_ Color",
+          "sentence": "Set _PARAM0_ Color (ID: _PARAM1_)",
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -661,7 +661,7 @@
                     "value": "NumberVariable"
                   },
                   "parameters": [
-                    "ID",
+                    "id",
                     ">=",
                     "19"
                   ]
@@ -671,7 +671,7 @@
                     "value": "NumberVariable"
                   },
                   "parameters": [
-                    "ID",
+                    "id",
                     "<=",
                     "21"
                   ]
@@ -721,7 +721,7 @@
                     "value": "NumberVariable"
                   },
                   "parameters": [
-                    "ID",
+                    "id",
                     ">=",
                     "12"
                   ]
@@ -731,7 +731,7 @@
                     "value": "NumberVariable"
                   },
                   "parameters": [
-                    "ID",
+                    "id",
                     "<=",
                     "18"
                   ]
@@ -781,7 +781,7 @@
                     "value": "NumberVariable"
                   },
                   "parameters": [
-                    "ID",
+                    "id",
                     "<=",
                     "11"
                   ]
@@ -791,7 +791,7 @@
                     "value": "NumberVariable"
                   },
                   "parameters": [
-                    "ID",
+                    "id",
                     ">=",
                     "7"
                   ]
@@ -841,7 +841,7 @@
                     "value": "NumberVariable"
                   },
                   "parameters": [
-                    "ID",
+                    "id",
                     "<=",
                     "6"
                   ]
@@ -851,7 +851,7 @@
                     "value": "NumberVariable"
                   },
                   "parameters": [
-                    "ID",
+                    "id",
                     ">=",
                     "0"
                   ]
@@ -905,6 +905,11 @@
               "name": "Object",
               "supplementaryInformation": "Action_Scene::MyObject",
               "type": "object"
+            },
+            {
+              "description": "id",
+              "name": "id",
+              "type": "expression"
             }
           ],
           "objectGroups": []

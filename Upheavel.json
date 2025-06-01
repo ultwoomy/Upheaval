@@ -11,8 +11,8 @@
     "antialiasingMode": "MSAA",
     "antialisingEnabledOnMobile": false,
     "folderProject": true,
-    "orientation": "landscape",
-    "packageName": "com.example.gamename",
+    "orientation": "default",
+    "packageName": "com.yuwu.upheaval",
     "pixelsRounding": false,
     "projectUuid": "5b5b5037-f3bf-49a9-ba29-6e6110aba9de",
     "scaleMode": "linear",
@@ -20,42 +20,42 @@
     "templateSlug": "",
     "version": "1.0.0",
     "name": "Upheavel",
-    "description": "",
+    "description": "The Son of Heaven has decreed that all mortal beings must battle amongst themselves until there is but one remaining, but you just want to be a warrior without all this murdering nonsense. Hew the heavens in two and save your weird neighbors from having to kill each other.",
     "author": "",
     "windowWidth": 1280,
     "windowHeight": 720,
-    "latestCompilationDirectory": "",
+    "latestCompilationDirectory": "C:\\Users\\ultwo\\Downloads\\Upheaval_Proto",
     "maxFPS": 60,
     "minFPS": 20,
     "verticalSync": false,
     "platformSpecificAssets": {
-      "android-icon-144": "",
-      "android-icon-192": "",
-      "android-icon-36": "",
-      "android-icon-48": "",
-      "android-icon-72": "",
-      "android-icon-96": "",
-      "android-windowSplashScreenAnimatedIcon": "",
-      "desktop-icon-512": "",
-      "ios-icon-100": "",
-      "ios-icon-1024": "",
-      "ios-icon-114": "",
-      "ios-icon-120": "",
-      "ios-icon-144": "",
-      "ios-icon-152": "",
-      "ios-icon-167": "",
-      "ios-icon-180": "",
-      "ios-icon-20": "",
-      "ios-icon-29": "",
-      "ios-icon-40": "",
-      "ios-icon-50": "",
-      "ios-icon-57": "",
-      "ios-icon-58": "",
-      "ios-icon-60": "",
-      "ios-icon-72": "",
-      "ios-icon-76": "",
-      "ios-icon-80": "",
-      "ios-icon-87": ""
+      "android-icon-144": "Gourd4.png",
+      "android-icon-192": "Gourd4.png",
+      "android-icon-36": "Gourd4.png",
+      "android-icon-48": "Gourd4.png",
+      "android-icon-72": "Gourd4.png",
+      "android-icon-96": "Gourd4.png",
+      "android-windowSplashScreenAnimatedIcon": "Gourd4.png",
+      "desktop-icon-512": "Gourd4.png",
+      "ios-icon-100": "Gourd4.png",
+      "ios-icon-1024": "Gourd4.png",
+      "ios-icon-114": "Gourd4.png",
+      "ios-icon-120": "Gourd4.png",
+      "ios-icon-144": "Gourd4.png",
+      "ios-icon-152": "Gourd4.png",
+      "ios-icon-167": "Gourd4.png",
+      "ios-icon-180": "Gourd4.png",
+      "ios-icon-20": "Gourd4.png",
+      "ios-icon-29": "Gourd4.png",
+      "ios-icon-40": "Gourd4.png",
+      "ios-icon-50": "Gourd4.png",
+      "ios-icon-57": "Gourd4.png",
+      "ios-icon-58": "Gourd4.png",
+      "ios-icon-60": "Gourd4.png",
+      "ios-icon-72": "Gourd4.png",
+      "ios-icon-76": "Gourd4.png",
+      "ios-icon-80": "Gourd4.png",
+      "ios-icon-87": "Gourd4.png"
     },
     "loadingScreen": {
       "backgroundColor": 0,
@@ -77,9 +77,13 @@
       "placement": "bottom-left",
       "showWatermark": true
     },
-    "authorIds": [],
+    "authorIds": [
+      "WevhYsj7Rod0umqYnq6XAG3m0IK2"
+    ],
     "authorUsernames": [],
-    "categories": [],
+    "categories": [
+      "game-jam-7"
+    ],
     "playableDevices": [],
     "extensionProperties": [],
     "platforms": [
@@ -418,6 +422,68 @@
         "name": "assets\\sprites\\miniatures\\Blue_Slime_Dagger.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "Gourd3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Gourd3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Gourd4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Gourd4.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "Main.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "Main.mp3",
+        "preloadAsMusic": false,
+        "preloadAsSound": false,
+        "preloadInCache": false,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Square White Slider Border.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Square White Slider Border.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Settings UI/Slider/pixel art/324e5f522f6242e9f93090e75ddc38427c3a6c42e8236dbf0ed541bd85cf7221_Square White Slider Border.png",
+          "name": "Square White Slider Border.png"
+        }
+      },
+      {
+        "file": "assets/Square White Slider Fill Bar.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Square White Slider Fill Bar.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Settings UI/Slider/pixel art/47bc684198cd25b3ec74b0e72c2e2c7abb1b6736bd9f4b78a943c663e83118bf_Square White Slider Fill Bar.png",
+          "name": "Square White Slider Fill Bar.png"
+        }
+      },
+      {
+        "file": "assets/Square White Slider Thumb.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Square White Slider Thumb.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/Settings UI/Slider/pixel art/848f861767e7ce4581dba9e122ee7bafeaca57987655cebe1f78ab31d1300f0f_Square White Slider Thumb.png",
+          "name": "Square White Slider Thumb.png"
+        }
       }
     ],
     "resourceFolders": []
@@ -561,27 +627,27 @@
             },
             {
               "type": "number",
-              "value": 20
+              "value": 25
             },
             {
               "type": "number",
-              "value": 30
+              "value": 40
             },
             {
               "type": "number",
-              "value": 45
+              "value": 60
             },
             {
               "type": "number",
-              "value": 55
+              "value": 75
             },
             {
               "type": "number",
-              "value": 70
+              "value": 90
             },
             {
               "type": "number",
-              "value": 71
+              "value": 115
             }
           ]
         },
@@ -621,6 +687,7 @@
           ]
         },
         {
+          "folded": true,
           "name": "DialogueLengthLoss",
           "type": "array",
           "children": [
@@ -805,27 +872,27 @@
             },
             {
               "type": "number",
-              "value": 70
+              "value": 130
             },
             {
               "type": "number",
-              "value": 300
+              "value": 600
             },
             {
               "type": "number",
-              "value": 1000
+              "value": 2200
             },
             {
               "type": "number",
-              "value": 4000
+              "value": 15000
             },
             {
               "type": "number",
-              "value": 10000
+              "value": 50000
             },
             {
               "type": "number",
-              "value": 9999999
+              "value": 99999999
             }
           ]
         }
@@ -841,6 +908,16 @@
       "name": "DiPassives",
       "type": "structure",
       "children": [
+        {
+          "name": "CatchUpEnabled",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "CatchUpValue",
+          "type": "number",
+          "value": 0
+        },
         {
           "name": "Followers",
           "type": "number",
@@ -859,6 +936,7 @@
       "value": true
     },
     {
+      "folded": true,
       "name": "ActionInfo",
       "type": "structure",
       "children": [
@@ -1237,7 +1315,7 @@
             },
             {
               "type": "number",
-              "value": 0
+              "value": 1
             }
           ]
         },
@@ -1339,6 +1417,11 @@
       ]
     },
     {
+      "name": "FailedLastFight",
+      "type": "number",
+      "value": 0
+    },
+    {
       "folded": true,
       "name": "UpgradesInfo",
       "type": "structure",
@@ -1375,7 +1458,7 @@
             },
             {
               "type": "number",
-              "value": 1
+              "value": 2
             }
           ]
         }
@@ -1439,6 +1522,11 @@
     },
     {
       "name": "DeadlineOffset",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "TotalDays",
       "type": "number",
       "value": 0
     }
@@ -1522,6 +1610,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/di_miniature"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/panelspriteslider"
     }
   ],
   "externalLayouts": []
