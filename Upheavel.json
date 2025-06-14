@@ -604,7 +604,7 @@
     {
       "name": "Time_Max",
       "type": "number",
-      "value": 0.5
+      "value": 5
     },
     {
       "name": "Action_Returned",
@@ -933,7 +933,7 @@
     {
       "name": "TutorialCompletion",
       "type": "boolean",
-      "value": true
+      "value": false
     },
     {
       "folded": true,
@@ -1508,7 +1508,7 @@
     {
       "name": "ReincarnationTutorialCompletion",
       "type": "boolean",
-      "value": true
+      "value": false
     },
     {
       "name": "LossText",

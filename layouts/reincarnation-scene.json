@@ -5020,12 +5020,12 @@
             },
             {
               "type": {
-                "value": "BooleanVariable"
+                "value": "NumberVariable"
               },
               "parameters": [
-                "ReincarnationTutorialCompletion",
+                "FailedLastFight",
                 "=",
-                ""
+                "1"
               ]
             }
           ],

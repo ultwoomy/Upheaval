@@ -61,7 +61,7 @@
     {
       "name": "Strength",
       "type": "number",
-      "value": 1000000
+      "value": 0
     },
     {
       "name": "Days",
@@ -4697,16 +4697,6 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "SetBooleanVariable"
-                      },
-                      "parameters": [
-                        "DiPassives.CatchUpEnabled",
-                        "True",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "SetNumberVariable"
                       },
                       "parameters": [
@@ -4817,6 +4807,33 @@
                   "parameters": [
                     "",
                     "\"Time Counter\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentEnemy",
+                    "=",
+                    "4"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetBooleanVariable"
+                  },
+                  "parameters": [
+                    "DiPassives.CatchUpEnabled",
+                    "True",
+                    ""
                   ]
                 }
               ]
